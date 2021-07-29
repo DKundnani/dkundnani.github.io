@@ -1,6 +1,6 @@
 ## Biography
 
-I work at the intersection of biology, statistics, and computation  with a strong application focus on the field of genomics and epigenomics. I work with [Dr. Francesca Storici](http://www.storicilab.gatech.edu/) as a Bioinformatics Ph.D. Graduate Research Assistant in the Storici Lab at Georgia Institute of Technology.  My goal is to delineate presence of ribonucleotides(constructs of RNA) in human genomic DNA finding correlations with other DNA metabolic activities in both in cancer and non-cancer cell types. 
+I work at the intersection of biology, statistics, and computation  with a strong application focus on the field of genomics and epigenomics. I work with [Dr. Francesca Storici](http://www.storicilab.gatech.edu/) as a Bioinformatics Ph.D. Graduate Research Assistant in the Storici Lab at Georgia Institute of Technology.  My goal is to delineate presence of ribonucleotides(constructs of RNA) in human genomic DNA finding correlations with other DNA metabolic activities in both in cancer and non-cancer cell types[see updates about the future work](https://biosciences.gatech.edu/news/congratulations-francesca-storici-and-natasha-jonoska). 
 <br><br>
 Through my work in The Storici Lab, I have recently co-authored a [paper](https://www.mdpi.com/2079-7737/10/3/221) and received US National Science Foundation Conference Award for a poster presentation in RNA Society 2021
 <br><br>
@@ -11,27 +11,51 @@ Before coming to Georgia Tech, I have been fortunate to work with amazing doctor
 ### Recent Projects
 
 [Associations of RNASEH2A gene in cancer datasets](/images/Exp-Corr-2021.jpg )
-<img src="images\Exp-Corr-2021.jpg?raw=true" alt="images\Exp-Corr-2021.jpg" />
 <br><br>
-Determining Expression correlation of RNASEH2A with cancer proliferation and cell cycle markers in large cancer cell lines and tissue datasets. This project has been recently a part of [paper](https://doi.org/10.3390/biology10030221) published in MDPI's Biology journal and the [presented] (/pdf/DK-poster-2021.pdf) in [RNA 2021 Conference](https://app.oxfordabstracts.com/events/1864/program-app/submission/243452)
-
----
-[Project 2 Title](/pdf/sample_presentation.pdf)
 <img src="images\Exp-Corr-2021.jpg?raw=true"/>
+<br><br>
+Determining Expression correlation of RNASEH2A with cancer proliferation and cell cycle markers in large cancer cell lines and tissue datasets. This project has been recently a part of [paper](https://doi.org/10.3390/biology10030221) published in MDPI's Biology journal and the [presented](/pdf/DK-poster-2021.pdf) in [RNA 2021 Conference](https://app.oxfordabstracts.com/events/1864/program-app/submission/243452)
 
 ---
+
+[Associations of RNASEH2A gene in cancer datasets](/images/IGen-2020.jpg)
+<br><br>
+<img src="images\IGen-2020.jpg?raw=true"/>
+<br><br>
+IGen is an app to help the consumer be aware of their genetic tendency for susceptibility to multiple infections and be proactive with their health during the time of Global Pandemic. All they need is a DNA test sequencing Results from Companies like 23andMe. [See a glimpse if the Science behind it](/ppt/IGen.pptx)
+
+---
+[Discovery of Differntially methylated regions in HIV cohort from Yale's Veterans Aging Cohort Study](/images/DMR-2020.jpg )
+<br><br>
+<img src="images\Exp-Corr-2021.jpg?raw=true"/>
+<br><br>
+ [](https://medicine.yale.edu/intmed/vacs/)
+ [](https://medicine.yale.edu/intmed/vacs/vacsresources/vacsindexinfo/)
+ [More info..](/ppt/DMR.pptx)
+
+---
+
+### More Projects
+<br><br>
+[Project 1 Title](http://example.com/)
+<br><br>
+[Exome Analysis of Utah Resident with Northern and Western European Ancestry](https://gtbinf.wordpress.com/2019/11/25/exome-analysis-of-utah-resident-with-northern-and-western-european-ancestry/)
+<br><br>
+[Differential gene expression in lung cancer cell lines between wildtype and mutant/variant p53](https://gtbinf.wordpress.com/2019/11/08/differential-gene-expression-in-lung-cancer-cell-lines-between-wildtype-and-mutant-variant-p53/)
+
+---
+
+### Recent Publications
+<br><br>
+[Project 1 Title](http://example.com/)
+<br><br>
+[Project 2 Title](http://example.com/)
+<br><br>
 [Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-
-### Category Name 2
-
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+<br><br>
+[Project 4 Title](http://example.com/)
+<br><br>
+[Project 5 Title](http://example.com/)
 
 ---
 

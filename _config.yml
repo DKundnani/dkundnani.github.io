@@ -7,7 +7,7 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   <a href="https://www.linkedin.com/in/example/">LinkedIn Profile</a> 
   <br>
-  <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&hl=en&oi=ao"><img src="/logos/google_scholar_logo.png"> Google Scholar Profile</a> 
+  <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&hl=en&oi=ao"><img src="/logos/google_scholar_logo.png" width="4" height="5"> Google Scholar Profile</a> 
   <br>
   <a href="/pdf/DLK_CV_2021[07].pdf">Curriculum Vitae</a> 
   <br><br>

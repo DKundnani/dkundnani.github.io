@@ -2,16 +2,16 @@ title: Deepali Kundnani # your name (or website title) here
 logo: "/images/Exec pic.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   Bioinformatics Ph.D. Student 
-  <br><br>
+  <br>
   Georgia Institute of Technology
   <br><br>
   <a href="https://www.linkedin.com/in/example/">LinkedIn Profile</a> 
-  <br><br>
-  <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&hl=en&oi=ao">Google Scholar Profile Profile</a> 
-  <br><br>
+  <br>
+  <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&hl=en&oi=ao">Google Scholar Profile</a> 
+  <br>
   <a href="/pdf/DLK_CV_2021[07].pdf">Curriculum Vitae</a> 
   <br><br>
-  <a href="https://atlanta.ashanet.org/blog/donation_profiles/deepali-l-kundnani-2/">Community Service</a> 
+  <a href="https://atlanta.ashanet.org/blog/donation_profiles/deepali-l-kundnani-2/">Community Service Profile</a> 
 
   
 theme: jekyll-theme-minimal

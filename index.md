@@ -53,6 +53,7 @@ Discovery of Differntially methylated regions in smokers vs non smokers validate
 <br><br>
 [Project 5 Title](http://example.com/)
 
+[See Complete list...](pdf/DK-Publications-2021.pdf)
 ---
 
 

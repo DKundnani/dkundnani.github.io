@@ -25,14 +25,14 @@ IGen is an app to help the consumer be aware of their genetic tendency for susce
 ---
 ### [Use of Methylation data to determine Survial Risks in HIV cohort from Yale's Veterans Aging Cohort Study](/images/DMR-2020.jpg )
 <br><br>
-<img src="images\Exp-Corr-2021.jpg?raw=true"/>
+<img src="images\DMR-2020?raw=true"/>
 <br><br>
 Discovery of Differntially methylated regions in smokers vs non smokers validated the finding from several other research groups. We were able to see variation in the methylation status based on Race. For prognosis prediction on this [dataset](https://medicine.yale.edu/intmed/vacs/), we used [Veterans Aging Cohort (VACS) Index](https://medicine.yale.edu/intmed/vacs/vacsresources/vacsindexinfo/). Use of support Vector Machines gave the best accuracy. Used of different and more lineant thresholding to extract more features and more information could lead to good AUCs for the methylated regions to be used as Biomarkers or predictors. [More info..](/ppt/DMR.pptx)
 
 ---
 ### More Projects
 
-[Genome Assembly and Comparative Genomic Study on CDC's foodborn disease Outbreaks ](.........)
+[Genome Assembly and Comparative Genomic Study on CDC's foodborn disease Outbreaks ](.........) Link coming soon
 <br><br>
 [Differential gene expression in lung cancer cell lines between wildtype and mutant/variant p53](https://gtbinf.wordpress.com/2019/11/08/differential-gene-expression-in-lung-cancer-cell-lines-between-wildtype-and-mutant-variant-p53/)
 <br><br>

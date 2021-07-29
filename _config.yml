@@ -5,9 +5,11 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br>
   Georgia Institute of Technology
   <br><br>
-  <a href="https://www.linkedin.com/in/deepalik/"> <img src="/logos/ln.png" width="40" height="50">LinkedIn Profile</a> 
+  <img src="/logos/ln.png" width="10" height="10" alt="https://www.linkedin.com/in/deepalik/"> 
+  <a href="https://www.linkedin.com/in/deepalik/"> LinkedIn Profile </a> 
   <br>
-  <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&hl=en&oi=ao"> <img src="/logos/gs.png" width="40" height="50"> Google Scholar Profile</a> 
+  <img src="/logos/gs.png" width="10" height="10" alt="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&hl=en&oi=ao">
+  <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&hl=en&oi=ao">  Google Scholar Profile</a> 
   <br>
   <a href="/pdf/DLK_CV_2021[07].pdf">Curriculum Vitae</a> 
   <br><br>

@@ -25,7 +25,7 @@ IGen is an app to help the consumer be aware of their genetic tendency for susce
 ---
 ### [Use of Methylation data to determine Survial Risks in HIV cohort from Yale's Veterans Aging Cohort Study](/images/DMR-2020.jpg )
 <br><br>
-<img src="images\DMR-2020?raw=true"/>
+<img src="images\DMR-2020.jpg?raw=true"/>
 <br><br>
 Discovery of Differntially methylated regions in smokers vs non smokers validated the finding from several other research groups. We were able to see variation in the methylation status based on Race. For prognosis prediction on this [dataset](https://medicine.yale.edu/intmed/vacs/), we used [Veterans Aging Cohort (VACS) Index](https://medicine.yale.edu/intmed/vacs/vacsresources/vacsindexinfo/). Use of support Vector Machines gave the best accuracy. Used of different and more lineant thresholding to extract more features and more information could lead to good AUCs for the methylated regions to be used as Biomarkers or predictors. [More info..](/ppt/DMR.pptx)
 
@@ -56,7 +56,7 @@ Edwin J Ostrin, Leonidas E Bantis, David O Wilson, Nikul Patel, Renwei Wang, <b>
 <p style="font-size:15px">A four-marker biomarker panel, previously validated to improve lung cancer risk prediction, was found to also have utility in distinguishing benign from malignant indeterminate pulmonary nodules. Its performance in improving sensitivity at a high specificity indicates potential utility of the marker panel in assessing likelihood of malignancy in otherwise indeterminate nodules.</p>
 
 <br><br>
-[https://www.frontiersin.org/articles/10.3389/fonc.2020.553342/full?report=reader](https://doi.org/10.3389/fonc.2020.553342)
+[NFATc Acts as a Non-Canonical Phenotypic Stability Factor for a Hybrid Epithelial/Mesenchymal Phenotype](https://doi.org/10.3389/fonc.2020.553342)
 <br>
 Ayalur Raghu Subbalakshmi,<b> Deepali Kundnani </b>, Kuheli Biswas, Anandamohan Ghosh, Samir M Hanash, Satyendra C Tripathi, Mohit Kumar Jolly
 <br>

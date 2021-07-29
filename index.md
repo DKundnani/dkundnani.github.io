@@ -36,12 +36,14 @@ IGen is an app to help the consumer be aware of their genetic tendency for susce
 ---
 
 ### More Projects
+[Genome Assembly and Comparative Genomic Study on CDC's foodborn disease Outbreaks ](.........)
 <br><br>
-[Project 1 Title](http://example.com/)
+[Differential gene expression in lung cancer cell lines between wildtype and mutant/variant p53](https://gtbinf.wordpress.com/2019/11/08/differential-gene-expression-in-lung-cancer-cell-lines-between-wildtype-and-mutant-variant-p53/)
 <br><br>
 [Exome Analysis of Utah Resident with Northern and Western European Ancestry](https://gtbinf.wordpress.com/2019/11/25/exome-analysis-of-utah-resident-with-northern-and-western-european-ancestry/)
 <br><br>
-[Differential gene expression in lung cancer cell lines between wildtype and mutant/variant p53](https://gtbinf.wordpress.com/2019/11/08/differential-gene-expression-in-lung-cancer-cell-lines-between-wildtype-and-mutant-variant-p53/)
+
+
 
 ---
 

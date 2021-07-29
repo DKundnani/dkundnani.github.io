@@ -6,9 +6,9 @@ Before coming to Georgia Tech, I have been fortunate to work with amazing doctor
 
 ---
 
-### Recent Projects
+## Recent Projects
 
-[Associations of RNASEH2A gene in cancer datasets](/images/Exp-Corr-2021.jpg )
+### [Associations of RNASEH2A gene in cancer datasets](/images/Exp-Corr-2021.jpg )
 <br><br>
 <img src="images\Exp-Corr-2021.jpg?raw=true"/>
 <br><br>
@@ -16,14 +16,14 @@ Determining Expression correlation of RNASEH2A with cancer proliferation and cel
 
 ---
 
-[Application to Determine Susceptibility of Multiple infections](/images/IGen-2020.jpg)
+### [Application to Determine Susceptibility of Multiple infections](/images/IGen-2020.jpg)
 <br><br>
 <img src="images\IGen-2020.jpg?raw=true"/>
 <br><br>
 IGen is an app to help the consumer be aware of their genetic tendency for susceptibility to multiple infections and be proactive with their health during the time of Global Pandemic. All they need is a DNA test sequencing Results from Companies like 23andMe.[  [Glimpse of the Science behind it](/ppt/IGen.pptx) ]
 
 ---
-[Use of Methylation data to determine Survial Risks in HIV cohort from Yale's Veterans Aging Cohort Study](/images/DMR-2020.jpg )
+### [Use of Methylation data to determine Survial Risks in HIV cohort from Yale's Veterans Aging Cohort Study](/images/DMR-2020.jpg )
 <br><br>
 <img src="images\Exp-Corr-2021.jpg?raw=true"/>
 <br><br>
@@ -41,7 +41,7 @@ Discovery of Differntially methylated regions in smokers vs non smokers validate
 
 ---
 
-### Publications
+## Publications
 <br><br>
 [Gene co-expression analysis of human RNASEH2A reveals functional networks associated with DNA replication, DNA damage response, and cell cycle regulation](https://doi.org/10.3390/biology10030221)
 <br>

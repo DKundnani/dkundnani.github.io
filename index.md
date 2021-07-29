@@ -11,7 +11,7 @@ Before coming to Georgia Tech, I have been fortunate to work with amazing doctor
 ### Recent Projects
 
 [Associations of RNASEH2A gene in cancer datasets]("images\Exp-Corr-2021.jpg?raw=true" )
-<img src="images\Exp-Corr-2021.jpg?raw=true" alt="images\Exp-Corr-2021.jpg?raw=true" />
+<img src="images\Exp-Corr-2021.jpg?raw=true" alt="images\Exp-Corr-2021.jpg" />
 <br><br>
 Determining Expression correlation of RNASEH2A with cancer proliferation and cell cycle markers in large cancer cell lines and tissue datasets. This project has been recently a part of [paper](https://doi.org/10.3390/biology10030221) published in MDPI's Biology journal and the [presented] ("pdf\DK-poster-2021.pdf") in [RNA 2021 Conference](https://app.oxfordabstracts.com/events/1864/program-app/submission/243452)
 

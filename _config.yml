@@ -1,4 +1,4 @@
-title: Deepali Kundnani # your name (or website title) here
+title: "Deepali  Kundnani" # your name (or website title) here
 logo: "/images/Exec pic.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   Bioinformatics Ph.D. Student
@@ -13,4 +13,4 @@ description: > # your text below (remove <br> elements if you don't need line br
   [I'm an inline-style link](https://www.google.com)
 
 theme: jekyll-theme-minimal
-google_analytics:UA-203542525-1  # your Google Analytics tracking ID here
+google_analytics: UA-203542525-1  # your Google Analytics tracking ID here

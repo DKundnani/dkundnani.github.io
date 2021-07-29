@@ -1,6 +1,6 @@
 ## Biography
 
-I work at the intersection of biology, statistics, and computation  with a strong application focus on the field of genomics and epigenomics. I work with [Dr. Francesca Storici](http://www.storicilab.gatech.edu/) as a Bioinformatics Ph.D. Graduate Research Assistant in the Storici Lab at Georgia Institute of Technology.  My goal is to delineate presence of ribonucleotides(constructs of RNA) in human genomic DNA finding correlations with other DNA metabolic activities in both in cancer and non-cancer cell types[see updates about the future work](https://biosciences.gatech.edu/news/congratulations-francesca-storici-and-natasha-jonoska). 
+I work at the intersection of biology, statistics, and computation  with a strong application focus on the field of genomics and epigenomics. I work with [Dr. Francesca Storici](http://www.storicilab.gatech.edu/) as a Bioinformatics Ph.D. Graduate Research Assistant in the Storici Lab at Georgia Institute of Technology.  My goal is to delineate presence of ribonucleotides(constructs of RNA) in human genomic DNA finding correlations with other DNA metabolic activities in both in cancer and non-cancer cell types[ [future work ..](https://biosciences.gatech.edu/news/ ]congratulations-francesca-storici-and-natasha-jonoska). 
 <br><br>
 Through my work in The Storici Lab, I have recently co-authored a [paper](https://www.mdpi.com/2079-7737/10/3/221) and received US National Science Foundation Conference Award for a poster presentation in RNA Society 2021
 <br><br>
@@ -18,32 +18,28 @@ Determining Expression correlation of RNASEH2A with cancer proliferation and cel
 
 ---
 
-[Associations of RNASEH2A gene in cancer datasets](/images/IGen-2020.jpg)
+[Application to Determine Susceptibility of Multiple infections](/images/IGen-2020.jpg)
 <br><br>
 <img src="images\IGen-2020.jpg?raw=true"/>
 <br><br>
-IGen is an app to help the consumer be aware of their genetic tendency for susceptibility to multiple infections and be proactive with their health during the time of Global Pandemic. All they need is a DNA test sequencing Results from Companies like 23andMe. [See a glimpse if the Science behind it](/ppt/IGen.pptx)
+IGen is an app to help the consumer be aware of their genetic tendency for susceptibility to multiple infections and be proactive with their health during the time of Global Pandemic. All they need is a DNA test sequencing Results from Companies like 23andMe.[  [Glimpse of the Science behind it](/ppt/IGen.pptx) ]
 
 ---
-[Discovery of Differntially methylated regions in HIV cohort from Yale's Veterans Aging Cohort Study](/images/DMR-2020.jpg )
+[Use of Methylation data to determine Survial Risks in HIV cohort from Yale's Veterans Aging Cohort Study](/images/DMR-2020.jpg )
 <br><br>
 <img src="images\Exp-Corr-2021.jpg?raw=true"/>
 <br><br>
- [](https://medicine.yale.edu/intmed/vacs/)
- [](https://medicine.yale.edu/intmed/vacs/vacsresources/vacsindexinfo/)
- [More info..](/ppt/DMR.pptx)
+Discovery of Differntially methylated regions in smokers vs non smokers validated the finding from several other research groups. We were able to see variation in the methylation status based on Race. For prognosis prediction on this [dataset](https://medicine.yale.edu/intmed/vacs/), we used [Veterans Aging Cohort (VACS) Index](https://medicine.yale.edu/intmed/vacs/vacsresources/vacsindexinfo/). Use of support Vector Machines gave the best accuracy. Used of different and more lineant thresholding to extract more features and more information could lead to good AUCs for the methylated regions to be used as Biomarkers or predictors. [More info..](/ppt/DMR.pptx)
 
 ---
-
 ### More Projects
+
 [Genome Assembly and Comparative Genomic Study on CDC's foodborn disease Outbreaks ](.........)
 <br><br>
 [Differential gene expression in lung cancer cell lines between wildtype and mutant/variant p53](https://gtbinf.wordpress.com/2019/11/08/differential-gene-expression-in-lung-cancer-cell-lines-between-wildtype-and-mutant-variant-p53/)
 <br><br>
 [Exome Analysis of Utah Resident with Northern and Western European Ancestry](https://gtbinf.wordpress.com/2019/11/25/exome-analysis-of-utah-resident-with-northern-and-western-european-ancestry/)
 <br><br>
-
-
 
 ---
 
@@ -60,8 +56,6 @@ IGen is an app to help the consumer be aware of their genetic tendency for susce
 [Project 5 Title](http://example.com/)
 
 ---
-
-
 
 
 ---

@@ -68,3 +68,6 @@ Discovery of Differntially methylated regions in smokers vs non smokers validate
 
 ### [See Complete list of publications](pdf/DK-Publications-2021.pdf)
 
+<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="deepalik" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/deepalik?trk=profile-badge">Deepali Kundnani</a></div>
+              
+

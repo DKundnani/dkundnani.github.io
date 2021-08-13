@@ -14,7 +14,7 @@ Before coming to Georgia Tech, I have been fortunate to work with amazing doctor
 <br>
 <img src="images\Exp-Corr-2021.jpg?raw=true"/>
 <br><br>
-Determining Expression correlation of RNASEH2A with cancer proliferation and cell cycle markers in large cancer cell lines and tissue datasets. This project has been recently a part of [paper](https://doi.org/10.3390/biology10030221) published in MDPI's Biology journal and received US National Science Foundation Conference Award for a [poster presentation](/pdf/DK-poster-2021.pdf) in [RNA 2021 Conference](https://app.oxfordabstracts.com/events/1864/program-app/submission/243452)
+Determining Expression correlation of RNASEH2A with cancer proliferation and cell cycle markers in large cancer cell lines and tissue datasets. This project has been recently a part of [paper](https://doi.org/10.3390/biology10030221) published in MDPI's Biology journal and received US National Science Foundation Conference Award for a [poster presentation](/pdf/GT_BINF_Poster_2021_DK.pdf) in [RNA 2021 Conference](https://app.oxfordabstracts.com/events/1864/program-app/submission/243452)
 
 ---
 

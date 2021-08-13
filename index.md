@@ -34,7 +34,7 @@ Discovery of Differntially methylated regions in smokers vs non smokers validate
 ---
 ### More Projects
 
-##### [Genome Assembly and Comparative Genomic Study on CDC's foodborn disease Outbreaks ](.........) Link coming soon
+##### [Genome Assembly and Comparative Genomic Study on CDC's foodborn disease Outbreaks ](pdf/FoodBorne_DiseaseOutbreakStudy_2020.pdf) Link coming soon
 
 ##### [Differential gene expression in lung cancer cell lines between wildtype and mutant/variant p53](https://gtbinf.wordpress.com/2019/11/08/differential-gene-expression-in-lung-cancer-cell-lines-between-wildtype-and-mutant-variant-p53/)
 

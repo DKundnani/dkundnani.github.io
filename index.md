@@ -44,7 +44,7 @@ Discovery of Differntially methylated regions in smokers vs non smokers validate
 ---
 
 ## Publications
-### [FeatureCorr: An R package to study feature correlations aided with data transformation for sequencing and microarray data](https://doi.org/10.3390/biology10030221)
+### [FeatureCorr: An R package to study feature correlations aided with data transformation for sequencing and microarray data(<i> In Review </i>)](https://doi.org/10.3390/biology10030221)
 <p style="font-size:13px"> <b> Deepali Kundnani </b>, Francesca Storici </p>
 <p style="font-size:12px">FeatureCorr is an R package which aids in association and network analysis of data obtained from preliminary bioinformatic analysis of next generation sequencing(NGS) or microarray experiments. These experiments are widely used for various applications like mutation and expression profiles, detection of epigenetic changes in the genomic DNA, etc. FeatureCorr enables users in cleaning and preprocessing of data to minimize batch effects and for background noise removal. FeatureCorr can help in analysis of feature correlation in different ways: Correlation of one Feature vs multiple Features, pairwise correlation of multiple features against multiple features, and in-depth correlation and distributions of two features.</p>
 

@@ -27,4 +27,14 @@ description: > # your text below (remove <br> elements if you don't need line br
 theme: jekyll-theme-minimal
 google_analytics: G-ZKYQ2F24J1 # your Google Analytics tracking ID here
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKYQ2F24J1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZKYQ2F24J1');
+</script>
+
 

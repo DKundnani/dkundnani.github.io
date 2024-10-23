@@ -1,5 +1,15 @@
 ## Biography
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKYQ2F24J1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZKYQ2F24J1');
+</script>
+
 I work at the intersection of <b> biology</b>,<b> statistics</b>, and <b>computation</b>  with a strong application focus on the field of genomics and epigenomics. 
 <br>
 I work with [Dr. Francesca Storici](http://www.storicilab.gatech.edu/) as a Bioinformatics Ph.D. Graduate Research Assistant in the Storici Lab at Georgia Institute of Technology.  My goal is to delineate presence of ribonucleotides(constructs of RNA) in human genomic DNA finding correlations with other DNA metabolic activities in both in cancer and non-cancer cell types.[[future work ..](https://research.gatech.edu/new-grants-could-transform-scientists-understanding-dna)] 

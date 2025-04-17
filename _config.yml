@@ -14,9 +14,6 @@ description: > # your text below (remove <br> elements if you don't need line br
   <img src="/logos/pdf.jpg" width="20" height="20" alt="/pdf/DK_CV_2021[08].pdf"> 
   <a href="pdf/DLK_CV_2022[10].pdf">Curriculum Vitae</a> 
   <br>
-  <img src="/logos/css.jpg" width="20" height="20" alt="https://atlanta.ashanet.org/blog/donation_profiles/deepali-l-kundnani-2/"> 
-  <a href="https://atlanta.ashanet.org/blog/donation_profiles/deepali-l-kundnani-2/">Community Service Profile</a> 
-  <br>
   <img src="/logos/O.png" width="20" height="20" alt="mailto:deepali.kundnani@gatech.edu"> 
   <a href="mailto:deepali.kundnani@gatech.edu">Email</a> 
   <br>
@@ -26,15 +23,3 @@ description: > # your text below (remove <br> elements if you don't need line br
 
 theme: jekyll-theme-minimal
 google_analytics: G-ZKYQ2F24J1 # your Google Analytics tracking ID here
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKYQ2F24J1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZKYQ2F24J1');
-</script>
-
-

@@ -9,10 +9,8 @@
 
   gtag('config', 'G-ZKYQ2F24J1');
 </script>
-
-I work at the intersection of <b> biology</b>,<b> statistics</b>, and <b>computation</b>  with a strong application focus on the field of genomics and epigenomics. 
 <br>
-I work at the intersection of biology, statistics, and computation at Georgia Institute of Technology as a Bioinformatics Ph.D. Candidate, specializing in multi-omics integration and association. My work includes investigation of ribonucleotide in [human nuclear](https://research.gatech.edu/new-grants-could-transform-scientists-understanding-dna) and [mitochondrial genome](https://academic.oup.com/nar/article/52/3/1207/7481827), [Aicardi-Goutières syndrome (AGS)] (), and expression correlation of [RNaseH2 subunits in cancer progression] (https://www.mdpi.com/2079-7737/10/3/221). 
+I work at the intersection of  <b> biology</b>,<b> statistics</b>, and <b>computation</b> at Georgia Institute of Technology as a Bioinformatics Ph.D. Candidate, specializing in multi-omics integration and association. My work includes investigation of ribonucleotide in [human nuclear](https://research.gatech.edu/new-grants-could-transform-scientists-understanding-dna) and [mitochondrial genome](https://academic.oup.com/nar/article/52/3/1207/7481827), [Aicardi-Goutières syndrome (AGS)] (), and expression correlation of [RNaseH2 subunits in cancer progression] (https://www.mdpi.com/2079-7737/10/3/221). 
 <br><br>
 Before coming to Georgia Tech, I have been fortunate to work with amazing doctors and scientists at Hanash Lab in [MD Anderson Cancer Center](https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html) and have been a part of incredible effort in diagnostics of [Lung Cancer Risk Assessment Biomarkers](https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html). 
 ---

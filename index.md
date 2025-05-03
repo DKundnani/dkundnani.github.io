@@ -10,7 +10,7 @@
   gtag('config', 'G-ZKYQ2F24J1');
 </script>
 <br>
-I work at the intersection of  <b> biology</b>,<b> statistics</b>, and <b>computation</b> at Georgia Institute of Technology as a Bioinformatics Ph.D. Candidate, specializing in multi-omics integration and association. My work includes investigation of ribonucleotide in [human nuclear](https://research.gatech.edu/new-grants-could-transform-scientists-understanding-dna) and [mitochondrial genome](https://academic.oup.com/nar/article/52/3/1207/7481827), [Aicardi-Goutières syndrome (AGS)](https://www.cell.com/iscience/fulltext/S2589-0042(24)01237-9), and expression correlation of [RNaseH2 subunits in cancer progression] (https://www.mdpi.com/2079-7737/10/3/221). 
+I work at the intersection of  <b> biology</b>,<b> statistics</b>, and <b>computation</b> at Georgia Institute of Technology as a Bioinformatics Ph.D. Candidate, specializing in multi-omics integration and association. My work includes investigation of ribonucleotide in [human nuclear](https://research.gatech.edu/new-grants-could-transform-scientists-understanding-dna) and [mitochondrial genome](https://academic.oup.com/nar/article/52/3/1207/7481827), [Aicardi-Goutières syndrome (AGS)](https://www.cell.com/iscience/fulltext/S2589-0042(24)01237-9), and expression correlation of [RNaseH2 subunits in cancer progression](https://www.mdpi.com/2079-7737/10/3/221). 
 <br><br>
 Before coming to Georgia Tech, I have been fortunate to work with amazing doctors and scientists at Hanash Lab in [MD Anderson Cancer Center](https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html) and have been a part of incredible effort in diagnostics of [Lung Cancer Risk Assessment Biomarkers](https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html). 
 ---
@@ -27,7 +27,7 @@ Study of ribonucleotide embedment in human CD4+T cell type derived from patient 
 <br>
 <img src="images\AGS_final.PNG?raw=true"/>
 <br><br>
-Two mutant orthologs of human AGS, namely RNaseH2A-G37S and RNaseH2C-R69W were experimentally created in yeast as rnh201-G32S and rnh203-K46W, respectively. The RNaseH2A mutant results in strong reduction of enzymes activity thereby leading to massive ribonucleotide increament in the nuclear genome with increase seen on leading strand of Autonomous Replicating Sequences. The RNase H2C mutant was found to show no significant increase in nuclear genome, but we observed change in sites of ribonucleotide embedment suggesting structural effect of enzyme leading to change in specificity.
+Two mutant orthologs of human AGS, namely RNaseH2A-G37S and RNaseH2C-R69W were experimentally created in yeast as rnh201-G42S and rnh203-K46W, respectively. The RNaseH2A mutant results in strong reduction of enzymes activity thereby leading to massive ribonucleotide increament in the nuclear genome with increase seen on leading strand of Autonomous Replicating Sequences. The RNase H2C mutant was found to show no significant increase in nuclear genome, but we observed change in sites of ribonucleotide embedment suggesting structural effect of enzyme leading to change in specificity.
 
 ---
 ### [Associations of RNASEH2A gene in cancer datasets](/images/Exp-Corr-2021.jpg )

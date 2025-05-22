@@ -9,6 +9,39 @@
 
   gtag('config', 'G-ZKYQ2F24J1');
 </script>
+
+
+# MySite
+
+---
+
+<p align="center">
+  <img src="https://via.placeholder.com/150" alt="Profile Picture" style="border-radius: 50%; width: 150px; height: 150px;">
+</p>
+
+# Welcome to My Bootstrap Website
+
+A simple, responsive template to get you started.
+
+[Learn More](#)
+
+---
+
+## About This Template
+
+This is a basic Bootstrap template. You can easily customize it by adding more sections, components, and your own content.
+
+## Quick Links
+
+- [Home](#)
+- [About](#)
+- [Contact](#)
+
+---
+
+&copy; 2025 MySite. All rights reserved.
+
+
 <br>
 I work at the intersection of  <b> biology</b>,<b> statistics</b>, and <b>computation</b> at Georgia Institute of Technology as a Bioinformatics Ph.D. Candidate, specializing in multi-omics integration and association. My work includes investigation of ribonucleotide in [human nuclear](https://research.gatech.edu/new-grants-could-transform-scientists-understanding-dna) and [mitochondrial genome](https://academic.oup.com/nar/article/52/3/1207/7481827), [Aicardi-Goutières syndrome (AGS)](https://www.cell.com/iscience/fulltext/S2589-0042(24)01237-9), and expression correlation of [RNaseH2 subunits in cancer progression](https://www.mdpi.com/2079-7737/10/3/221). 
 <br><br>

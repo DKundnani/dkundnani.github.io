@@ -139,6 +139,30 @@
     .timeline-entry.right::before {
       left: -10px;
     }
+    .timeline-entry.both {
+      width: 100%;
+      left: 0;
+      display: block;
+      margin-bottom: 40px;
+      position: relative;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .timeline-entry.both::before {
+      display: none;
+    }
+
+    .timeline-entry.both .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .timeline-entry.both .content {
+      margin-bottom: 0;
+      height: 100%;
+    }
     /* Responsive design */
     @media (max-width: 700px) {
       .timeline::after {
@@ -160,6 +184,14 @@
       }
       .timeline-entry::before {
         left: 0;
+      }
+      .timeline-entry.both .row {
+        flex-direction: column;
+      }
+      .timeline-entry.both .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
       }
       }
     </style>
@@ -270,17 +302,24 @@
           <h2 class="section-title">Journey</h2>
           <div>
             <div class="timeline">
-              <div class="timeline-entry left">
-                <div class="content">
-                  <span class="maintext">GRA & GTA</span>
-                  <span class="cv-date">2019 - 2025</span>
-                  <span class="subtext">Georgia Institute of Technology, Atlanta, GA</span>
-                  <p>Conducted research in bioinformatics and machine learning.</p>
-                  <hr>
-                  <span class="maintext">Ph.D in Bioinformatics</span>
-                  <span class="cv-date">2019 - 2025</span>
-                  <span class="subtext">Georgia Institute of Technology, Atlanta, GA</span>
-                  <p>Conducted research in bioinformatics and machine learning.</p>
+              <div class="timeline-entry both">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="content">
+                      <span class="maintext">GRA & GTA</span>
+                      <span class="cv-date">2019 - 2025</span>
+                      <span class="subtext">Georgia Institute of Technology, Atlanta, GA</span>
+                      <p>Conducted research in bioinformatics and machine learning.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="content">
+                      <span class="maintext">Ph.D in Bioinformatics</span>
+                      <span class="cv-date">2019 - 2025</span>
+                      <span class="subtext">Georgia Institute of Technology, Atlanta, GA</span>
+                      <p>Conducted research in bioinformatics and machine learning.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="timeline-entry left">

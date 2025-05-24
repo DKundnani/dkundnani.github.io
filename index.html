@@ -102,8 +102,14 @@
       position: relative;
       background: transparent;
       box-shadow: none;
-      padding: 5px 5px;
+      padding: 10px 10px;
     }
+      .timeline-entry.both {
+      width: 100%;
+      left: 0;
+      padding: 0;
+    }
+
     .timeline-entry.left {
       left: 0;
       text-align: left;
@@ -144,16 +150,7 @@
     .timeline-entry.right::before {
       left: -10px;
     }
-    .timeline-entry.both {
-      width: 100%;
-      left: 0;
-      display: block;
-      margin-bottom: 40px;
-      position: relative;
-      background: transparent;
-      box-shadow: none;
-      padding: 0;
-    }
+
 
     .timeline-entry.both::before {
       content: '';

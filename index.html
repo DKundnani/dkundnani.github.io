@@ -96,10 +96,13 @@
       margin-left: -2px;
     }
     .timeline-entry {
-      padding: 20px 40px;
+      width: 100%;
+      display: block;
+      margin-bottom: 40px;
       position: relative;
-      width: 50%;
-      box-sizing: border-box;
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
     }
     .timeline-entry.left {
       left: 0;
@@ -200,6 +203,9 @@
       }
       .timeline-entry::before {
         left: 0;
+      }
+      .timeline-entry .row {
+        flex-direction: column;
       }
       .timeline-entry.both .row {
         flex-direction: column;

@@ -102,7 +102,7 @@
       position: relative;
       background: transparent;
       box-shadow: none;
-      padding: 5px ;
+      padding: 5px 5px;
     }
     .timeline-entry.left {
       left: 0;
@@ -184,14 +184,9 @@
       height: 100%;
     }
     /* Responsive design */
-    @media (max-width: 700px) {
+    @media (max-width: 1000px) {
       .timeline::after {
         left: 20px;
-      }
-      .timeline-entry .col-md-6{
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
       }
       .timeline-entry.left,
       .timeline-entry.right {
@@ -210,6 +205,7 @@
       .timeline-entry.both .row {
         flex-direction: column;
       }
+      .timeline-entry .col-md-6,
       .timeline-entry.both .col-md-6 {
         width: 100%;
         max-width: 100%;

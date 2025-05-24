@@ -117,6 +117,8 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       display: inline-block;
       min-width: 250px;
+      border: 2.5px solid #061834;
+      display: flex;
     }
     .timeline-entry.left .content {
       margin-right: 0;
@@ -172,13 +174,15 @@
     }
 
     .timeline-entry.both .content {
+      padding: 20px;
       background: #fff;
+      position: relative;
       border-radius: 6px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 20px;
-      margin-bottom: 0;
-      min-width: 200px;
-      height: 100%;
+      display: inline-block;
+      min-width: 250px;
+      border: 2.5px solid #061834;
+      display: flex;
     }
     /* Responsive design */
     @media (max-width: 700px) {
@@ -223,7 +227,7 @@
         </button>
       <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <ul class="navbar-nav w-100 d-flex justify-content-between">
-        <li class="nav-item"><a class="nav-link active" href="#profile">ABOUT ME</a></li>
+        <li class="nav-item"><a class="nav-link" href="#profile">ABOUT ME</a></li>
         <li class="nav-item"><a class="nav-link" href="#awards">AWARDS</a></li>
         <li class="nav-item"><a class="nav-link" href="#highlights">HIGHLIGHTS</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">PROJECTS</a></li>

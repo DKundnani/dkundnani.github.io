@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Building FeatureCorr: lessons from shipping a small R package — Deepali L. Kundnani</title>
+    <title>Building FeatureCorr: lessons from a small R package — Deepali L. Kundnani</title>
     <meta name="description" content="A correlation tool written for one analysis ended up as a published R package. What I learned about scoping, defaults, and documentation.">
     <meta name="author" content="Deepali L. Kundnani">
     <link rel="canonical" href="https://dkundnani.bio/blog/building-featurecorr.html">
@@ -11,13 +11,13 @@
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Deepali L. Kundnani">
-    <meta property="og:title" content="Building FeatureCorr: lessons from shipping a small R package — Deepali L. Kundnani">
+    <meta property="og:title" content="Building FeatureCorr: lessons from a small R package — Deepali L. Kundnani">
     <meta property="og:description" content="A correlation tool written for one analysis ended up as a published R package. What I learned about scoping, defaults, and documentation.">
     <meta property="og:url" content="https://dkundnani.bio/blog/building-featurecorr.html">
     <meta property="og:image" content="https://dkundnani.bio/images/web/profile.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@DeepaliKundnani">
-    <meta name="twitter:title" content="Building FeatureCorr: lessons from shipping a small R package — Deepali L. Kundnani">
+    <meta name="twitter:title" content="Building FeatureCorr: lessons from a small R package — Deepali L. Kundnani">
     <meta name="twitter:description" content="A correlation tool written for one analysis ended up as a published R package. What I learned about scoping, defaults, and documentation.">
     <meta name="twitter:image" content="https://dkundnani.bio/images/web/profile.jpg">
 
@@ -30,8 +30,8 @@
       /* Apply the saved theme before first paint so there is no flash. */
       (function () {
         try {
-          var t = localStorage.getItem("dk-theme");
-          if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          /* Light by default — dark only if the visitor picks it. */
+          var t = localStorage.getItem("dk-theme") || "light";
           document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
@@ -110,8 +110,8 @@
     <header class="subhero">
       <div class="container">
         <span class="eyebrow">Software &middot; 5 min read</span>
-        <h1>Building FeatureCorr: lessons from shipping a small R package</h1>
-        <p>A correlation tool I wrote for my own analyses ended up as a published package. What I would do differently the second time.</p>
+        <h1>Building FeatureCorr: lessons from a small R package</h1>
+        <p>A script became a published package. The statistics were the easy part.</p>
       </div>
     </header>
 

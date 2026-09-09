@@ -30,8 +30,8 @@
       /* Apply the saved theme before first paint so there is no flash. */
       (function () {
         try {
-          var t = localStorage.getItem("dk-theme");
-          if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          /* Light by default — dark only if the visitor picks it. */
+          var t = localStorage.getItem("dk-theme") || "light";
           document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
@@ -111,7 +111,7 @@
       <div class="container">
         <span class="eyebrow">Explainer &middot; 6 min read</span>
         <h1>The RNA hiding inside your DNA</h1>
-        <p>Your genome is not made purely of DNA. Every cell carries stray RNA letters embedded in its double helix &mdash; and where they land turns out to matter.</p>
+        <p>Your genome is not pure DNA. Where the stray RNA letters land turns out to matter.</p>
       </div>
     </header>
 

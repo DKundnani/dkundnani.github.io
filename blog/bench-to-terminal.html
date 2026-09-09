@@ -30,8 +30,8 @@
       /* Apply the saved theme before first paint so there is no flash. */
       (function () {
         try {
-          var t = localStorage.getItem("dk-theme");
-          if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          /* Light by default — dark only if the visitor picks it. */
+          var t = localStorage.getItem("dk-theme") || "light";
           document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
@@ -111,7 +111,7 @@
       <div class="container">
         <span class="eyebrow">Career &middot; 5 min read</span>
         <h1>Bench to terminal: what pipetting taught me about data</h1>
-        <p>Four years of wet-lab work before I wrote a single analysis pipeline. Here is what that background changed about how I read a dataset.</p>
+        <p>Four years at the bench before my first pipeline. It changed how I read every dataset since.</p>
       </div>
     </header>
 

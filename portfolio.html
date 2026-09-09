@@ -30,8 +30,8 @@
       /* Apply the saved theme before first paint so there is no flash. */
       (function () {
         try {
-          var t = localStorage.getItem("dk-theme");
-          if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          /* Light by default — dark only if the visitor picks it. */
+          var t = localStorage.getItem("dk-theme") || "light";
           document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
       })();
@@ -111,10 +111,7 @@
       <div class="container">
         <span class="eyebrow">Portfolio</span>
         <h1>Research projects</h1>
-        <p>
-          Five projects spanning epigenomics, rare genetic disease, cancer genomics, and clinical
-          modelling &mdash; each one starting from a dataset and a question that would not let go.
-        </p>
+        <p>Epigenomics, rare disease, cancer genomics, and clinical modelling.</p>
       </div>
     </header>
 
@@ -137,7 +134,7 @@
               <div class="carousel__cap">
                 <span class="carousel__eyebrow">Epigenomics · 2025</span>
                 <h3>Ribonucleotide enrichment features in the human genome</h3>
-                <p>Mapping where single embedded ribonucleotides land across human cell types — and what they track with.</p>
+                <p>Where rNMPs land across human cell types, and what they track with.</p>
               </div>
             </div>
             <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="2 of 5">
@@ -147,7 +144,7 @@
               <div class="carousel__cap">
                 <span class="carousel__eyebrow">Rare disease · 2024</span>
                 <h3>Ribonucleotide features in Aicardi-Gouti&egrave;res syndrome mutants</h3>
-                <p>Two disease-linked mutations, engineered into yeast, show that enzyme structure changes where ribonucleotides land — not just how many.</p>
+                <p>Two disease mutations in yeast. One changes how many rNMPs appear; the other changes where.</p>
               </div>
             </div>
             <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="3 of 5">
@@ -157,7 +154,7 @@
               <div class="carousel__cap">
                 <span class="carousel__eyebrow">Cancer genomics · 2021</span>
                 <h3>RNASEH2A associations across cancer datasets</h3>
-                <p>Correlating RNASEH2A expression with proliferation and cell-cycle markers across large cancer cell line and tissue datasets.</p>
+                <p>RNASEH2A against proliferation and cell-cycle markers across CCLE and TCGA.</p>
               </div>
             </div>
             <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="4 of 5">
@@ -167,7 +164,7 @@
               <div class="carousel__cap">
                 <span class="carousel__eyebrow">Application · 2020</span>
                 <h3>IGen — a web app for infection susceptibility</h3>
-                <p>Turning a consumer DNA test into an actionable read on genetic susceptibility to multiple infections.</p>
+                <p>A consumer DNA test in, a polygenic risk score for 20+ infections out.</p>
               </div>
             </div>
             <div class="carousel__slide" role="group" aria-roledescription="slide" aria-label="5 of 5">
@@ -177,7 +174,7 @@
               <div class="carousel__cap">
                 <span class="carousel__eyebrow">Clinical modelling · 2020</span>
                 <h3>Methylation-based survival risk in an HIV cohort</h3>
-                <p>Differentially methylated regions as candidate prognostic markers in Yale's Veterans Aging Cohort Study.</p>
+                <p>Methylation as a prognostic marker in 900+ HIV patients from Yale's VACS cohort.</p>
               </div>
             </div>
             </div>
@@ -225,7 +222,6 @@
 
       <section class="section" id="projects">
         <h2 class="section__title">Project detail</h2>
-        <p class="section__intro">The same projects, with the full story behind each figure.</p>
       <article class="entry reveal" id="human-ribome">
         <span class="carousel__eyebrow" style="background:var(--accent-soft);border-color:transparent;color:var(--accent)">Epigenomics · 2025</span>
         <h3 style="margin:.7rem 0 1rem;font-size:clamp(1.15rem,2.8vw,1.5rem);font-weight:750;letter-spacing:-.015em">Ribonucleotide enrichment features in the human genome</h3>
@@ -235,16 +231,14 @@
         </figure>
         <div class="prose">
             <p>
-              A study of ribonucleotide embedment across human CD4+ T cells derived from patient blood,
-              a lab-grown stem cell line (hESC-H9), and embryonic kidney cells (HEK293T) &mdash; the last
-              of these with and without the RNase H2 enzyme.
+              The first genome-wide look at ribonucleotide embedment in human cells: CD4+ T cells from
+              patient blood, a stem cell line (hESC-H9), and HEK293T with and without RNase H2.
             </p>
             <p>
-              We found that single embedded ribonucleotides (rNMPs) are enriched near CpG islands and are
-              associated with gene expression and methylation around transcription start sites. We also
-              observed a gene template versus non-template strand bias in the RNase H2 knockout that is
-              absent in wild-type cells, consistent with removal of rG on the non-template strand, possibly
-              by the Top1 enzyme.
+              Embedded rNMPs are enriched near CpG islands and track with expression and methylation at
+              transcription start sites. Knocking out RNase H2 introduces a template versus non-template
+              strand bias absent in wild-type cells &mdash; consistent with rG being removed from the
+              non-template strand, possibly by Top1.
             </p>
         </div>
         <div class="pub__links" style="margin-top:1rem"><span class="tag tag--muted">Related paper (in preparation)</span></div>
@@ -259,15 +253,14 @@
         </figure>
         <div class="prose">
             <p>
-              Two mutant orthologs of human AGS &mdash; RNaseH2A-G37S and RNaseH2C-R69W &mdash; were
-              experimentally created in yeast as <em>rnh201-G42S</em> and <em>rnh203-K46W</em> respectively.
+              Two human AGS orthologs &mdash; RNaseH2A-G37S and RNaseH2C-R69W &mdash; built in yeast as
+              <em>rnh201-G42S</em> and <em>rnh203-K46W</em>.
             </p>
             <p>
-              The RNaseH2A mutant strongly reduces enzyme activity, causing a substantial ribonucleotide
-              increase in the nuclear genome, concentrated on the leading strand of autonomously replicating
-              sequences. The RNase H2C mutant showed no significant nuclear increase, but the <em>sites</em>
-              of ribonucleotide embedment changed &mdash; suggesting a structural effect on the enzyme that
-              shifts its specificity rather than its throughput.
+              The RNaseH2A mutant cripples enzyme activity: ribonucleotides pile up, concentrated on the
+              leading strand of replication origins. The RNase H2C mutant showed no significant increase
+              at all &mdash; but the <em>sites</em> moved. Structure shifting specificity, not throughput.
+              A count-based assay would have called it normal.
             </p>
         </div>
         <div class="pub__links" style="margin-top:1rem"><a class="tag" href="https://doi.org/10.1016/j.isci.2024.110012" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Paper (iScience, 2024)</a><a class="tag" href="https://github.com/DKundnani?tab=repositories&amp;q=RPA+OR+hotspots" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a></div>
@@ -282,14 +275,13 @@
         </figure>
         <div class="prose">
             <p>
-              Determining the expression correlation of RNASEH2A with cancer proliferation and cell-cycle
-              markers across large cancer cell line and tissue datasets, spanning 35+ cancer types.
+              RNASEH2A expression correlated with proliferation and cell-cycle markers across 1,000+ CCLE
+              cell lines and 10,000+ TCGA patient samples, spanning 35+ cancer types.
             </p>
             <p>
-              This work became part of a
-              <a href="https://doi.org/10.3390/biology10030221" target="_blank" rel="noopener">paper published in
-              MDPI's <em>Biology</em></a>, and received a US National Science Foundation Conference Award for a
-              poster presentation at the RNA 2021 Conference.
+              Published in
+              <a href="https://doi.org/10.3390/biology10030221" target="_blank" rel="noopener">MDPI's <em>Biology</em></a>,
+              and awarded a US National Science Foundation Conference Award for the poster at RNA 2021.
             </p>
         </div>
         <div class="pub__links" style="margin-top:1rem"><a class="tag" href="https://doi.org/10.3390/biology10030221" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Paper (Biology, 2021)</a><a class="tag" href="pdf/GT_BINF_Poster_2021_DK.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>Poster (PDF)</a><a class="tag" href="https://app.oxfordabstracts.com/events/1864/program-app/submission/243452" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>RNA 2021 abstract</a></div>
@@ -304,12 +296,12 @@
         </figure>
         <div class="prose">
             <p>
-              IGen helps a consumer understand their genetic tendency toward susceptibility to multiple
-              infections, so they can be proactive about their health &mdash; built during a global pandemic,
-              when that question suddenly mattered to everyone.
+              IGen predicts a polygenic risk score for susceptibility to 20+ infections. Built during a
+              global pandemic, when that question suddenly mattered to everyone.
             </p>
             <p>
-              All the app needs is a DNA sequencing result from a consumer service such as 23andMe.
+              Input is a consumer sequencing result &mdash; 23andMe or Ancestry. I led and designed the
+              computational pipeline behind it.
             </p>
         </div>
         <div class="pub__links" style="margin-top:1rem"><a class="tag" href="ppt/IGen.pptx" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>The science behind it (PPTX)</a></div>
@@ -324,17 +316,16 @@
         </figure>
         <div class="prose">
             <p>
-              Discovery of differentially methylated regions in smokers versus non-smokers validated findings
-              from several other research groups, and we saw variation in methylation status by race.
+              Differentially methylated regions in smokers versus non-smokers, found with Gaussian kernel
+              smoothing across 900+ HIV patients in Yale's
+              <a href="https://medicine.yale.edu/intmed/vacs/" target="_blank" rel="noopener">VACS cohort</a>.
+              The findings replicated other groups' results, and methylation varied by race.
             </p>
             <p>
-              For prognosis prediction on the
-              <a href="https://medicine.yale.edu/intmed/vacs/" target="_blank" rel="noopener">VACS dataset</a>
-              we used the
-              <a href="https://medicine.yale.edu/intmed/vacs/vacsresources/vacsindexinfo/" target="_blank" rel="noopener">Veterans
-              Aging Cohort Study (VACS) Index</a>. Support vector machines gave the best accuracy. More lenient
-              thresholding would extract additional features, and likely push the AUC high enough for these
-              methylated regions to serve as biomarkers or predictors.
+              For survival prediction against the
+              <a href="https://medicine.yale.edu/intmed/vacs/vacsresources/vacsindexinfo/" target="_blank" rel="noopener">VACS
+              Index</a>, support vector machines beat k-nearest neighbours. More lenient thresholding would
+              surface more features &mdash; and likely a usable AUC.
             </p>
         </div>
         <div class="pub__links" style="margin-top:1rem"><a class="tag" href="ppt/DMR.pptx" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>More detail (PPTX)</a></div>
@@ -344,7 +335,6 @@
 
       <section class="section reveal" id="more">
         <h2 class="section__title">More projects</h2>
-        <p class="section__intro">Coursework and side investigations from my Georgia Tech years.</p>
         <div class="grid grid--3">
           <a class="post" href="pdf/FoodBorne_DiseaseOutbreakStudy_2020.pdf">
             <div class="post__meta"><span class="post__topic">Project</span></div>

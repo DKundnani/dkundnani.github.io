@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The RNA hiding inside your DNA | Deepali L. Kundnani</title>
-    <meta name="description" content="A short explainer on ribonucleotides embedded in genomic DNA: what they are, why cells tolerate them, and why their position across the genome is worth mapping.">
+    <meta name="description" content="Roughly a million RNA letters sit embedded in every human genome. They are not randomly placed, and they are not simply damage: they change the shape DNA takes.">
     <meta name="author" content="Deepali L. Kundnani">
     <link rel="canonical" href="https://dkundnani.bio/blog/ribonucleotides-in-your-dna.html">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23061834'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='%230d9488' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E">
@@ -12,13 +12,13 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Deepali L. Kundnani">
     <meta property="og:title" content="The RNA hiding inside your DNA | Deepali L. Kundnani">
-    <meta property="og:description" content="A short explainer on ribonucleotides embedded in genomic DNA: what they are, why cells tolerate them, and why their position across the genome is worth mapping.">
+    <meta property="og:description" content="Roughly a million RNA letters sit embedded in every human genome. They are not randomly placed, and they are not simply damage: they change the shape DNA takes.">
     <meta property="og:url" content="https://dkundnani.bio/blog/ribonucleotides-in-your-dna.html">
     <meta property="og:image" content="https://dkundnani.bio/images/web/profile.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@DeepaliKundnani">
     <meta name="twitter:title" content="The RNA hiding inside your DNA | Deepali L. Kundnani">
-    <meta name="twitter:description" content="A short explainer on ribonucleotides embedded in genomic DNA: what they are, why cells tolerate them, and why their position across the genome is worth mapping.">
+    <meta name="twitter:description" content="Roughly a million RNA letters sit embedded in every human genome. They are not randomly placed, and they are not simply damage: they change the shape DNA takes.">
     <meta name="twitter:image" content="https://dkundnani.bio/images/web/profile.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,9 +110,9 @@
     </nav>
     <header class="subhero">
       <div class="container">
-        <span class="eyebrow">Explainer &middot; 6 min read</span>
+        <span class="eyebrow">Explainer &middot; 7 min read</span>
         <h1>The RNA hiding inside your DNA</h1>
-        <p>Your genome is not pure DNA. Where the stray RNA letters land turns out to matter.</p>
+        <p>A million RNA letters sit inside every human genome. They are not scattered, and they are not just damage.</p>
       </div>
     </header>
 
@@ -120,85 +120,86 @@
       <article class="section article">
         <div class="callout">
           <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-          <p><strong>Draft.</strong> This post was scaffolded as a starting point: edit the wording,
-          add your own detail, then delete this box and remove <code>post--draft</code> from the card on the
-          blog index.</p>
+          <p><strong>Awaiting your review.</strong> Drafted from your own published work and posts.
+          Read it over, then say the word and this box and the "Draft" badge come off.</p>
         </div>
 
         <div class="article__body">
 <p>
           The textbook version of the genome is tidy: DNA is DNA, RNA is RNA, and the two do not mix.
-          The real version is messier. As a cell copies its genome, the polymerase occasionally reaches
-          for the wrong building block and inserts a ribonucleotide (an RNA letter) into
-          the DNA strand it is building.
+          The real version is messier. Roughly <strong>one million ribonucleotides</strong> sit embedded
+          in every human genome, and we spent years working out where they are and what they do.
         </p>
         <p>
-          This is not rare. It is the single most common non-canonical unit found in genomic DNA.
-          A cell has repair machinery whose entire job is to find these ribonucleotides and take them
-          back out. When that machinery fails, the consequences show up in human disease.
-        </p>
-
-        <h2>Why a cell tolerates them at all</h2>
-        <p>
-          Ribonucleotides get incorporated because the cell's pool of RNA building blocks vastly
-          outnumbers its pool of DNA building blocks. Polymerases discriminate well, but not perfectly,
-          and at the scale of a whole genome even a very small error rate produces a large absolute number.
-        </p>
-        <p>
-          The clean-up crew is an enzyme called RNase H2. It recognises a ribonucleotide sitting in a
-          DNA context and initiates its removal. When RNase H2 is impaired, ribonucleotides accumulate
-          , and in humans mutations in the RNase H2 complex cause
-          Aicardi-Gouti&egrave;res syndrome, a severe inflammatory disorder that mimics congenital infection.
+          That work is now published in
+          <a href="https://doi.org/10.1016/j.cell.2026.07.053" target="_blank" rel="noopener"><em>Cell</em></a>.
+          I led the bioinformatics analyses; Georgia Tech wrote it up
+          <a href="https://bioinformatics.gatech.edu/bioinformatics-publication-cell" target="_blank" rel="noopener">here</a>.
         </p>
 
-        <h2>Position, not just count</h2>
+        <h2>How RNA ends up in DNA</h2>
         <p>
-          The interesting question is not only <em>how many</em> ribonucleotides a genome carries, but
-          <em>where</em> they sit. That is the part that took me through most of my Ph.D.
+          Ribonucleotides get incorporated because a cell's pool of RNA building blocks vastly outnumbers
+          its pool of DNA building blocks. Polymerases discriminate well, but not perfectly, and across a
+          whole genome even a tiny error rate produces a large absolute number.
         </p>
         <p>
-          Working across human CD4+ T cells, a stem cell line, and embryonic kidney cells with and without
-          RNase H2, we found that embedded ribonucleotides are not scattered at random. They are enriched
-          near CpG islands, and their distribution tracks with gene expression and methylation state
-          around transcription start sites.
+          The clean-up crew is RNase H2, an enzyme whose job is to recognise a ribonucleotide sitting in a
+          DNA context and start its removal. So the standard story has been: mistake, then repair.
+        </p>
+
+        <h2>Where they land is not random</h2>
+        <p>
+          Mapping them at base resolution across human cell types, we found the placement is anything but
+          random. Embedded ribonucleotides cluster at:
+        </p>
+        <ul>
+          <li>transcription start sites</li>
+          <li>CpG islands</li>
+          <li>R-loops and G-quadruplexes</li>
+          <li>telomeres</li>
+        </ul>
+        <p>
+          And their density scales with how actively a gene is transcribed. A mark that tracks
+          transcriptional state and differs by cell type is doing something more interesting than
+          waiting to be repaired.
+        </p>
+
+        <h2>The twist: they change DNA's shape</h2>
+        <p>
+          When RNase H2 nicks an embedded ribonucleotide, DNA supercoiling shifts. Remove RNase H2 and
+          negative supercoiling builds up at promoters, with Top1 stepping in to compensate.
         </p>
         <blockquote>
-          If a mark is non-random, correlates with expression, and differs between cell types, it starts
-          to look less like damage and more like a layer of information.
+          Embedded ribonucleotides are not only damage awaiting repair. They are epigenetic modulators of
+          transcription-associated DNA topology.
         </blockquote>
         <p>
-          We also saw a strand asymmetry that appears only when RNase H2 is knocked out: a bias between
-          the template and non-template strands of genes, consistent with rG being removed from the
-          non-template strand by a different enzyme, possibly Top1.
+          That is the part I did not expect going in. The chemical composition of the strand feeds directly
+          into its physical organisation, and physical organisation feeds back into transcription.
         </p>
 
-        <h2>The rare-disease angle</h2>
+        <h2>Why it matters beyond the mechanism</h2>
         <p>
-          Two Aicardi-Gouti&egrave;res mutations, rebuilt in yeast, made the point sharper. One of them
-          , the RNase H2A mutant, behaved as expected: enzyme activity dropped, ribonucleotides
-          piled up, concentrated on the leading strand near replication origins.
+          Mutations in RNase H2 cause Aicardi-Gouti&egrave;res syndrome, a rare genetic disorder driven by
+          runaway immune activation. The same enzymes are tied to genome instability and tumorigenesis.
         </p>
         <p>
-          The second one was the surprise. The RNase H2C mutant showed no significant increase in overall
-          nuclear ribonucleotide load. What changed instead were the <em>sites</em>. The enzyme was still
-          working; it was working somewhere else. That points to a structural effect on specificity rather
-          than a simple loss of throughput, and it means a count-based assay would have called that
-          mutant normal.
+          A base-resolution map of where these ribonucleotides sit, plus evidence that they shape DNA
+          topology, opens a Pandora's box of questions about how and where ribonucleotide processing feeds
+          genome instability and inflammation. I find that a good problem to have.
         </p>
 
-        <h2>What I think this means</h2>
+        <h2>Not a solo effort</h2>
         <p>
-          I am cautious about the word "epigenetic", because it gets stretched. But the criteria we usually
-          apply (a chemical mark on the genome, non-randomly positioned, differing by cell type,
-          associated with transcriptional state) are the criteria embedded ribonucleotides meet.
-        </p>
-        <p>
-          Whether they are a cause, a consequence, or a readout of something else is still open. That
-          ambiguity is the honest answer, and it is also why the field is worth staying in.
+          None of this would exist without my co-authors: Francesca Storici, my advisor, whose command of
+          the biology shaped every question we asked; Natasa Jonoska, for the statistical framework behind
+          our claims of non-randomness; and Yeunsoo Lee, for the experiments that carried the supercoiling
+          story from hypothesis to evidence.
         </p>
         </div>
         <div class="article__foot">
-          <div class="pub__links"><a class="tag" href="https://doi.org/10.1016/j.isci.2024.110012" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Distinct features of ribonucleotides in AGS ortholog mutants (iScience, 2024)</a><a class="tag" href="../portfolio.html#human-ribome"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Project detail and figures</a></div>
+          <div class="pub__links"><a class="tag" href="https://doi.org/10.1016/j.cell.2026.07.053" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>The paper in Cell</a><a class="tag" href="https://bioinformatics.gatech.edu/bioinformatics-publication-cell" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Georgia Tech write-up</a><a class="tag" href="../portfolio.html#human-ribome"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>Project figures</a></div>
           <a class="btn btn--ghost" style="border-color:var(--border);color:var(--text-soft)" href="../blog.html">
             <svg class="icon" aria-hidden="true"><use href="#i-left"/></svg> All posts
           </a>

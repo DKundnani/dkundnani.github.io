@@ -373,17 +373,21 @@ main { padding-block: 3.5rem 1rem; }
 /* Two columns astride a central spine: education left, experience right.
    --gap is the half-gutter each card leaves for the line. */
 .timeline {
-  --gap: 34px; position: relative; max-width: 1000px; margin-inline: auto;
+  --gap: 34px;                  /* half-gutter each column leaves for the spine */
+  --split: 33.333%;             /* education gets a third, experience two thirds */
+  --pad: 1.15rem;               /* horizontal padding inside a concurrent block   */
+  position: relative; max-width: 1000px; margin-inline: auto;
   font-size: .92rem;            /* the journey reads a step smaller than the page */
 }
 .timeline::before {
-  content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+  content: ""; position: absolute; left: var(--split); top: 0; bottom: 0; width: 2px;
   transform: translateX(-50%);
   background: linear-gradient(180deg, var(--accent), var(--border) 78%, transparent);
 }
 
 .tl-heads {
-  display: grid; grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: calc(var(--split) - var(--gap)) 1fr;
   gap: calc(var(--gap) * 2); margin-bottom: 1.5rem;
 }
 .tl-heads span {
@@ -393,7 +397,7 @@ main { padding-block: 3.5rem 1rem; }
 }
 
 .tl {
-  position: relative; width: calc(50% - var(--gap)); margin-bottom: 1.5rem;
+  position: relative; margin-bottom: 1.5rem;
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius); padding: 1.15rem 1.3rem; box-shadow: var(--shadow);
   transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
@@ -402,8 +406,8 @@ main { padding-block: 3.5rem 1rem; }
   transform: translateY(-3px); box-shadow: var(--shadow-lg);
   border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
 }
-.tl--edu { margin-right: auto; }   /* left column  */
-.tl--exp { margin-left: auto; }    /* right column */
+.tl--edu { width: calc(var(--split) - var(--gap)); margin-right: auto; }
+.tl--exp { width: calc(100% - var(--split) - var(--gap)); margin-left: auto; }
 
 .tl::before {                      /* node on the spine */
   content: ""; position: absolute; top: 1.5rem;
@@ -427,16 +431,16 @@ main { padding-block: 3.5rem 1rem; }
 /* ---- Concurrent block: a degree and the roles held during it, one unit ---- */
 .tl-block {
   position: relative; width: 100%; margin-bottom: 1.75rem;
-  padding: 2.5rem 1.15rem 1.15rem;
+  padding: 2.5rem var(--pad) var(--pad);
   border: 1px solid var(--border); border-radius: var(--radius);
   background: color-mix(in srgb, var(--accent-soft) 42%, var(--surface));
 }
 .tl-block::before {          /* keep the spine visually continuous through the block */
-  content: ""; position: absolute; left: 50%; top: 2.6rem; bottom: 1rem; width: 2px;
+  content: ""; position: absolute; left: var(--split); top: 2.6rem; bottom: 1rem; width: 2px;
   transform: translateX(-50%); background: var(--border);
 }
 .tl-block__date {
-  position: absolute; top: -1px; left: 50%; transform: translate(-50%, -50%);
+  position: absolute; top: -1px; left: var(--split); transform: translate(-50%, -50%);
   padding: .3rem 1rem; border-radius: 999px; white-space: nowrap;
   background: var(--accent); color: #fff;
   font-size: .72rem; font-weight: 700; letter-spacing: .06em;
@@ -444,7 +448,9 @@ main { padding-block: 3.5rem 1rem; }
   box-shadow: 0 0 0 4px var(--bg);
 }
 .tl-block__cols {
-  display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--gap) * 2);
+  display: grid;
+  grid-template-columns: calc(var(--split) - var(--gap) - var(--pad)) 1fr;
+  gap: calc(var(--gap) * 2);
   align-items: stretch;
 }
 .tl-block__cols > div { display: flex; flex-direction: column; }
@@ -459,6 +465,7 @@ main { padding-block: 3.5rem 1rem; }
   .tl-block { padding: 2.5rem .95rem 1rem; }
   .tl-block::before { display: none; }
   .tl-block__cols { grid-template-columns: 1fr; gap: 1rem; }
+  .tl-block__date { left: 50%; }
 }
 
 @media (max-width: 860px) {

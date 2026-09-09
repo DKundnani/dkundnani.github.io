@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Blog | Deepali L. Kundnani</title>
-    <meta name="description" content="Writing by Deepali Kundnani on genomics, computational biology, and research practice.">
+    <meta name="description" content="Short reads by Deepali Kundnani on scientific curiosity, self improvement, inner work, and life as an adventure.">
     <meta name="author" content="Deepali L. Kundnani">
     <link rel="canonical" href="https://dkundnani.bio/blog.html">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23061834'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='%230d9488' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E">
@@ -12,13 +12,13 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Deepali L. Kundnani">
     <meta property="og:title" content="Blog | Deepali L. Kundnani">
-    <meta property="og:description" content="Writing by Deepali Kundnani on genomics, computational biology, and research practice.">
+    <meta property="og:description" content="Short reads by Deepali Kundnani on scientific curiosity, self improvement, inner work, and life as an adventure.">
     <meta property="og:url" content="https://dkundnani.bio/blog.html">
     <meta property="og:image" content="https://dkundnani.bio/images/web/profile.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@DeepaliKundnani">
     <meta name="twitter:title" content="Blog | Deepali L. Kundnani">
-    <meta name="twitter:description" content="Writing by Deepali Kundnani on genomics, computational biology, and research practice.">
+    <meta name="twitter:description" content="Short reads by Deepali Kundnani on scientific curiosity, self improvement, inner work, and life as an adventure.">
     <meta name="twitter:image" content="https://dkundnani.bio/images/web/profile.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,55 +111,119 @@
     <header class="subhero">
       <div class="container">
         <span class="eyebrow">Blog</span>
-        <h1>Notes and writing</h1>
-        <p>Genomics, research practice, and things I wish someone had told me earlier.</p>
+        <h1>Curiosity and adventure</h1>
+        <p>
+          Short reads on four things I keep coming back to: the science I chase, the work of
+          getting better at anything, what happens when I turn that attention inward, and the
+          places I have been while doing all of it.
+        </p>
       </div>
     </header>
 
     <main class="container" id="main">
-      <section class="section reveal" id="posts">
-        <h2 class="section__title">Posts</h2>
+      <nav class="catnav" aria-label="Categories">
+        <ul class="pills">
+          <li><a class="pill" href="#scientific-curiosity">Scientific curiosity</a></li>
+          <li><a class="pill" href="#self-improvement">Self improvement</a></li>
+          <li><a class="pill" href="#inner-work">Diving into my own mind</a></li>
+          <li><a class="pill" href="#travel-diary">Life as observation</a></li>
+        </ul>
+      </nav>
+
+      <section class="section reveal" id="scientific-curiosity">
+        <h2 class="section__title">Scientific curiosity</h2>
+        <p class="section__intro">The questions that keep me at the terminal.</p>
         <div class="grid grid--3">
           <a class="post" href="blog/ribonucleotides-in-your-dna.html">
-            <div class="post__meta">
-              <span class="post__topic">Explainer</span>
-              <span>&middot;</span><span>7 min read</span>
-            </div>
+            <div class="post__meta"><span class="post__topic">7 min</span></div>
             <h3>The RNA hiding inside your DNA</h3>
             <p>A million RNA letters sit inside every human genome. They are not scattered, and they are not just damage.</p>
             <span class="post__more">Read post <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></span>
           </a>
-          <a class="post" href="blog/bench-to-terminal.html">
-            <div class="post__meta">
-              <span class="post__topic">Career</span>
-              <span>&middot;</span><span>5 min read</span>
-            </div>
-            <h3>Bench to terminal: what pipetting taught me about data</h3>
-            <p>Four years at the bench before my first pipeline. It changed how I read every dataset since.</p>
-            <span class="post__more">Read post <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></span>
-          </a>
           <a class="post" href="blog/building-featurecorr.html">
-            <div class="post__meta">
-              <span class="post__topic">Software</span>
-              <span>&middot;</span><span>5 min read</span>
-            </div>
+            <div class="post__meta"><span class="post__topic">5 min</span></div>
             <h3>Building FeatureCorr: lessons from a small R package</h3>
             <p>A script became a published package. The statistics were the easy part.</p>
             <span class="post__more">Read post <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></span>
           </a>
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>What a strand bias actually tells you about replication</h3>
+            <p>Leading and lagging strands leave different fingerprints. Reading them takes more care than it looks.</p>
+          </div>
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>Reading a pan-cancer correlation without fooling yourself</h3>
+            <p>Thirty-three cancer types will hand you a significant result whether or not one is there.</p>
+          </div>
         </div>
       </section>
 
-      <section class="section reveal" id="ideas">
-        <h2 class="section__title">On the list</h2>
-        <p class="section__intro">Topics I plan to write about next.</p>
-        <ul class="pills">
-          <li class="pill">What a strand bias actually tells you about replication</li>
-          <li class="pill">Reading a pan-cancer correlation without fooling yourself</li>
-          <li class="pill">Snakemake patterns I reuse in every project</li>
-          <li class="pill">How to present genomics results to a clinical audience</li>
-          <li class="pill">Mentoring notes: the first month in a Linux environment</li>
-        </ul>
+      <section class="section reveal" id="self-improvement">
+        <h2 class="section__title">Self improvement</h2>
+        <p class="section__intro">Getting better on purpose, at the bench and away from it.</p>
+        <div class="grid grid--3">
+          <a class="post" href="blog/bench-to-terminal.html">
+            <div class="post__meta"><span class="post__topic">5 min</span></div>
+            <h3>Bench to terminal: what pipetting taught me about data</h3>
+            <p>Four years at the bench before my first pipeline. It changed how I read every dataset since.</p>
+            <span class="post__more">Read post <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></span>
+          </a>
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>Training for a half marathon while writing a thesis</h3>
+            <p>Two things that both demand every morning, and what happened when I stopped treating that as a conflict.</p>
+          </div>
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>What mentoring five students taught me about my own gaps</h3>
+            <p>You find out how well you understand something the first time you have to hand it to someone else.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="inner-work">
+        <h2 class="section__title">Diving into my own mind</h2>
+        <p class="section__intro">Attention, stillness, and what turns up when the noise drops.</p>
+        <div class="grid grid--3">
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>Sitting still with seven hundred people</h3>
+            <p>A campus-wide meditation, and the strange arithmetic of a room that large going quiet at once.</p>
+          </div>
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>Two years running a well-being society</h3>
+            <p>What it actually takes to make stillness available to a thousand students who did not ask for it.</p>
+          </div>
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>What meditation changed about how I do science</h3>
+            <p>Mostly it changed how long I can stay with a problem before reaching for a distraction.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="travel-diary">
+        <h2 class="section__title">Life as observation</h2>
+        <p class="section__intro">A travel diary. Treating your own life as the field site.</p>
+        <div class="grid grid--3">
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>Four cities, one decade: Mumbai to Albuquerque</h3>
+            <p>Every move rearranged what I thought was fixed about how people live.</p>
+          </div>
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>Notes from the high desert</h3>
+            <p>New Mexico is the emptiest place I have lived, and the loudest at sunset.</p>
+          </div>
+          <div class="post post--planned">
+            <div class="post__meta"><span class="post__soon">Coming soon</span></div>
+            <h3>A field guide to moving countries</h3>
+            <p>The paperwork is the easy part. Nobody warns you about the rest.</p>
+          </div>
+        </div>
       </section>
     </main>
 

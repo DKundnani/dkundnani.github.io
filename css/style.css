@@ -174,7 +174,7 @@ a:hover { color: var(--accent-2); }
 html[data-theme="dark"] .theme-icon--moon { display: none; }
 html:not([data-theme="dark"]) .theme-icon--sun { display: none; }
 
-@media (max-width: 940px) {
+@media (max-width: 1040px) {
   .nav__toggle { display: grid; }
   .nav__links {
     position: fixed; inset: var(--nav-h) 0 auto 0; margin: 0;
@@ -357,17 +357,6 @@ main { padding-block: 3.5rem 1rem; }
   border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
   background: var(--accent-soft);
 }
-
-/* awards */
-.award { display: flex; gap: 1rem; align-items: flex-start; }
-.award__year {
-  flex: none; min-width: 74px; text-align: center;
-  padding: .35rem .5rem; border-radius: 999px;
-  background: var(--amber-soft); color: var(--amber);
-  font-size: .78rem; font-weight: 700; font-variant-numeric: tabular-nums;
-}
-.award h3 { margin: 0 0 .15rem; font-size: .98rem; font-weight: 700; line-height: 1.4; }
-.award p { margin: 0; font-size: .86rem; color: var(--text-soft); font-style: italic; }
 
 /* --------------------------------------------------------------- timeline */
 /* Two columns astride a central spine: education left, experience right.
@@ -876,3 +865,35 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
   background: var(--accent-soft); border-color: transparent;
   color: var(--accent); font-variant-numeric: tabular-nums;
 }
+
+/* Compact year-keyed lists: conferences, invited talks */
+.mini__head {
+  display: flex; align-items: center; gap: .5rem;
+  margin: 0 0 1rem; font-size: .78rem; font-weight: 700;
+  letter-spacing: .09em; text-transform: uppercase; color: var(--text-faint);
+}
+.mini__head .icon { color: var(--accent); font-size: 1rem; }
+.mini { list-style: none; margin: 0; padding: 0; }
+.mini li {
+  display: grid; grid-template-columns: 42px 1fr; gap: .7rem;
+  margin-bottom: .85rem; font-size: .85rem;
+}
+.mini li:last-child { margin-bottom: 0; }
+.mini__year {
+  color: var(--accent); font-weight: 700; font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+}
+.mini b { display: block; color: var(--text); font-weight: 600; line-height: 1.45; }
+.mini__kind {
+  display: inline-block; margin-bottom: .2rem; padding: .1rem .5rem;
+  border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border);
+  font-size: .66rem; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+.mini__v { display: block; margin-top: .15rem; color: var(--text-faint); font-size: .79rem; }
+
+/* Wider variant for full-width year lists (awards, service) */
+.mini--wide { max-width: 780px; }
+.mini--wide li { grid-template-columns: 82px 1fr; margin-bottom: 1rem; }
+.mini--wide .mini__year { font-size: .84rem; }
+.mini--wide b { font-size: .95rem; }

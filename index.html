@@ -2,603 +2,766 @@
 <html lang="en-US">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Deepali L. Kundnani</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Deepali L. Kundnani — Computational Biologist</title>
+    <meta name="description" content="Deepali Kundnani is a computational biologist with a Ph.D. in Bioinformatics from Georgia Tech, working on multi-omics integration, ribonucleotide epigenomics, and clinical biomarker discovery.">
+    <meta name="author" content="Deepali L. Kundnani">
+    <link rel="canonical" href="https://dkundnani.bio/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23061834'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='28' font-weight='700' fill='%230d9488' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E">
 
-    <meta name="description" content="Welcome to the personal website of Deepali Kundnani, a bioinformatics researcher currently completing Ph.D. in Bioinformatics from Georgia Tech and has extensive building custom bioinformatic workflows and feature identification using Next Generation and long read sequencing technologies . Explore Deepali's website to learn more about their research, publications, and academic background.">    
-    <meta name="keywords" content="Deepali Kundnani, Computational Biology,Bioinformatics, Georgia Institute of Technology, Research, Software Development, Machine Learning in Bioscience, Data Science, Bioinformatics Workflows, High-Performance Computing, Statistical Techniques, Biomedical Research, Biomarkers, Cancer Research, Ribonucleotide Incorporation, Epigenomics, Rare Genetic Disorders, Enzyme Associations, Software Packages, Diagnostics, MD Anderson Cancer Center, Lung Cancer Risk Assessment, Mark Borodovsky Prize for Excellence in Bioinformatics"> 
-    <meta name="author" content="Kundnani Deepali">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Deepali L. Kundnani">
+    <meta property="og:title" content="Deepali L. Kundnani — Computational Biologist">
+    <meta property="og:description" content="Deepali Kundnani is a computational biologist with a Ph.D. in Bioinformatics from Georgia Tech, working on multi-omics integration, ribonucleotide epigenomics, and clinical biomarker discovery.">
+    <meta property="og:url" content="https://dkundnani.bio/">
+    <meta property="og:image" content="https://dkundnani.bio/images/web/profile.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@DeepaliKundnani">
+    <meta name="twitter:title" content="Deepali L. Kundnani — Computational Biologist">
+    <meta name="twitter:description" content="Deepali Kundnani is a computational biologist with a Ph.D. in Bioinformatics from Georgia Tech, working on multi-omics integration, ribonucleotide epigenomics, and clinical biomarker discovery.">
+    <meta name="twitter:image" content="https://dkundnani.bio/images/web/profile.jpg">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
-    <!-- Google verification -->
+    <script>
+      /* Apply the saved theme before first paint so there is no flash. */
+      (function () {
+        try {
+          var t = localStorage.getItem("dk-theme");
+          if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKYQ2F24J1"></script>
-    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-ZKYQ2F24J1'); </script>
-
-    <!-- Custom style instead of CSS -->
-    <style>
-      .navbar-custom {
-        background-color: #061834 !important;
-      }
-      .navbar-custom .nav-link {
-        color: #f4f4f9 !important;
-      }
-      .navbar-custom .nav-link:hover {
-        color: white !important;
-      }
-      body {
-        font-family: 'Verdana', Tahoma, Geneva, Segoe UI, sans-serif;
-        color: #333;
-        background-color: #f4f4f9;
-        line-height: 1.6;
-      }
-      header {
-        background-color: #061834;
-        color: white;
-        text-align: center;
-        padding: 5rem 1rem 1.5rem 1rem;
-        position: relative;
-      }
-      .round-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%; /* Makes the image circular */
-        object-fit: cover;
-        border: 4px solid white;
-        margin: 0 auto 1rem auto;
-        display: block;
-      }
-      .section-title {
-        display: block !important;
-        border-bottom: 2px solid #061834;
-        color: #061834;
-        padding-bottom: 0.25rem;
-        margin-bottom: 1rem;
-        font-weight: 600;
-        padding-top: 4.5rem; /* Adjust this value to match navbar height */
-      }
-      .cv-section {
-        margin-bottom: 2.5rem;
-      }
-      .maintext {
-        font-weight: 550;
-      }
-      .subtext {
-        font-style: italic;
-        font-weight: 500;
-      }
-      .cv-date {
-        float: right;
-        color: #6c757d;
-        font-size: 0.95em;
-      }
-      footer {
-        background-color: #061834;
-        color: white;
-        text-align: center;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-      }
-
-      /*--Vertical timeline--*/
-      .timeline {
-      position: relative;
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px 0;
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZKYQ2F24J1');</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Deepali L. Kundnani",
+      "url": "https://dkundnani.bio/",
+      "image": "https://dkundnani.bio/images/web/profile.jpg",
+      "jobTitle": "Computational Biologist",
+      "email": "mailto:deepali.kundnani@gatech.edu",
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology"},
+        {"@type": "CollegeOrUniversity", "name": "University of Houston - Clear Lake"}
+      ],
+      "worksFor": {"@type": "Organization", "name": "University of New Mexico Health Sciences"},
+      "knowsAbout": ["Bioinformatics", "Multi-omics integration", "Epigenomics", "Ribonucleotide biology",
+                     "Cancer biomarkers", "Machine learning", "Next-generation sequencing"],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=RdAQkxwAAAAJ",
+        "https://github.com/DKundnani",
+        "https://linkedin.com/in/deepalik",
+        "https://x.com/DeepaliKundnani"
+      ]
     }
-    .timeline::after {
-      content: '';
-      position: absolute;
-      width: 4px;
-      background: #333;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      margin-left: -2px;
-    }
-    .timeline-entry {
-      width: 50%;
-      display: block;
-      margin-bottom: 40px;
-      position: relative;
-      background: transparent;
-      box-shadow: none;
-      padding: 10px 10px;
-    }
-      .timeline-entry.both {
-      width: 100%;
-      left: 0;
-      padding: 0;
-    }
-
-    .timeline-entry.left {
-      left: 0;
-      text-align: left;
-    }
-    .timeline-entry.right {
-      left: 50%;
-      text-align: left;
-    }
-    .timeline-entry .content {      
-      background: #d1e7ff;
-      border-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 20px;
-      margin-bottom: 0;
-      min-width: 200px;
-      height: 100%;
-    }
-
-
-    .timeline-entry.left .content {
-      margin-right: 0;
-    }
-    .timeline-entry.right .content {
-      margin-left: 0;
-    }
-    .timeline-entry::before {
-      content: '';
-      position: absolute;
-      top: 30px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #d1e7ff;
-      border: 4px solid #333;
-      z-index: 1;
-    }
-    .timeline-entry.left::before {
-      right: -10px;
-    }
-    .timeline-entry.right::before {
-      left: -10px;
-    }
-    .timeline-entry.both::before {
-      content: '';
-      position: absolute;
-      top: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #d1e7ff;
-      border: 4px solid #333;
-      z-index: 1;
-    }
-
-    .timeline-entry.both .row {
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-
-    /* Responsive design */
-    @media (max-width: 1000px) {
-      .timeline::after {
-        left: 20px;
-      }
-      .timeline-entry.left,
-      .timeline-entry.right {
-        left: 0;
-      }
-      .timeline-entry.left .content,
-      .timeline-entry.right .content {
-        margin: 0;
-      }
-      .timeline-entry::before {
-        left: 0;
-      }
-      .timeline-entry.both .row {
-        flex-direction: column;
-      }
-      .timeline-entry .col-md-6,
-      .timeline-entry.both .col-md-6 {
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-      }
-      }
-    </style>
+    </script>
   </head>
-
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-      <div class="container" style="width: 80%;">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-      <ul class="navbar-nav w-100 d-flex justify-content-between">
-      <li class="nav-item"><a class="nav-link fw-bold" style="font-weight: 500;" href="#profile"><b>ABOUT</b></a></li>
-      <li class="nav-item"><a class="nav-link fw-bold" style="font-weight: 500;" href="#highlights"><b>HIGHLIGHTS</b></a></li>
-      <li class="nav-item"><a class="nav-link fw-bold" style="font-weight: 500;" href="#awards"><b>AWARDS</b></a></li>
-      <li class="nav-item"><a class="nav-link fw-bold" style="font-weight: 500;" href="portfolio.html"><b>PORTFOLIO</b></a></li>
-      <li class="nav-item"><a class="nav-link fw-bold" style="font-weight: 500;" href="#journey"><b>JOURNEY</b></a></li>
-      <li class="nav-item"><a class="nav-link fw-bold" style="font-weight: 500;" href="#publications"><b>PUBLICATIONS & MORE</b></a></li>
-      <li class="nav-item"><a class="nav-link fw-bold" style="font-weight: 500;" href="#skills"><b>SKILLS</b></a></li>
-      <li class="nav-item"><a class="nav-link fw-bold" style="font-weight: 500;" href="#contact"><b>CONTACT</b></a></li>
-      </ul>
-      </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></symbol>
+<symbol id="i-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+<symbol id="i-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+<symbol id="i-chev-down" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+<symbol id="i-chev-left" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></symbol>
+<symbol id="i-chev-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-cpu" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+<symbol id="i-trend" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></symbol>
+<symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+<symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4z"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+<symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 2v6.5L3.8 18a2 2 0 0 0 1.7 3h13a2 2 0 0 0 1.7-3L15 8.5V2"/><line x1="8" y1="2" x2="16" y2="2"/><line x1="6.5" y1="14" x2="17.5" y2="14"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-github" viewBox="0 0 24 24" class="brand"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+<symbol id="i-linkedin" viewBox="0 0 24 24" class="brand"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24" class="brand"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932zM17.61 20.644h2.039L6.486 3.24H4.298z"/></symbol>
+<symbol id="i-scholar" viewBox="0 0 24 24" class="brand"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></symbol>
+</defs></svg>
+<a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" id="progress"></div>
+    <nav class="nav" id="nav">
+      <div class="container nav__inner">
+        <a class="nav__brand" href="index.html">
+          <span class="nav__mark" aria-hidden="true">DK</span>
+          <span>Deepali Kundnani</span>
+        </a>
+        <button class="nav__btn nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#highlights">Highlights</a></li>
+          <li><a href="#awards">Awards</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav__btn" id="theme-toggle" aria-label="Switch to dark theme">
+          <svg class="icon theme-icon--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+          <svg class="icon theme-icon--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+        </button>
       </div>
     </nav>
+    <header class="hero" id="home">
+      <svg class="hero__helix" viewBox="0 0 1200 400" preserveAspectRatio="none" aria-hidden="true">
+        <g fill="none" stroke="#5eead4" stroke-width="1.5" opacity=".55">
+          <path class="strand" d="M-200 200 Q -100 60 0 200 T 200 200 T 400 200 T 600 200 T 800 200 T 1000 200 T 1200 200 T 1400 200"/>
+          <path class="strand strand--b" d="M-200 200 Q -100 340 0 200 T 200 200 T 400 200 T 600 200 T 800 200 T 1000 200 T 1200 200 T 1400 200"/>
+        </g>
+        <g stroke="#7dd3fc" stroke-width="1" opacity=".3" class="strand">
+          <line x1="50"  y1="128" x2="50"  y2="272"/><line x1="150" y1="150" x2="150" y2="250"/>
+          <line x1="250" y1="128" x2="250" y2="272"/><line x1="350" y1="150" x2="350" y2="250"/>
+          <line x1="450" y1="128" x2="450" y2="272"/><line x1="550" y1="150" x2="550" y2="250"/>
+          <line x1="650" y1="128" x2="650" y2="272"/><line x1="750" y1="150" x2="750" y2="250"/>
+          <line x1="850" y1="128" x2="850" y2="272"/><line x1="950" y1="150" x2="950" y2="250"/>
+          <line x1="1050" y1="128" x2="1050" y2="272"/><line x1="1150" y1="150" x2="1150" y2="250"/>
+        </g>
+      </svg>
 
-    <!-- Home Section -->
-    <header id="home">
-      <div class="container my-5">
-        <img src="/images/Exec pic.jpg" alt="Profile Picture" class="round-image">
-        <h1 class="display-4">Deepali Kundnani</h1>
-        <div class="mx-auto" style="width: 90%;">
-          <p class="lead">
-            <span style="text-align: justify; display: block;">
-              Computational Biologist with a strong foundation in molecular biology and over eight years of experience applying multi-omics approaches to uncover disease-related insights. I specialize in developing customized bioinformatics workflows, utilizing high-performance computing, and implementing advanced statistical techniques to drive innovation and discovery in biomedical research.
-            </span>
-          </p>
+      <div class="container hero__inner">
+        <img class="hero__photo" src="images/web/profile.jpg" width="168" height="168"
+             alt="Portrait of Deepali Kundnani" fetchpriority="high">
+        <h1>Deepali L. Kundnani</h1>
+        <p class="hero__role">Computational Biologist</p>
+        <!-- TODO: confirm exact UNM job title and swap it into the line below and in the Journey timeline. -->
+        <p class="hero__affil">University of New Mexico Health Sciences &middot; Ph.D. Bioinformatics, Georgia Tech</p>
+
+        <p class="rotator">Working on <span class="rotator__word" id="rotator">multi-omics integration</span></p>
+
+        <p class="hero__lead">
+          Eight years of turning messy biological data into answers &mdash; building custom bioinformatics
+          workflows, running them on high-performance clusters, and applying the statistics that separate a
+          real signal from a hopeful one.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__num" data-count="8" data-suffix="+">0</div>
+            <div class="stat__label">Years in research</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="16" data-suffix="+">0</div>
+            <div class="stat__label">Publications</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="1" data-prefix="$" data-suffix="M+">0</div>
+            <div class="stat__label">Grants supported</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="35" data-suffix="+">0</div>
+            <div class="stat__label">Cancer types analysed</div>
+          </div>
         </div>
-        <p>
-          <a href="https://linkedin.com/in/deepalik" class="text-white me-3" style="font-size: 1.5rem; text-decoration: none;">
-          <i class="bi bi-linkedin" style="font-size: 2rem; vertical-align: middle;"></i></a>
-          <a href="https://github.com/Dkundnani" class="text-white me-3" style="font-size: 1.5rem; text-decoration: none;">
-          <i class="bi bi-github" style="font-size: 2rem; vertical-align: middle;"></i></a>
-          <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&hl=en&oi=ao" class="text-white me-3" style="font-size: 1.5rem; text-decoration: none;">
-          <i class="bi bi-mortarboard-fill" style="font-size: 2rem; vertical-align: middle;"></i></a>
-          <a href="https://x.com/DeepaliKundnani" class="text-white" style="font-size: 1.5rem; text-decoration: none;">
-          <i class="bi bi-twitter-x" style="font-size: 2rem; vertical-align: middle;"></i></a>
-        </p>
-        <p>
-          <a href="pdf/Deepali_Kundnani_CV.pdf" class="btn btn-outline-light" style="background: transparent; border: 2px solid #fff; color: #fff;" download>
-          <i class="bi bi-download" style="vertical-align: middle; margin-right: 6px;"></i> Download CV </a>
-        </p>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="pdf/Deepali_Kundnani_CV.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Download CV
+          </a>
+          <a class="btn btn--ghost" href="#publications">
+            <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> Read the research
+          </a>
+          <div class="socials"><a href="https://linkedin.com/in/deepalik" aria-label="LinkedIn" target="_blank" rel="noopener"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+        <a href="https://github.com/DKundnani" aria-label="GitHub" target="_blank" rel="noopener"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-github"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&amp;hl=en&amp;oi=ao" aria-label="Google Scholar" target="_blank" rel="noopener"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-scholar"/></svg></a>
+        <a href="https://x.com/DeepaliKundnani" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-x"/></svg></a></div>
+        </div>
       </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container my-5">
-      <div class="mx-auto" style="width: 90%;">
-        <div class="p-4 rounded shadow bg-white border">
-        <!-- About me -->
-        <section id="profile" class="cv-section">
-          <h2 class="section-title">About me</h2>
-          <div>
-            <span style="text-align: justify; display: block;"></span>
-              During my Ph.D. journey at GeorgiaTech, my focus has been on discovery and validation of ribonucleotide incorporation in human genome as a novel epigenomics phenomena. I have also discovered unique ribonucleotide embedment features in associated rare genetic disorder mutants, studied enzyme associations in large public datasets and developed tailored software packages. For the same work, I have been awarded <a href="https://bioinformatics.gatech.edu/2023-bioinformatics-outstanding-student-awards">Mark Borodovsky Prize for Excellence in Bioinformatics</a> at Georgia Institute of Technology.
-            </span>
-            <br><br>
-            <span style="text-align: justify; display: block;">
-              Before coming to Georgia Tech, I have developed, optimized and validated multiplex Immuno Assays for protein biomarkers in patient blood samples for early detection of multiple cancers, fortunate to have worked with amazing doctors and scientists at Hanash Lab in MD Anderson Cancer Center. The incredible effort in diagnostics of <a href="https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html">Lung Cancer Risk Assessment Biomarkers</a> has been recognized by the institution.
-            </span>
-          </div>
-        </section>
+    <main class="container" id="main">
 
-        <!-- Career Highlights -->
-        <section id="highlights" class="cv-section">
-          <h2 class="section-title">Career Highlights</h2>
-          <div>
-              <ul>
-                <li>Led pioneering research projects in bioinformatics, developing multi-omics association frameworks for linking DNA features to functional outcomes.</li>
-                <li>Secured > $1 million in grants by providing hypothesis based on preliminary analysis.</li>
-                <li>Co-authored 7+ papers in GeorgiaTech and 9+ papers in MD Anderson </li>
-                <li>Proficient in developing and maintaining bioinformatics pipelines, including data modeling, feature selection, and ML-driven survival analysis.</li>
-                <li>Extensive experience create SOPs for CLIA labs and FDA approvals, in clinical trails and working with proprietary materials.</li>
-                <li>Experience mentoring and training students in both molecular biology techniques and computational biology.</li>
-                </ul>
-              <span class="maintext">Interests</span>
-              <ul>
-                <li>Aging associated epigenetic phenomena</li>
-                <li>Rare Genetic disorders</li>
-                <li>Multi-omics Integrated research</li>
-                <li>Clinical Biomarkers</li>
-                <li>Precision Medicine</li>
-                <li>Immune, brain and gut microbiome traid</li>
-              </ul>
-        </section>
-
-        <!-- Awards -->
-        <section id="awards" class="cv-section">
-          <h2 class="section-title">Awards and Prizes</h2>
-          <div>
-            <span class="maintext">Student Government Association Conference Award</span>
-            <span class="cv-date">2024</span><br>
-            <span class="subtext">Georgia Institute of Technology</span>
-          </div>
-          <div class="mt-3">
-            <span class="maintext">Mark Borodovsky Prize for Excellence in Bioinformatics</span>
-            <span class="cv-date">2023</span><br>
-            <span class="subtext">Georgia Institute of Technology</span>
-          </div>
-          <div class="mt-3">
-            <span class="maintext">US National Science Foundation Conference Award</span>
-            <span class="cv-date">2021</span><br>
-            <span class="subtext">The 26th Annual Meeting of the RNA Society</span>
-          </div>
-          <div class="mt-3">
-            <span class="maintext">Performance Excellence Award</span>
-            <span class="cv-date">2019</span><br>
-            <span class="subtext">University of Texas at MD Anderson Cancer Center</span>
-          </div>
-          <div class="mt-3">
-            <span class="maintext">Jones NAS Biological Sciences Scholarship</span>
-            <span class="cv-date">2014 - 2015</span><br>
-            <span class="subtext">University of Houston – Clear Lake</span>
-          </div>
-          <div class="mt-3">
-            <span class="maintext">Third Prize in National Technical Paper Presentation</span>
-            <span class="cv-date">2010</span><br>
-            <span class="subtext">Institute of Electrical and Electronics Engineers (IEEE) committee in India</span>
-          </div>
-        </section>
-
-
-
-        <section id="journey" class="cv-section">
-          <h2 class="section-title">Journey</h2>
-          <div>
-            <div class="timeline">
-              <div class="timeline-entry both">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="content">
-                      <span class="maintext">Research and Teaching Assistant</span>
-                      <span class="cv-date">2019 - 2025</span><br>
-                      <span class="subtext">Georgia Institute of Technology, Atlanta, GA</span>
-                      <ul>
-                      <li>Led pioneering research projects in bioinformatics, developing multi-omics association frameworks for linking DNA features to functional outcomes.</li>
-                      <li>Applied strand-specific sequencing analytics to dissect disease-associated mutational effect on replication.</li>
-                      <li>leveraged public databases for pan-cancer analyses across 35+ cancer types, linked basic science (ribonucleotide biology) to clinical insights (cancer proliferation, cell cycle)</li>
-                      <li>Secured > $1 million in grants by providing hypothesis based on preliminary analysis.</li>
-                      <li>Developed novel software packages and maintained, and updated Lab's pipelines.</li>
-                      <li>Showcased research findings at international conferences, mentored 4+ students </li>
-                      <li>Lectured, created modules and graded courses with students ranging from 20-250</li>
-                      <li>Provided hands on training to 15+ students on linux based cloud computing enviroment, python and R scripts</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="content">
-                      <span class="maintext">Ph.D in Bioinformatics</span>
-                      <span class="cv-date">2019 - 2025</span><br>
-                      <span class="subtext">Georgia Institute of Technology, Atlanta, GA</span>
-                      <ul>
-                      <li>Designed modular frameworks for web-based biomedical applications</li>
-                      <li>Data modeling for better feature selection</li>
-                      <li>Deployed ML-driven survival analysison longitudinal clinical-genomic datasets </li>
-                      <li>Standardized pipelines for real-time outbreak analytics using public health datasets (CDC)</li>
-                      <li>Invited and co-hosted well-known cancer researchers to address Georgia Tech community</li>
-                      <li>Particapted in Georgia Tech Bioinformatics PhD orientation T-short design panels</li>
-                      <li>Founding Student Committee Member, Molecular BioMedical (MBM) Cancer Talk Series</li>
-                      <li>Volunteered a a secretary and President at student organizations</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-entry left">
-                <div class="content">
-                  <span class="maintext"> Research Assistant II</span>
-                  <span class="cv-date">2015 - 2019</span><br>
-                  <span class="subtext">MD Anderson Cancer Center</span>
-                  <ul>
-                  <li>translational cancer research: optimized/validated immune/multiplex assays for multiple cancers and FDA approval.</li>
-                  <li>Set up CLIA-certified patient blood sample processing lab for trials.</li>
-                  <li>DNA vaccines, propriety antigen and antibody production.</li>
-                  <li>Data handling and batch normalizaiton for >100 patient sample protein levels</li>
-                  <li>Integrated multiomics data (genomic, transcriptomic, mass spectrometry) to advance biomarker discovery.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="timeline-entry both">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="content">
-                      <span class="maintext">Lab Intern</span>
-                      <span class="cv-date">Jan 2015 - May 2015</span><br>
-                      <span class="subtext">Georgia Institute of Technology, Atlanta, GA</span>
-                      <ul>
-                      <li>Optimized SOPs for antigen production in mammalian cells.</li>
-                      <li>Monoclonal antibody screening, purification, and QC for ovarian cancer ELISA kits.</li>
-                      <li>Supported FDA audits.</li>
-                      </ul>
-                      <hr>
-                      <span class="maintext">Teaching Assistant</span>
-                      <span class="cv-date">Sep 2014 - Dec 2014</span><br>
-                      <span class="subtext">University of Houston - Clear Lake</span>
-                      <ul>
-                      <li>Liaison between students and professor for applied biotechnology projects and assignments.</li>
-                      <li>Trained other TAs for both basic and advanced molecular biology labs.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="content">
-                      <span class="maintext">M.S. Molecular Biotechnology</span>
-                      <span class="cv-date">2013 - 2015</span><br>
-                      <span class="subtext">University of Houston Clear-Lake, Houston, TX</span>
-                      <ul>
-                      <li>Jones NAS Scholarship for merit, 2013-2014 academic year</li>
-                      <li>Good GPA, Experience in lab experiments and training.</li>
-                      <li>Independent Resarch -  Human asthma lung cDNA library screening employing a yeast two-hybrid system to detect protein interaction with iNOS.</li>
-                      <li>Capstone - Cloning techniques for high yield productivity of monoclonal antibodies in mammalian cells.</li>
-                      <li>Activities and societies: SLICE, Welcome Back Bash, Strictly speaking</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="timeline-entry left">
-                <div class="content">
-                  <span class="maintext"> Research and Teaching Assistant</span>
-                  <span class="cv-date">2012-2013</span><br>
-                  <span class="subtext">Usha Biotech</span>
-                  <ul>
-                  <li>Trained students in Mammaliam Cell culture and Molecular cloning</li>
-                  <li></li>
-                  <li>DNA vaccines, propriety antigen and antibody production.</li>
-                  <li>Data handling and batch normalizaiton for >100 patient sample protein levels</li>
-                  <li>Integrated multiomics data (genomic, transcriptomic, mass spectrometry) to advance biomarker discovery.</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="timeline-entry both">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="content">
-                      <span class="maintext">Trainee</span>
-                      <span class="cv-date">Sep 2011 - Apr 2012</span><br>
-                      <span class="subtext">S.L. Raheja Hospital</span>
-                      <ul>
-                      <li>Researched clinical data on stem cell therapy for diabetic foot complications.</li>
-                      <li>conducted patient eligibility assessments.</li>
-                      <li>developed statistical standards.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="content">
-                      <span class="maintext">B.E.  Biotechnology</span>
-                      <span class="cv-date">2008 - 2012</span><br>
-                      <span class="subtext">University Mumbai - TSEC</span>
-                      <ul>
-                      <li>Thrid Prize - IEEE Techical Paper Presentation</li>
-                      <li>Attended seminars and training for clinical research and molecular biotechnology.</li>
-                      <li>Organizing Committee member and speaker for workshops for multiple events.</li>
-                      <li>Mendelian genetics, Molecular Cloning, Immunology, Biochemistry, Biotechnology, Protein Enginnering</li>
-                      <li>DNA and protein isolations and titration experiments</li>
-                      <li>Engineering aspects in general - Applied Phys & Chem</li>
-                      <li>Large scale fermentations and Chromatographies</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        <!-- Publications -->
-        <section id="publications" class="cv-section">
-          <h2 class="section-title">Selected Publications</h2>
-            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope="" itemtype="http://schema.org/CreativeWork">
-            <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-            <span itemprop="author"><b>Kundnani, D. L.</b>, Yang. T., Channagiri, T., Xu, P., Lee, Y., ... Jonoska, N. & Storici, F.</span>(2025).
-            <a itemprop="name">Human nuclear ribomes reveal DNA-embedded ribonucleotides as a novel epigenetic layer</a>.<em>in preparation</em>.
+      <section class="section reveal" id="about">
+        <h2 class="section__title">About me</h2>
+        <div class="about">
+          <div class="prose">
+            <p>
+              I am a computational biologist with a molecular-biology foundation &mdash; which means I have
+              pipetted the samples that generate the data I now analyse. That combination shapes how I work:
+              I trust a result more when I understand the assay that produced it.
+            </p>
+            <p>
+              My Ph.D. at Georgia Tech focused on the discovery and validation of ribonucleotide incorporation
+              in the human genome as a novel epigenomic phenomenon. Along the way I characterised distinctive
+              ribonucleotide embedment features in mutants associated with a rare genetic disorder, studied
+              enzyme associations across large public datasets, and released tailored software packages for
+              the field. That work was recognised with the
+              <a href="https://bioinformatics.gatech.edu/2023-bioinformatics-outstanding-student-awards" target="_blank" rel="noopener">Mark
+              Borodovsky Prize for Excellence in Bioinformatics</a>.
+            </p>
+            <p>
+              Before Georgia Tech, I developed, optimised, and validated multiplex immunoassays for protein
+              biomarkers in patient blood samples for the early detection of multiple cancers at the Hanash Lab,
+              MD Anderson Cancer Center. That team's work on
+              <a href="https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html" target="_blank" rel="noopener">lung
+              cancer risk-assessment biomarkers</a> was recognised institution-wide.
+            </p>
           </div>
 
-            <div class="pub-list-item" style="margin-bottom: 1rem" itemscope="" itemtype="http://schema.org/CreativeWork">
-            <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-            <span itemprop="author">Bazzani, V, <b>Kundnani, D. L.</b>,  Redin, M. E., Agostini, F., Corso, A., ... Storici, F. & Vascotto, C.</span>(2025).
-            <a href="https://www.nature.com/articles/s41598-025-91746-x" itemprop="name">Characterization of a new mutation of mitochondrial ND6 gene in hepatocellular carcinoma and its effects on Complex I</a>.<em>Sci Reports</em>.
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://www.nature.com/articles/s41598-025-91746-x.pdf" target="_blank" rel="noopener">PDF</a>
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://github.com/DKundnani/LTB_ND6_humito" target="_blank" rel="noopener">Code</a>
-          </div>
-
-          <div class="pub-list-item" style="margin-bottom: 1rem" itemscope="" itemtype="http://schema.org/CreativeWork">
-            <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-            <span itemprop="author"><b>Kundnani, D. L.</b>, Yang, T., Gombolay, A., Mukherjee, K., Newnam, G., Meers, C., ... & Storici, F.</span>(2024).
-            <a href="https://doi.org/10.1016/j.isci.2024.110012" itemprop="name">Distinct features of ribonucleotides within genomic DNA in Aicardi-Goutières syndrome ortholog mutants of Saccharomyces cerevisiae</a>.<em>IScience</em>.
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://www.sciencedirect.com/science/article/pii/S2589004224012379/pdfft?md5=5b3eb2e0917f6eff9277ba38c5b97078&pid=1-s2.0-S2589004224012379-main.pdf" target="_blank" rel="noopener">PDF</a>
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://github.com/DKundnani?tab=repositories&q=RPA+OR+hotspots&type=&language=&sort=" target="_blank" rel="noopener">Code</a>
-          </div>
-
-          <div class="pub-list-item" style="margin-bottom: 1rem" itemscope="" itemtype="http://schema.org/CreativeWork">
-            <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-            <span itemprop="author"><b>Kundnani, D.</b>, & Storici, F.</span>(2022).
-            <a href="https://doi.org/10.1016/J.SIMPA.2021.100144" itemprop="name">FeatureCorr: An R package to study feature correlations aided with data transformation for sequencing and microarray data</a>.<em>IScience</em>.
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://www.sciencedirect.com/science/article/pii/S2665963821000592/pdfft?isDTMRedir=true&download=true" target="_blank" rel="noopener">PDF</a>
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://github.com/DKundnani/FeatureCorr/blob/main/README.md" target="_blank" rel="noopener">Code</a>
-          </div>
-
-          <div class="pub-list-item" style="margin-bottom: 1rem" itemscope="" itemtype="http://schema.org/CreativeWork">
-            <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-            <span itemprop="author">Subbalakshmi, A. R., <b>Kundnani, D.</b>, Biswas, K., Ghosh, A., Hanash, S. M., Tripathi, S. C., & Jolly, M. K.</span>(2020).
-            <a href="https://doi.org/10.3389/fonc.2020.553342" itemprop="name">NFATc Acts as a Non-Canonical Phenotypic Stability Factor for a Hybrid Epithelial/Mesenchymal Phenotype</a>.<em>Frontiers in Oncology</em>.
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://www.frontiersin.org/articles/10.3389/fonc.2020.553342/pdf" target="_blank" rel="noopener">PDF</a>
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="http://loop-impact.frontiersin.org/impact/article/553342#totalviews/views" target="_blank" rel="noopener">Impact</a>
-          </div>
-
-          <div class="pub-list-item" style="margin-bottom: 1rem" itemscope="" itemtype="http://schema.org/CreativeWork">
-            <i class="fa fa-file-text-o pub-icon" aria-hidden="true"></i>
-            <span itemprop="author">Guida, F., Sun, N., Bantis, L. E., Muller, D. C., Li, P., Taguchi, A., ... & Hanash, S. M.</span>(2018).
-            <a href="https://doi.org/10.1001/jamaoncol.2018.2078" itemprop="name">Assessment of Lung Cancer Risk on the Basis of a Biomarker Panel of Circulating Proteins</a>.<em>JAMA Oncology</em>.
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://www.frontiersin.org/articles/10.3389/fonc.2020.553342/pdf" target="_blank" rel="noopener">PDF</a>
-              <a class="btn btn-primary btn-outline py-0 px-2" style="font-size: 0.75rem;" href="https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html" target="_blank" rel="noopener">News</a>
-          </div>
-
-          <p class="view-all">
-            <a href="pdf/DK-Publications-2025.pdf">All Publications <i class="fa fa-angle-double-right"></i></a>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" class="cv-section">
-          <h2 class="section-title">Skills</h2>
-          <div class="row">
-            <div class="col-md-6">
-              <ul>
-                <li>Python, R, C++, Java</li>
-                <li>Statistical Analysis</li>
-                <li>Machine Learning, Deep Learning</li>
-                <li>Cloud Computing (AWS)</li>
+          <aside class="about__aside">
+            <div class="card">
+              <ul class="factlist">
+                <li>
+                  <svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>
+                  <div><strong>Mark Borodovsky Prize</strong><span>Excellence in Bioinformatics, Georgia Tech</span></div>
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>
+                  <div><strong>Bench to terminal</strong><span>Wet-lab assay development and computational analysis</span></div>
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>
+                  <div><strong>15+ students trained</strong><span>Linux/HPC environments, Python and R</span></div>
+                </li>
+                <li>
+                  <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+                  <div><strong>Open science</strong><span>Software and analysis code released publicly</span></div>
+                </li>
               </ul>
             </div>
-            <div class="col-md-6">
-              <ul>
-                <li>Next Gen and Long read sequence analysis</li>
-                <li>Multi-omics integration and association</li>
-                <li>Workflow Management (SnakeMake)</li>
-                <li>Data visualization</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+            <a class="btn btn--primary" href="#contact" style="justify-content:center">
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Get in touch
+            </a>
+          </aside>
+        </div>
+      </section>
 
-        <!-- Contact -->
-        <section id="contact" class="cv-section">
-          <h2 class="section-title">Contact</h2>
-          <p>Feel free to reach incase of questions, collaborative ideas, or just want to say hello!</p>
-          <form name="contact" method="POST" action="https://formspree.io/f/xjvdwbqk" data-netlify-recaptcha="true">
-            <div class="mb-3">
-              <input type="text" name="name" class="form-control" id="inputName" placeholder="Name" required="">
+      <section class="section reveal" id="highlights">
+        <h2 class="section__title">Career highlights</h2>
+        <p class="section__intro">Where I have made the most difference, across academic research and translational cancer work.</p>
+        <div class="grid grid--3">
+          <article class="card card--hover hl">
+            <div class="hl__icon"><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg></div>
+            <h3>Multi-omics frameworks</h3>
+            <p>Built association frameworks that link DNA features to functional outcomes across genomic, transcriptomic, and mass-spectrometry data.</p>
+          </article>
+          <article class="card card--hover hl">
+            <div class="hl__icon"><svg class="icon" aria-hidden="true"><use href="#i-trend"/></svg></div>
+            <h3>$1M+ in grants supported</h3>
+            <p>Preliminary analyses that generated the hypotheses behind successful funding applications.</p>
+          </article>
+          <article class="card card--hover hl">
+            <div class="hl__icon"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></div>
+            <h3>16+ peer-reviewed papers</h3>
+            <p>Seven publications from Georgia Tech and nine from MD Anderson, several as first author.</p>
+          </article>
+          <article class="card card--hover hl">
+            <div class="hl__icon"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg></div>
+            <h3>Production pipelines</h3>
+            <p>Reproducible bioinformatics pipelines covering data modelling, feature selection, and ML-driven survival analysis.</p>
+          </article>
+          <article class="card card--hover hl">
+            <div class="hl__icon"><svg class="icon" aria-hidden="true"><use href="#i-target"/></svg></div>
+            <h3>Regulated environments</h3>
+            <p>SOPs for CLIA labs and FDA submissions, clinical trial support, and work with proprietary materials.</p>
+          </article>
+          <article class="card card--hover hl">
+            <div class="hl__icon"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg></div>
+            <h3>Teaching and mentorship</h3>
+            <p>Mentored 4+ researchers and lectured courses ranging from 20 to 250 students.</p>
+          </article>
+        </div>
+
+        <h3 style="margin:2.25rem 0 .9rem;font-size:.78rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text-faint)">Research interests</h3>
+        <ul class="pills">
+          <li class="pill">Aging-associated epigenetics</li>
+          <li class="pill">Rare genetic disorders</li>
+          <li class="pill">Multi-omics integration</li>
+          <li class="pill">Clinical biomarkers</li>
+          <li class="pill">Precision medicine</li>
+          <li class="pill">Immune–brain–gut microbiome triad</li>
+        </ul>
+      </section>
+
+      <section class="section reveal" id="awards">
+        <h2 class="section__title">Awards and prizes</h2>
+        <div class="grid grid--2">
+          <article class="card card--hover award">
+            <span class="award__year">2024</span>
+            <div><h3>Student Government Association Conference Award</h3><p>Georgia Institute of Technology</p></div>
+          </article>
+          <article class="card card--hover award">
+            <span class="award__year">2023</span>
+            <div><h3>Mark Borodovsky Prize for Excellence in Bioinformatics</h3><p>Georgia Institute of Technology</p></div>
+          </article>
+          <article class="card card--hover award">
+            <span class="award__year">2021</span>
+            <div><h3>US National Science Foundation Conference Award</h3><p>26th Annual Meeting of the RNA Society</p></div>
+          </article>
+          <article class="card card--hover award">
+            <span class="award__year">2019</span>
+            <div><h3>Performance Excellence Award</h3><p>University of Texas MD Anderson Cancer Center</p></div>
+          </article>
+          <article class="card card--hover award">
+            <span class="award__year">2014–15</span>
+            <div><h3>Jones NAS Biological Sciences Scholarship</h3><p>University of Houston – Clear Lake</p></div>
+          </article>
+          <article class="card card--hover award">
+            <span class="award__year">2010</span>
+            <div><h3>Third Prize, National Technical Paper Presentation</h3><p>IEEE committee, India</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="journey">
+        <h2 class="section__title">Journey</h2>
+        <p class="section__intro">From biotechnology engineering in Mumbai to computational biology in the United States.</p>
+        <div class="timeline">
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">Computational Biologist <span class="tl__tag">Current</span></h3>
+            <span class="tl__date">2025 &ndash; Present</span>
+          </div>
+          <p class="tl__org">University of New Mexico Health Sciences <span class="tl__place">&middot; Albuquerque, NM</span></p>
+          <ul>
+            <li>Applying multi-omics and statistical methods to health sciences research.</li>
+            <li><!-- TODO: replace with your actual UNM title, team, and 2–4 bullets describing the work. --></li>
+          </ul>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">Research and Teaching Assistant</h3>
+            <span class="tl__date">2019 &ndash; 2025</span>
+          </div>
+          <p class="tl__org">Georgia Institute of Technology <span class="tl__place">&middot; Atlanta, GA</span></p>
+          <ul>
+            <li>Led bioinformatics research projects, developing multi-omics association frameworks that link DNA features to functional outcomes.</li>
+            <li>Applied strand-specific sequencing analytics to dissect the effect of disease-associated mutations on replication.</li>
+            <li>Leveraged public databases for pan-cancer analyses across 35+ cancer types, connecting ribonucleotide biology to clinical insights in proliferation and cell cycle.</li>
+            <li>Secured &gt; $1 million in grants by providing the hypotheses behind preliminary analyses.</li>
+          </ul>
+          <div class="tl__extra" id="tl-gt-ra">
+            <ul>
+              <li>Developed novel software packages and maintained the lab's analysis pipelines.</li>
+              <li>Presented findings at international conferences and mentored 4+ students.</li>
+              <li>Lectured, built course modules, and graded classes of 20&ndash;250 students.</li>
+              <li>Gave hands-on training to 15+ students in Linux-based cloud computing, Python, and R.</li>
+            </ul>
+          </div>
+          <button class="tl__more" data-expand="tl-gt-ra" data-label="Show more" aria-expanded="false">
+            <span class="tl__more-label">Show more</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg>
+          </button>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">Ph.D. in Bioinformatics <span class="tl__tag">Degree</span></h3>
+            <span class="tl__date">2019 &ndash; 2025</span>
+          </div>
+          <p class="tl__org">Georgia Institute of Technology <span class="tl__place">&middot; Atlanta, GA</span></p>
+          <ul>
+            <li>Discovery and validation of ribonucleotide incorporation in the human genome as a novel epigenomic layer.</li>
+            <li>Designed modular frameworks for web-based biomedical applications and data modelling for feature selection.</li>
+            <li>Deployed ML-driven survival analysis on longitudinal clinical-genomic datasets.</li>
+            <li>Standardised pipelines for real-time outbreak analytics using public health datasets (CDC).</li>
+          </ul>
+          <div class="tl__extra" id="tl-gt-phd">
+            <ul>
+              <li>Invited and co-hosted cancer researchers to address the Georgia Tech community.</li>
+              <li>Founding student committee member, Molecular BioMedical (MBM) Cancer Talk Series.</li>
+              <li>Participated in the Georgia Tech Bioinformatics Ph.D. orientation T-shirt design panel.</li>
+              <li>Served as secretary and president of student organisations.</li>
+            </ul>
+          </div>
+          <button class="tl__more" data-expand="tl-gt-phd" data-label="Show more" aria-expanded="false">
+            <span class="tl__more-label">Show more</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg>
+          </button>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">Research Assistant II</h3>
+            <span class="tl__date">2015 &ndash; 2019</span>
+          </div>
+          <p class="tl__org">MD Anderson Cancer Center <span class="tl__place">&middot; Houston, TX</span></p>
+          <ul>
+            <li>Translational cancer research: optimised and validated immune and multiplex assays across multiple cancers, including work supporting FDA approval.</li>
+            <li>Set up a CLIA-certified patient blood sample processing lab for clinical trials.</li>
+            <li>Produced DNA vaccines and proprietary antigens and antibodies.</li>
+            <li>Handled data and batch normalisation for protein levels across 100+ patient samples.</li>
+            <li>Integrated multi-omics data (genomic, transcriptomic, mass spectrometry) to advance biomarker discovery.</li>
+          </ul>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">Lab Intern</h3>
+            <span class="tl__date">Jan &ndash; May 2015</span>
+          </div>
+          <p class="tl__org">Georgia Institute of Technology <span class="tl__place">&middot; Atlanta, GA</span></p>
+          <ul>
+            <li>Optimised SOPs for antigen production in mammalian cells.</li>
+            <li>Monoclonal antibody screening, purification, and QC for ovarian cancer ELISA kits.</li>
+            <li>Supported FDA audits.</li>
+          </ul>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">Teaching Assistant</h3>
+            <span class="tl__date">Sep &ndash; Dec 2014</span>
+          </div>
+          <p class="tl__org">University of Houston – Clear Lake <span class="tl__place">&middot; Houston, TX</span></p>
+          <ul>
+            <li>Liaison between students and faculty for applied biotechnology projects and assignments.</li>
+            <li>Trained other teaching assistants for both basic and advanced molecular biology labs.</li>
+          </ul>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">M.S. Molecular Biotechnology <span class="tl__tag">Degree</span></h3>
+            <span class="tl__date">2013 &ndash; 2015</span>
+          </div>
+          <p class="tl__org">University of Houston – Clear Lake <span class="tl__place">&middot; Houston, TX</span></p>
+          <ul>
+            <li>Jones NAS Scholarship for merit, 2013&ndash;2014 academic year.</li>
+            <li>Independent research: screened a human asthma lung cDNA library with a yeast two-hybrid system to detect protein interactions with iNOS.</li>
+            <li>Capstone: cloning techniques for high-yield production of monoclonal antibodies in mammalian cells.</li>
+            <li>Activities and societies: SLICE, Welcome Back Bash, Strictly Speaking.</li>
+          </ul>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">Research and Teaching Assistant</h3>
+            <span class="tl__date">2012 &ndash; 2013</span>
+          </div>
+          <p class="tl__org">Usha Biotech <span class="tl__place">&middot; Mumbai, India</span></p>
+          <ul>
+            <li>Trained students in mammalian cell culture and molecular cloning.</li>
+            <li><!-- TODO: the original site repeated the MD Anderson bullets here by mistake; add 2–3 real bullets for this role. --></li>
+          </ul>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">Trainee</h3>
+            <span class="tl__date">Sep 2011 &ndash; Apr 2012</span>
+          </div>
+          <p class="tl__org">S. L. Raheja Hospital <span class="tl__place">&middot; Mumbai, India</span></p>
+          <ul>
+            <li>Researched clinical data on stem cell therapy for diabetic foot complications.</li>
+            <li>Conducted patient eligibility assessments.</li>
+            <li>Developed statistical standards for the study.</li>
+          </ul>
+        </article>
+        <article class="tl">
+          <div class="tl__head">
+            <h3 class="tl__role">B.E. Biotechnology <span class="tl__tag">Degree</span></h3>
+            <span class="tl__date">2008 &ndash; 2012</span>
+          </div>
+          <p class="tl__org">University of Mumbai – TSEC <span class="tl__place">&middot; Mumbai, India</span></p>
+          <ul>
+            <li>Third Prize, IEEE Technical Paper Presentation.</li>
+            <li>Coursework in Mendelian genetics, molecular cloning, immunology, biochemistry, and protein engineering.</li>
+            <li>Hands-on DNA and protein isolation, titration, large-scale fermentation, and chromatography.</li>
+            <li>Organising committee member and speaker for multiple workshops and events.</li>
+          </ul>
+        </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="publications">
+        <h2 class="section__title">Selected publications</h2>
+        <p class="section__intro">A selection from 16+ peer-reviewed papers. Filter by theme, or read the complete list.</p>
+        <div class="filters" role="group" aria-label="Filter publications">
+          <button class="filter" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter="firstauthor" aria-pressed="false">First author</button>
+          <button class="filter" data-filter="epigenetics" aria-pressed="false">Epigenomics</button>
+          <button class="filter" data-filter="cancer" aria-pressed="false">Cancer</button>
+          <button class="filter" data-filter="software" aria-pressed="false">Software</button>
+        </div>
+        <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
+          <article class="pub" data-tags="firstauthor epigenetics">
+            <div class="pub__year">2025</div>
+            <div>
+              <h3 class="pub__title">Human nuclear ribomes reveal DNA-embedded ribonucleotides as a novel epigenetic layer</h3>
+              <p class="pub__authors"><b>Kundnani, D. L.</b>, Yang, T., Channagiri, T., Xu, P., Lee, Y., &hellip; Jonoska, N. &amp; Storici, F. &middot; <span class="pub__venue">In preparation</span></p>
+              <div class="pub__links"><span class="tag tag--muted">In preparation</span></div>
             </div>
-            <div class="mb-3">
-              <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required="">
+          </article>
+          <article class="pub" data-tags="cancer">
+            <div class="pub__year">2025</div>
+            <div>
+              <h3 class="pub__title"><a href="https://www.nature.com/articles/s41598-025-91746-x" target="_blank" rel="noopener">Characterization of a new mutation of the mitochondrial ND6 gene in hepatocellular carcinoma and its effects on Complex I</a></h3>
+              <p class="pub__authors">Bazzani, V., <b>Kundnani, D. L.</b>, Redin, M. E., Agostini, F., Corso, A., &hellip; Storici, F. &amp; Vascotto, C. &middot; <span class="pub__venue">Scientific Reports</span></p>
+              <div class="pub__links"><a class="tag" href="https://www.nature.com/articles/s41598-025-91746-x.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>PDF</a><a class="tag" href="https://github.com/DKundnani/LTB_ND6_humito" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a></div>
             </div>
-            <div class="mb-3">
-              <textarea name="message" class="form-control" id="inputMessage" rows="3" placeholder="Message" required=""></textarea>
+          </article>
+          <article class="pub" data-tags="firstauthor epigenetics">
+            <div class="pub__year">2024</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.1016/j.isci.2024.110012" target="_blank" rel="noopener">Distinct features of ribonucleotides within genomic DNA in Aicardi-Gouti&egrave;res syndrome ortholog mutants of <em>Saccharomyces cerevisiae</em></a></h3>
+              <p class="pub__authors"><b>Kundnani, D. L.</b>, Yang, T., Gombolay, A., Mukherjee, K., Newnam, G., Meers, C., &hellip; &amp; Storici, F. &middot; <span class="pub__venue">iScience</span></p>
+              <div class="pub__links"><a class="tag" href="https://www.sciencedirect.com/science/article/pii/S2589004224012379/pdfft?md5=5b3eb2e0917f6eff9277ba38c5b97078&amp;pid=1-s2.0-S2589004224012379-main.pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>PDF</a><a class="tag" href="https://github.com/DKundnani?tab=repositories&amp;q=RPA+OR+hotspots" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a></div>
             </div>
-            <button type="submit" class="btn btn-primary px-3 py-2 w-100">Send</button>
-          </form> <br> <br>
-            <div class="d-flex justify-content-center align-items-center mb-3">
-              <div class="text-center mx-3">
-                <i class="fas fa-envelope fa-lg mb-2" aria-hidden="true"></i><br>
-                <span id="person-email"><a href="mailto:deepali.kundnani@gatech.edu">deepali.kundnani@gatech.edu</a></span>
+          </article>
+          <article class="pub" data-tags="firstauthor software">
+            <div class="pub__year">2022</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.1016/J.SIMPA.2021.100144" target="_blank" rel="noopener">FeatureCorr: an R package to study feature correlations aided with data transformation for sequencing and microarray data</a></h3>
+              <p class="pub__authors"><b>Kundnani, D.</b> &amp; Storici, F. &middot; <span class="pub__venue">Software Impacts</span></p>
+              <div class="pub__links"><a class="tag" href="https://www.sciencedirect.com/science/article/pii/S2665963821000592/pdfft?isDTMRedir=true&amp;download=true" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>PDF</a><a class="tag" href="https://github.com/DKundnani/FeatureCorr/blob/main/README.md" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a></div>
+            </div>
+          </article>
+          <article class="pub" data-tags="cancer">
+            <div class="pub__year">2020</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.3389/fonc.2020.553342" target="_blank" rel="noopener">NFATc acts as a non-canonical phenotypic stability factor for a hybrid epithelial/mesenchymal phenotype</a></h3>
+              <p class="pub__authors">Subbalakshmi, A. R., <b>Kundnani, D.</b>, Biswas, K., Ghosh, A., Hanash, S. M., Tripathi, S. C. &amp; Jolly, M. K. &middot; <span class="pub__venue">Frontiers in Oncology</span></p>
+              <div class="pub__links"><a class="tag" href="https://www.frontiersin.org/articles/10.3389/fonc.2020.553342/pdf" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>PDF</a><a class="tag" href="http://loop-impact.frontiersin.org/impact/article/553342#totalviews/views" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>Impact</a></div>
+            </div>
+          </article>
+          <article class="pub" data-tags="cancer">
+            <div class="pub__year">2018</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.1001/jamaoncol.2018.2078" target="_blank" rel="noopener">Assessment of lung cancer risk on the basis of a biomarker panel of circulating proteins</a></h3>
+              <p class="pub__authors">Guida, F., Sun, N., Bantis, L. E., Muller, D. C., Li, P., Taguchi, A., &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">JAMA Oncology</span></p>
+              <div class="pub__links"><a class="tag" href="https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>News</a></div>
+            </div>
+          </article>
+        <p style="margin-top:1.4rem">
+          <a class="btn btn--primary" href="pdf/DK-Publications-2025.pdf" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> All publications (PDF)
+          </a>
+          <a class="btn btn--ghost" style="border-color:var(--border);color:var(--text-soft)"
+             href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+            <svg class="icon icon--solid" aria-hidden="true"><use href="#i-scholar"/></svg> Google Scholar
+          </a>
+        </p>
+      </section>
+
+      <section class="section reveal" id="projects">
+        <h2 class="section__title">Featured projects</h2>
+        <p class="section__intro">A few of the questions I have chased. The full set, with figures, lives on the portfolio page.</p>
+        <div class="grid grid--3">
+          <article class="project">
+            <div class="project__media">
+              <img src="images/web/human-ribome-thumb.jpg" loading="lazy" width="900" height="506" alt="Ribonucleotide enrichment in the human genome">
+            </div>
+            <div class="project__body">
+              <h3>Ribonucleotide enrichment in the human genome</h3>
+              <p>rNMPs are enriched near CpG islands and track with gene expression and methylation around transcription start sites.</p>
+              <div class="project__links">
+                <a class="tag" href="portfolio.html#human-ribome">Read more <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a>
               </div>
-              <div class="text-center mx-3">
-                <i class="fas fa-phone fa-lg mb-2" aria-hidden="true"></i><br>
-                <span id="person-telephone"><a href="tel:%28+1%29%20832-787-2815">(+1) 832-787-2815</a></span>
-              </div>
-              <div class="text-center mx-3">
-                <i class="fas fa-map-marker fa-lg mb-2" aria-hidden="true"></i><br>
-                <span id="person-address">855 W Peachtree Street NE, Atlanta, GA 30308</span>
+            </div>
+          </article>
+          <article class="project">
+            <div class="project__media">
+              <img src="images/web/ags-thumb.jpg" loading="lazy" width="900" height="506" alt="Ribonucleotide features in Aicardi-Goutieres syndrome mutants">
+            </div>
+            <div class="project__body">
+              <h3>Ribonucleotide features in Aicardi-Gouti&egrave;res syndrome mutants</h3>
+              <p>Two AGS orthologous mutants engineered in yeast reveal how enzyme structure shifts where ribonucleotides land.</p>
+              <div class="project__links">
+                <a class="tag" href="portfolio.html#ags">Read more <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a>
               </div>
             </div>
-            <div class="ratio ratio-16x9 mb-3">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.334355567456!2d-84.38909912383151!3d33.777862932167864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88f5046632c255a1%3A0x612ed778129d4a7f!2s855%20W%20Peachtree%20St%20NE%2C%20Atlanta%2C%20GA%2030308!5e0!3m2!1sen!2sus!4v1747926944044!5m2!1sen!2sus" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </article>
+          <article class="project">
+            <div class="project__media">
+              <img src="images/web/exp-corr-thumb.jpg" loading="lazy" width="900" height="506" alt="RNASEH2A associations across cancer datasets">
             </div>
-        </section>
-      </div>
-      </div>
+            <div class="project__body">
+              <h3>RNASEH2A associations across cancer datasets</h3>
+              <p>Expression correlation of RNASEH2A with proliferation and cell-cycle markers across large cancer cell line and tissue datasets.</p>
+              <div class="project__links">
+                <a class="tag" href="portfolio.html#exp-corr">Read more <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p style="margin-top:1.5rem">
+          <a class="btn btn--primary" href="portfolio.html">
+            <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg> View the full portfolio
+          </a>
+        </p>
+      </section>
+
+      <section class="section reveal" id="blog">
+        <h2 class="section__title">Blog</h2>
+        <p class="section__intro">Notes on genomics, the day-to-day of computational research, and the occasional detour.</p>
+        <div class="grid grid--3">
+          <a class="post post--draft" href="blog/ribonucleotides-in-your-dna.html">
+            <div class="post__meta">
+              <span class="post__topic">Explainer</span>
+              <span>&middot;</span><span>6 min read</span>
+              <span class="badge-draft">Draft</span>
+            </div>
+            <h3>The RNA hiding inside your DNA</h3>
+            <p>Your genome is not made purely of DNA. Every cell carries millions of stray RNA letters embedded in its double helix &mdash; and where they land turns out to matter.</p>
+            <span class="post__more">Read post <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></span>
+          </a>
+          <a class="post post--draft" href="blog/bench-to-terminal.html">
+            <div class="post__meta">
+              <span class="post__topic">Career</span>
+              <span>&middot;</span><span>5 min read</span>
+              <span class="badge-draft">Draft</span>
+            </div>
+            <h3>Bench to terminal: what pipetting taught me about data</h3>
+            <p>Four years of wet-lab work before I wrote a single analysis pipeline. Here is what that background changed about how I read a dataset.</p>
+            <span class="post__more">Read post <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></span>
+          </a>
+          <a class="post post--draft" href="blog/building-featurecorr.html">
+            <div class="post__meta">
+              <span class="post__topic">Software</span>
+              <span>&middot;</span><span>5 min read</span>
+              <span class="badge-draft">Draft</span>
+            </div>
+            <h3>Building FeatureCorr: lessons from shipping a small R package</h3>
+            <p>A correlation tool I wrote for my own analyses ended up as a published package. What I would do differently the second time.</p>
+            <span class="post__more">Read post <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg></span>
+          </a>
+        </div>
+        <p style="margin-top:1.5rem">
+          <a class="btn btn--primary" href="blog.html">
+            <svg class="icon" aria-hidden="true"><use href="#i-book"/></svg> All posts
+          </a>
+        </p>
+      </section>
+
+      <section class="section reveal" id="skills">
+        <h2 class="section__title">Skills</h2>
+        <div class="grid grid--2">
+          <div class="card skillgroup">
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Languages &amp; tools</h3>
+            <ul class="pills"><li class="pill">Python</li><li class="pill">R</li><li class="pill">C++</li><li class="pill">Java</li><li class="pill">Bash</li><li class="pill">Git</li><li class="pill">Snakemake</li></ul>
+          </div>
+          <div class="card skillgroup">
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg>Sequencing analysis</h3>
+            <ul class="pills"><li class="pill">Next-generation sequencing</li><li class="pill">Long-read sequencing</li><li class="pill">Strand-specific analytics</li><li class="pill">Variant calling</li><li class="pill">Genome assembly</li></ul>
+          </div>
+          <div class="card skillgroup">
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>Statistics &amp; ML</h3>
+            <ul class="pills"><li class="pill">Statistical inference</li><li class="pill">Machine learning</li><li class="pill">Deep learning</li><li class="pill">Survival analysis</li><li class="pill">Feature selection</li><li class="pill">Batch normalisation</li></ul>
+          </div>
+          <div class="card skillgroup">
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-layers"/></svg>Data &amp; infrastructure</h3>
+            <ul class="pills"><li class="pill">Multi-omics integration</li><li class="pill">High-performance computing</li><li class="pill">Cloud computing (AWS)</li><li class="pill">Workflow management</li><li class="pill">Data visualisation</li></ul>
+          </div>
+          <div class="card skillgroup">
+            <h3><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>Laboratory</h3>
+            <ul class="pills"><li class="pill">Multiplex immunoassays</li><li class="pill">Molecular cloning</li><li class="pill">Mammalian cell culture</li><li class="pill">ELISA development</li><li class="pill">CLIA/FDA-compliant SOPs</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="contact">
+        <h2 class="section__title">Contact</h2>
+        <p class="section__intro">Questions, collaboration ideas, or just to say hello &mdash; all welcome.</p>
+        <div class="contact">
+          <form name="contact" method="POST" action="https://formspree.io/f/xjvdwbqk">
+            <div class="field">
+              <label for="inputName">Name</label>
+              <input type="text" name="name" id="inputName" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="inputEmail">Email</label>
+              <input type="email" name="email" id="inputEmail" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="inputMessage">Message</label>
+              <textarea name="message" id="inputMessage" rows="5" required></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit" style="width:100%">
+              <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg> Send message
+            </button>
+          </form>
+
+          <div class="card">
+            <ul class="factlist">
+              <li>
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+                <!-- TODO: swap in your UNM address once you confirm it. -->
+                <div><strong>Email</strong><span><a href="mailto:deepali.kundnani@gatech.edu">deepali.kundnani@gatech.edu</a></span></div>
+              </li>
+              <li>
+                <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
+                <div><strong>Based in</strong><span>Albuquerque, New Mexico</span></div>
+              </li>
+              <li>
+                <svg class="icon icon--solid" aria-hidden="true"><use href="#i-scholar"/></svg>
+                <div><strong>Publications</strong><span><a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar profile</a></span></div>
+              </li>
+              <li>
+                <svg class="icon icon--solid" aria-hidden="true"><use href="#i-github"/></svg>
+                <div><strong>Code</strong><span><a href="https://github.com/DKundnani" target="_blank" rel="noopener">github.com/DKundnani</a></span></div>
+              </li>
+            </ul>
+            <p style="margin:1.2rem 0 0;font-size:.87rem;color:var(--text-soft)">
+              Prefer a document? <a href="pdf/Deepali_Kundnani_CV.pdf" download>Download my CV</a>.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="text-white text-center py-3" style="background-color: #061834;">
+    <footer class="footer">
       <div class="container">
-        &copy; 2025 Deepali Kundnani. All rights reserved.
+        <div class="socials"><a href="https://linkedin.com/in/deepalik" aria-label="LinkedIn" target="_blank" rel="noopener"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+        <a href="https://github.com/DKundnani" aria-label="GitHub" target="_blank" rel="noopener"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-github"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&amp;hl=en&amp;oi=ao" aria-label="Google Scholar" target="_blank" rel="noopener"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-scholar"/></svg></a>
+        <a href="https://x.com/DeepaliKundnani" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-x"/></svg></a></div>
+        <p class="footer__note">
+          &copy; <span data-year></span> Deepali L. Kundnani &middot;
+          <a href="index.html">Home</a> &middot;
+          <a href="portfolio.html">Portfolio</a> &middot;
+          <a href="blog.html">Blog</a> &middot;
+          <a href="pdf/Deepali_Kundnani_CV.pdf">CV</a>
+        </p>
       </div>
     </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+
+    <button class="to-top" id="to-top" aria-label="Back to top">
+      <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
+    </button>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure">
+      <button class="lightbox__close" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      <img id="lightbox-img" src="" alt="">
+      <p class="lightbox__cap" id="lightbox-cap"></p>
+    </div>
+
+    <script src="js/site.js"></script>
+    <script>
+      /* Hero keyword rotator — decorative, so it is skipped for reduced-motion users. */
+      (function () {
+        var el = document.getElementById("rotator");
+        if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var words = ["multi-omics integration", "ribonucleotide epigenomics", "clinical biomarkers",
+                     "long-read sequencing", "machine learning for biology", "rare genetic disorders"];
+        var i = 0;
+        setInterval(function () {
+          i = (i + 1) % words.length;
+          el.classList.add("is-swapping");
+          setTimeout(function () { el.textContent = words[i]; }, 190);
+          setTimeout(function () { el.classList.remove("is-swapping"); }, 430);
+        }, 3200);
+      })();
+    </script>
+  </body>
+</html>

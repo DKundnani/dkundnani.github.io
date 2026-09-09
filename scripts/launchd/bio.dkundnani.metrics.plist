@@ -8,7 +8,7 @@
     <key>ProgramArguments</key>
     <array>
         <string>/bin/bash</string>
-        <string>/Users/deepalikundnani/Documents/git/dkundnani.github.io/scripts/refresh-metrics-local.sh</string>
+        <string>/Users/deepalikundnani/git/dkundnani.github.io/scripts/refresh-metrics-local.sh</string>
     </array>
 
     <!-- 1st of every month, 10:00 local time. If the Mac is asleep or off,
@@ -27,7 +27,7 @@
     </dict>
 
     <key>WorkingDirectory</key>
-    <string>/Users/deepalikundnani/Documents/git/dkundnani.github.io</string>
+    <string>/Users/deepalikundnani/git/dkundnani.github.io</string>
 
     <key>StandardOutPath</key>
     <string>/Users/deepalikundnani/Library/Logs/dkundnani-metrics.log</string>

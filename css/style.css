@@ -934,3 +934,13 @@ html[data-theme="dark"] img.orglogo--bleed { background: none; }
   color: var(--text-faint); font-size: .74rem; font-weight: 700;
   letter-spacing: .05em; text-transform: uppercase;
 }
+
+/* Highlight cards that link somewhere */
+a.hl { text-decoration: none; color: inherit; }
+a.hl:hover h3 { color: var(--accent); }
+.hl__go {
+  display: inline-flex; align-items: center; gap: .35rem; margin-top: .15rem;
+  font-size: .8rem; font-weight: 600; color: var(--accent);
+}
+.hl__go .icon { transition: transform .2s var(--ease); }
+a.hl:hover .hl__go .icon { transform: translateX(3px); }

@@ -219,7 +219,7 @@ html:not([data-theme="dark"]) .theme-icon--sun { display: none; }
 .hero__inner { position: relative; z-index: 1; }
 
 .hero__photo {
-  width: 168px; height: 168px; border-radius: 50%; object-fit: cover;
+  width: 235px; height: 235px; border-radius: 50%; object-fit: cover;
   margin: 0 auto 1.4rem; display: block;
   box-shadow: 0 0 0 5px var(--surface), 0 0 0 7px var(--accent), 0 16px 40px rgba(15,41,66,.18);
 }
@@ -902,16 +902,22 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
    Organisation marks: a supplied logo, or a monogram badge as fallback
    ========================================================================== */
 .orglogo {
-  display: inline-grid; place-items: center; flex: none;
-  width: 34px; height: 34px; border-radius: 9px; padding: 0 2px;
-  background: var(--brand, var(--navy)); color: #fff;
-  font-size: .58rem; font-weight: 800; letter-spacing: -.01em;
-  line-height: 1; text-align: center; overflow: hidden;
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  height: 34px; padding: 0 .55rem; border-radius: 9px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--brand, var(--navy));
+  font-size: .66rem; font-weight: 800; letter-spacing: -.01em;
+  line-height: 1; text-align: center; white-space: nowrap;
 }
-.orglogo--img {
-  background: #fff; object-fit: contain; padding: 3px;
-  border: 1px solid var(--border);
+/* A supplied logo keeps its own proportions inside the same tile height. */
+img.orglogo--img {
+  width: auto; height: 34px; padding: 4px 7px;
+  object-fit: contain; box-sizing: border-box;
 }
+html[data-theme="dark"] img.orglogo--img { background: #f6f8fc; }
+/* Logos that ship their own background sit flush, clipped to the tile. */
+img.orglogo--bleed { padding: 0; background: none; overflow: hidden; }
+html[data-theme="dark"] img.orglogo--bleed { background: none; }
 
 /* Hero strip, directly under the metrics */
 .orgstrip { max-width: 720px; margin: 0 auto 2rem; }
@@ -921,14 +927,15 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
 }
 .orgstrip li { display: flex; }
 .orgstrip .orglogo {
-  width: 42px; height: 42px; border-radius: 11px; font-size: .58rem;
+  height: 40px; border-radius: 11px; font-size: .72rem; padding: 0 .7rem;
   box-shadow: var(--shadow); cursor: default;
   transition: transform .2s var(--ease), box-shadow .2s var(--ease);
 }
+.orgstrip img.orglogo--img { height: 40px; padding: 5px 9px; }
 .orgstrip .orglogo:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
 /* Timeline cards */
 .tl__head .orglogo { align-self: center; margin-right: .1rem; }
 @media (max-width: 620px) {
-  .orgstrip .orglogo { width: 36px; height: 36px; border-radius: 9px; font-size: .52rem; }
+  .orgstrip .orglogo, .orgstrip img.orglogo--img { height: 34px; border-radius: 9px; font-size: .66rem; }
 }

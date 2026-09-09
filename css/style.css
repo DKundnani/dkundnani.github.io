@@ -793,14 +793,6 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
 .post:hover .post__more .icon { transform: translateX(3px); }
 .post__more .icon { transition: transform .2s var(--ease); }
 
-.post--draft { border-style: dashed; }
-.badge-draft {
-  display: inline-flex; align-items: center; gap: .3rem;
-  padding: .15rem .55rem; border-radius: 999px;
-  background: var(--amber-soft); color: var(--amber);
-  font-size: .66rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
-}
-
 /* article page */
 .article { max-width: 70ch; margin-inline: auto; }
 .article__head { margin-bottom: 2rem; }

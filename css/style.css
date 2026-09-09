@@ -897,3 +897,50 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
 .mini--wide li { grid-template-columns: 82px 1fr; margin-bottom: 1rem; }
 .mini--wide .mini__year { font-size: .84rem; }
 .mini--wide b { font-size: .95rem; }
+
+/* ==========================================================================
+   Organisation marks: a supplied logo, or a monogram badge as fallback
+   ========================================================================== */
+.orglogo {
+  display: inline-grid; place-items: center; flex: none;
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--brand, var(--navy)); color: #fff;
+  font-size: .6rem; font-weight: 800; letter-spacing: .02em;
+  line-height: 1; text-align: center;
+}
+.orglogo--img {
+  background: #fff; object-fit: contain; padding: 3px;
+  border: 1px solid var(--border);
+}
+
+/* Hero strip, directly under the metrics */
+.orgstrip { max-width: 720px; margin: 0 auto 2rem; }
+.orgstrip__label {
+  display: block; margin-bottom: .8rem;
+  font-size: .68rem; font-weight: 700; letter-spacing: .11em;
+  text-transform: uppercase; color: var(--text-faint);
+}
+.orgstrip ul {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: .5rem .6rem; margin: 0; padding: 0; list-style: none;
+}
+.orgstrip li {
+  display: flex; align-items: center; gap: .5rem;
+  padding: .32rem .7rem .32rem .34rem; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  font-size: .78rem; font-weight: 600; color: var(--text-soft);
+  transition: transform .2s var(--ease), border-color .2s var(--ease);
+}
+.orgstrip li:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+.orgstrip .orglogo { width: 28px; height: 28px; border-radius: 7px; font-size: .54rem; }
+
+/* Timeline cards */
+.tl__head .orglogo { align-self: center; margin-right: .1rem; }
+@media (max-width: 620px) {
+  .orgstrip li span { display: none; }
+  .orgstrip li { padding: .3rem; }
+}

@@ -1,0 +1,78 @@
+# Refreshes the publication metrics shown on the home page.
+#
+# Google Scholar has no public API and blocks automated requests, so this
+# pulls from OpenAlex instead — free, open, no API key. Runs weekly and
+# only commits when a number actually changed.
+name: Update publication metrics
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"      # Mondays, 06:00 UTC
+  workflow_dispatch:          # ...or run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch metrics from OpenAlex
+        env:
+          AUTHOR_ID: A5013149326
+          CONTACT: dkundnani@salud.unm.edu
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, datetime
+
+          author = os.environ["AUTHOR_ID"]
+          contact = os.environ["CONTACT"]
+
+          def get(url):
+              req = urllib.request.Request(url, headers={"User-Agent": "dkundnani.bio (%s)" % contact})
+              with urllib.request.urlopen(req, timeout=45) as r:
+                  return json.load(r)
+
+          base = "https://api.openalex.org"
+          a = get("%s/authors/%s?mailto=%s" % (base, author, contact))
+          arts = get("%s/works?filter=author.id:%s,type:article&per-page=1&mailto=%s" % (base, author, contact))
+
+          new = {
+              "publications": arts["meta"]["count"],
+              "citations": a["cited_by_count"],
+              "hIndex": a["summary_stats"]["h_index"],
+              "updated": datetime.date.today().isoformat(),
+              "source": "OpenAlex author %s" % author,
+          }
+
+          # Refuse obviously broken responses rather than publishing zeros.
+          if new["publications"] < 1 or new["citations"] < 1:
+              raise SystemExit("refusing to write implausible metrics: %r" % new)
+
+          try:
+              old = json.load(open("data/metrics.json"))
+          except Exception:
+              old = {}
+
+          if all(old.get(k) == new[k] for k in ("publications", "citations", "hIndex")):
+              print("no change:", new)
+          else:
+              with open("data/metrics.json", "w") as f:
+                  json.dump(new, f, indent=2)
+                  f.write("\n")
+              print("updated:", old, "->", new)
+          PY
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain data/metrics.json)" ]; then
+            git config user.name  "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/metrics.json
+            git commit -m "Update publication metrics from OpenAlex"
+            git push
+          else
+            echo "nothing to commit"
+          fi

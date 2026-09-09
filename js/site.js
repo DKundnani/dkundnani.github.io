@@ -108,6 +108,7 @@
   var counters = $$("[data-count]");
   if (counters.length) {
     var run = function (el) {
+      el.dataset.done = "1";
       var target = parseFloat(el.getAttribute("data-count"));
       var suffix = el.getAttribute("data-suffix") || "";
       var prefix = el.getAttribute("data-prefix") || "";
@@ -133,6 +134,26 @@
         });
       }, { threshold: .5 });
       counters.forEach(function (el) { co.observe(el); });
+    }
+
+    /* Live publication metrics, refreshed weekly by a GitHub Action that
+       reads OpenAlex. Falls back silently to the numbers in the HTML. */
+    var metricEls = $$("[data-metric]");
+    if (metricEls.length && window.fetch) {
+      fetch("data/metrics.json", { cache: "no-cache" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (m) {
+          if (!m) return;
+          metricEls.forEach(function (el) {
+            var v = m[el.getAttribute("data-metric")];
+            if (typeof v !== "number" || v < 1) return;
+            el.setAttribute("data-count", v);
+            if (el.dataset.done) run(el);   // already animated — redo with the real figure
+          });
+          var stamp = $("#metrics-updated");
+          if (stamp && m.updated) stamp.textContent = m.updated;
+        })
+        .catch(function () { /* offline or blocked: keep the static numbers */ });
     }
   }
 

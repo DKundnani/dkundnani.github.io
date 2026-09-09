@@ -165,22 +165,27 @@
 
         <div class="stats">
           <div class="stat">
-            <div class="stat__num" data-count="19" data-suffix="+">0</div>
+            <div class="stat__num" data-count="18" data-metric="publications">0</div>
             <div class="stat__label">Publications</div>
           </div>
           <div class="stat">
-            <div class="stat__num" data-count="800" data-suffix="+">0</div>
+            <div class="stat__num" data-count="826" data-metric="citations">0</div>
             <div class="stat__label">Citations</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="9" data-metric="hIndex">0</div>
+            <div class="stat__label">h-index</div>
           </div>
           <div class="stat">
             <div class="stat__num" data-count="1" data-prefix="$" data-suffix="M+">0</div>
             <div class="stat__label">Research funding</div>
           </div>
-          <div class="stat">
-            <div class="stat__num" data-count="33" data-suffix="+">0</div>
-            <div class="stat__label">Cancer types analysed</div>
-          </div>
         </div>
+        <p class="stats__note">
+          Publication figures update weekly from
+          <a href="https://openalex.org/A5013149326" target="_blank" rel="noopener">OpenAlex</a>
+          &middot; last checked <span id="metrics-updated">2026-09-09</span>
+        </p>
 
         <div class="hero__actions">
           <a class="btn btn--primary" href="pdf/Deepali_Kundnani_CV.pdf" download>
@@ -273,8 +278,8 @@
           </article>
           <article class="card card--hover hl">
             <div class="hl__icon"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></div>
-            <h3>19+ papers, 800+ citations</h3>
-            <p>Nature Communications, JAMA Oncology, JNCI, NAR, iScience.</p>
+            <h3>Published widely</h3>
+            <p>Cell, Nature Communications, JAMA Oncology, JNCI, Nucleic Acids Research.</p>
           </article>
           <article class="card card--hover hl">
             <div class="hl__icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg></div>
@@ -375,7 +380,10 @@
 
       <section class="section reveal" id="journey">
         <h2 class="section__title">Journey</h2>
-        <p class="section__intro">Education on the left, experience on the right.</p>
+        <p class="section__intro">
+          Education on the left, experience on the right. Roles held during a degree are wrapped
+          together with it.
+        </p>
         <div class="timeline">
           <div class="tl-heads" aria-hidden="true"><span>Education</span><span>Experience</span></div>
         <article class="tl tl--exp">
@@ -412,7 +420,7 @@
           <ul>
             <li>Led and trained teams of 10&ndash;30 SMEs across bioinformatics, computer science, and machine learning.</li>
             <li>Built a cross-domain STEM expert team from scratch across physics, chemistry, maths, biology, and scientific coding.</li>
-            <li>Designed rubrics, failure-mode taxonomies, SOPs, QA systems, and SME calibration workflows for model evaluation.</li>
+            <li>Designed rubrics, failure-mode taxonomies, SOPs, QA systems, and SME calibration workflows.</li>
           </ul>
           <div class="tl__extra" id="tl-turing-lead">
             <ul>
@@ -435,7 +443,25 @@
             <li>Analysed LLM transcripts to identify model breakage patterns in bioinformatics reasoning.</li>
           </ul>
         </article>
-        <article class="tl tl--exp">
+        <div class="tl-block">
+          <span class="tl-block__date">Aug 2019 &ndash; Jul 2025</span>
+          <div class="tl-block__cols">
+            <div>
+        <article class="tl tl--edu tl--bare">
+          <div class="tl__head">
+            <h3 class="tl__role">Ph.D. in Bioinformatics <span class="tl__tag">Degree</span></h3>
+            <span class="tl__date">Aug 2019 &ndash; Jul 2025</span>
+          </div>
+          <p class="tl__org">Georgia Institute of Technology <span class="tl__place">&middot; Atlanta, GA</span></p>
+          <ul>
+            <li>Minor in Machine Learning &middot; GPA 4.00 / 4.00.</li>
+            <li>Thesis: distribution and features of ribomes &mdash; genome-wide ribonucleotide embedment in eukaryotic genomes.</li>
+            <li>Mark Borodovsky Prize for Excellence in Bioinformatics.</li>
+          </ul>
+        </article>
+            </div>
+            <div>
+        <article class="tl tl--exp tl--bare">
           <div class="tl__head">
             <h3 class="tl__role">Expo Consultant &mdash; CellKb</h3>
             <span class="tl__date">2023 &amp; 2024</span>
@@ -445,7 +471,7 @@
             <li>Presented CellKb cell-type markers for annotation and discovery in scRNA-seq datasets.</li>
           </ul>
         </article>
-        <article class="tl tl--exp">
+        <article class="tl tl--exp tl--bare">
           <div class="tl__head">
             <h3 class="tl__role">Graduate Research and Teaching Assistant</h3>
             <span class="tl__date">Aug 2020 &ndash; Jul 2025</span>
@@ -459,10 +485,10 @@
           </ul>
           <div class="tl__extra" id="tl-gt-storici">
             <ul>
-              <li>Conceptualised ribose-seq normalisation and ribonucleotide enriched zones (REZ) in human mitochondrial and nuclear genomes.</li>
+              <li>Conceptualised ribose-seq normalisation and ribonucleotide enriched zones (REZ).</li>
               <li>New data-cleaning protocols for ribose-seq NGS libraries, doubling pattern-recognition accuracy.</li>
               <li>Co-founded the Molecular BioMedical (MBM) Cancer student committee.</li>
-              <li>Mentored 4+ early-career bioinformaticians; trained 5+ club executives and 15+ students in Linux, Python, and R.</li>
+              <li>Mentored 4+ early-career bioinformaticians; trained 15+ students in Linux, Python, and R.</li>
               <li>Presented at 8+ national and international conferences.</li>
             </ul>
           </div>
@@ -471,31 +497,22 @@
             <svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg>
           </button>
         </article>
-        <article class="tl tl--edu">
-          <div class="tl__head">
-            <h3 class="tl__role">Ph.D. in Bioinformatics <span class="tl__tag">Degree</span></h3>
-            <span class="tl__date">Aug 2019 &ndash; Jul 2025</span>
-          </div>
-          <p class="tl__org">Georgia Institute of Technology <span class="tl__place">&middot; Atlanta, GA</span></p>
-          <ul>
-            <li>Minor in Machine Learning &middot; GPA 4.00 / 4.00.</li>
-            <li>Thesis: distribution and features of ribomes &mdash; genome-wide ribonucleotide embedment in eukaryotic genomes.</li>
-            <li>Mark Borodovsky Prize for Excellence in Bioinformatics.</li>
-          </ul>
-        </article>
-        <article class="tl tl--exp">
+        <article class="tl tl--exp tl--bare">
           <div class="tl__head">
             <h3 class="tl__role">Ph.D. Rotational Student &amp; Graduate Teaching Assistant</h3>
             <span class="tl__date">Aug 2019 &ndash; Jul 2020</span>
           </div>
           <p class="tl__org">Georgia Institute of Technology <span class="tl__place">&middot; Atlanta, GA</span></p>
           <ul>
-            <li>Identified differentially methylated regions in 900+ HIV+ patients (Yale VACS) and modelled survival with kNN and SVM.</li>
+            <li>Identified differentially methylated regions in 900+ HIV+ patients (Yale VACS); modelled survival with kNN and SVM.</li>
             <li>Led genome assembly and comparative genomics teams tracing foodborne outbreak sources from CDC data.</li>
             <li>Differential expression and pathway analysis in lung cancer lines across wild-type and multiple p53 mutants.</li>
-            <li>Lectured and graded genetics, biostatistics, and applied health courses for 20&ndash;250 students.</li>
+            <li>Lectured and graded courses for 20&ndash;250 students.</li>
           </ul>
         </article>
+            </div>
+          </div>
+        </div>
         <article class="tl tl--exp">
           <div class="tl__head">
             <h3 class="tl__role">Research Assistant II</h3>
@@ -503,7 +520,7 @@
           </div>
           <p class="tl__org">MD Anderson Cancer Center &mdash; Hanash Lab <span class="tl__place">&middot; Houston, TX</span></p>
           <ul>
-            <li>Optimised and validated immunoassays for lung, pancreatic, colon, and ovarian cancer biomarkers across multiple human cohorts.</li>
+            <li>Optimised and validated immunoassays for lung, pancreatic, colon, and ovarian cancer biomarkers.</li>
             <li>Developed auto-antibody assays targeting alternative-splicing products and exosomes.</li>
             <li>Processed patient blood in a CLIA-certified lab for double-blind early lung and breast cancer trials.</li>
             <li>Batch normalisation and missing-data handling for cohorts of 300&ndash;7,000+ samples.</li>
@@ -511,8 +528,8 @@
           <div class="tl__extra" id="tl-mda">
             <ul>
               <li>Validated novel protein markers in epithelial&ndash;mesenchymal transition (EMT).</li>
-              <li>Managed large-scale DNA vaccine production for murine studies and in-house antigen/antibody production.</li>
-              <li>Integrated genomic and transcriptomic data with in-house mass spectrometry for biomarker discovery.</li>
+              <li>Managed large-scale DNA vaccine production and in-house antigen/antibody production.</li>
+              <li>Integrated genomic and transcriptomic data with in-house mass spectrometry.</li>
             </ul>
           </div>
           <button class="tl__more" data-expand="tl-mda" data-label="Show more" aria-expanded="false">
@@ -520,18 +537,11 @@
             <svg class="icon" aria-hidden="true"><use href="#i-chev-down"/></svg>
           </button>
         </article>
-        <article class="tl tl--exp">
-          <div class="tl__head">
-            <h3 class="tl__role">Laboratory Intern</h3>
-            <span class="tl__date">Jan &ndash; May 2015</span>
-          </div>
-          <p class="tl__org">AnshLabs <span class="tl__place">&middot; Houston, TX</span></p>
-          <ul>
-            <li>Led production of highly sensitive antigens in mammalian cell lines under GMP guidelines; supported ISO and FDA audits.</li>
-            <li>Screened, scaled, purified, and QC&rsquo;d monoclonal antibodies from hybridoma clones for commercial ovarian cancer ELISA kits.</li>
-          </ul>
-        </article>
-        <article class="tl tl--edu">
+        <div class="tl-block">
+          <span class="tl-block__date">Aug 2013 &ndash; May 2015</span>
+          <div class="tl-block__cols">
+            <div>
+        <article class="tl tl--edu tl--bare">
           <div class="tl__head">
             <h3 class="tl__role">M.S. Molecular Biotechnology <span class="tl__tag">Degree</span></h3>
             <span class="tl__date">Aug 2013 &ndash; May 2015</span>
@@ -543,7 +553,20 @@
             <li>Capstone: high-yield monoclonal antibody production in CHO cells.</li>
           </ul>
         </article>
-        <article class="tl tl--exp">
+            </div>
+            <div>
+        <article class="tl tl--exp tl--bare">
+          <div class="tl__head">
+            <h3 class="tl__role">Laboratory Intern</h3>
+            <span class="tl__date">Jan &ndash; May 2015</span>
+          </div>
+          <p class="tl__org">AnshLabs <span class="tl__place">&middot; Houston, TX</span></p>
+          <ul>
+            <li>Led production of highly sensitive antigens in mammalian cell lines under GMP guidelines; supported ISO and FDA audits.</li>
+            <li>Screened, purified, and QC&rsquo;d monoclonal antibodies from hybridoma clones for commercial ovarian cancer ELISA kits.</li>
+          </ul>
+        </article>
+        <article class="tl tl--exp tl--bare">
           <div class="tl__head">
             <h3 class="tl__role">Graduate Teaching Assistant</h3>
             <span class="tl__date">Sep &ndash; Dec 2014</span>
@@ -554,6 +577,9 @@
             <li>Trained teaching assistants to set up basic and advanced molecular biology labs.</li>
           </ul>
         </article>
+            </div>
+          </div>
+        </div>
         <article class="tl tl--exp">
           <div class="tl__head">
             <h3 class="tl__role">Research and Teaching Assistant</h3>
@@ -567,7 +593,24 @@
             <li>Trained students in mammalian cell culture.</li>
           </ul>
         </article>
-        <article class="tl tl--exp">
+        <div class="tl-block">
+          <span class="tl-block__date">Aug 2008 &ndash; May 2012</span>
+          <div class="tl-block__cols">
+            <div>
+        <article class="tl tl--edu tl--bare">
+          <div class="tl__head">
+            <h3 class="tl__role">B.E. Biotechnology <span class="tl__tag">Degree</span></h3>
+            <span class="tl__date">Aug 2008 &ndash; May 2012</span>
+          </div>
+          <p class="tl__org">Thadomal Shahani Engineering College <span class="tl__place">&middot; University of Mumbai, India</span></p>
+          <ul>
+            <li>First Class &middot; Third Prize, IEEE national technical paper presentation.</li>
+            <li>Thesis: stem cell therapy and wound care for diabetic foot complications.</li>
+          </ul>
+        </article>
+            </div>
+            <div>
+        <article class="tl tl--exp tl--bare">
           <div class="tl__head">
             <h3 class="tl__role">Trainee</h3>
             <span class="tl__date">May 2011 &ndash; Apr 2012</span>
@@ -579,23 +622,29 @@
             <li>Developed statistical standards for treatment efficacy from wound-closure measurements.</li>
           </ul>
         </article>
-        <article class="tl tl--edu">
-          <div class="tl__head">
-            <h3 class="tl__role">B.E. Biotechnology <span class="tl__tag">Degree</span></h3>
-            <span class="tl__date">Aug 2008 &ndash; May 2012</span>
+            </div>
           </div>
-          <p class="tl__org">Thadomal Shahani Engineering College <span class="tl__place">&middot; University of Mumbai, India</span></p>
-          <ul>
-            <li>First Class &middot; Third Prize, IEEE national technical paper presentation.</li>
-            <li>Thesis: stem cell therapy and wound care for diabetic foot complications.</li>
-          </ul>
-        </article>
+        </div>
         </div>
       </section>
 
       <section class="section reveal" id="publications">
-        <h2 class="section__title">Selected publications</h2>
-        <p class="section__intro">Fourteen of nineteen. Filter by theme.</p>
+        <h2 class="section__title">Publications</h2>
+        <p class="section__intro">
+          Every peer-reviewed paper, newest first. Metrics and links live on Google Scholar.
+        </p>
+        <p class="pub__actions">
+          <a class="btn btn--primary"
+             href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&amp;hl=en" target="_blank" rel="noopener">
+            <svg class="icon icon--solid" aria-hidden="true"><use href="#i-scholar"/></svg> Google Scholar
+          </a>
+          <a class="btn btn--ghost" href="https://openalex.org/A5013149326" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg> OpenAlex
+          </a>
+          <a class="btn btn--ghost" href="pdf/DK-Publications-2025.pdf" target="_blank" rel="noopener">
+            <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> PDF list
+          </a>
+        </p>
         <div class="filters" role="group" aria-label="Filter publications">
           <button class="filter" data-filter="all" aria-pressed="true">All</button>
           <button class="filter" data-filter="firstauthor" aria-pressed="false">First author</button>
@@ -605,25 +654,33 @@
         </div>
         <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
           <article class="pub" data-tags="firstauthor epigenetics">
-            <div class="pub__year">2025</div>
+            <div class="pub__year">2026</div>
             <div>
-              <h3 class="pub__title">Human nuclear ribomes reveal DNA-embedded ribonucleotides as a novel epigenetic layer</h3>
-              <p class="pub__authors"><b>Kundnani, D. L.</b>, Yang, T., Channagiri, T., Xu, P., Lee, Y., &hellip; Jonoska, N. &amp; Storici, F. &middot; <span class="pub__venue">In preparation</span></p>
-              <div class="pub__links"><span class="tag tag--muted">In preparation</span></div>
+              <h3 class="pub__title"><a href="https://doi.org/10.1016/j.cell.2026.07.053" target="_blank" rel="noopener">Human nuclear ribomes reveal DNA-embedded ribonucleotides as epigenetic modulators</a></h3>
+              <p class="pub__authors"><b>Kundnani, D. L.</b>, Lee, Y., Yang, T., Warner, T. P., Martinez-Figueroa, F., Channagiri, T., Xu, P., &hellip; &amp; Storici, F. &middot; <span class="pub__venue">Cell</span></p>
+              <div class="pub__links"></div>
+            </div>
+          </article>
+          <article class="pub" data-tags="cancer">
+            <div class="pub__year">2026</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.64898/2026.08.27.747587" target="_blank" rel="noopener">Tumor &gamma;&delta; T-cell abundance is associated with favorable cancer treatment outcomes</a></h3>
+              <p class="pub__authors">Niu, X., <b>Kundnani, D. L.</b>, Dicome, M., Tafoya, L., Song, L., Mamedov, M. R., Liu, X. S. &amp; Sahu, A. &middot; <span class="pub__venue">bioRxiv (preprint)</span></p>
+              <div class="pub__links"></div>
             </div>
           </article>
           <article class="pub" data-tags="epigenetics">
             <div class="pub__year">2025</div>
             <div>
-              <h3 class="pub__title"><a href="https://doi.org/10.1101/2025.03.17.643674" target="_blank" rel="noopener">Genome-wide ribonucleotide detection in Archaea</a></h3>
-              <p class="pub__authors">Moalic, Y., Reveil, M., <b>Kundnani, D. L.</b>, Balachander, S., Yang, T., &hellip; Storici, F. &amp; Henneke, G. &middot; <span class="pub__venue">bioRxiv</span></p>
+              <h3 class="pub__title"><a href="https://doi.org/10.1093/nar/gkaf1231" target="_blank" rel="noopener">Genome-wide ribonucleotide detection in Archaea</a></h3>
+              <p class="pub__authors">Moalic, Y., Reveil, M., <b>Kundnani, D. L.</b>, Balachander, S., Yang, T., &hellip; Storici, F. &amp; Henneke, G. &middot; <span class="pub__venue">Nucleic Acids Research</span></p>
               <div class="pub__links"></div>
             </div>
           </article>
           <article class="pub" data-tags="cancer">
             <div class="pub__year">2025</div>
             <div>
-              <h3 class="pub__title"><a href="https://www.nature.com/articles/s41598-025-91746-x" target="_blank" rel="noopener">Characterization of a new mutation of the mitochondrial ND6 gene in hepatocellular carcinoma</a></h3>
+              <h3 class="pub__title"><a href="https://doi.org/10.1038/s41598-025-91746-x" target="_blank" rel="noopener">Characterization of a new mutation of the mitochondrial ND6 gene in hepatocellular carcinoma</a></h3>
               <p class="pub__authors">Bazzani, V., <b>Kundnani, D. L.</b>, Redin, M. E., Agostini, F., Corso, A., &hellip; Storici, F. &amp; Vascotto, C. &middot; <span class="pub__venue">Scientific Reports</span></p>
               <div class="pub__links"><a class="tag" href="https://github.com/DKundnani/LTB_ND6_humito" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a></div>
             </div>
@@ -636,26 +693,26 @@
               <div class="pub__links"><a class="tag" href="https://github.com/DKundnani?tab=repositories&amp;q=RPA+OR+hotspots" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a></div>
             </div>
           </article>
-          <article class="pub" data-tags="epigenetics">
-            <div class="pub__year">2024</div>
-            <div>
-              <h3 class="pub__title">Light-strand bias and enriched zones of embedded ribonucleotides in the human mitochondrial genome</h3>
-              <p class="pub__authors">Xu, P., Yang, T., <b>Kundnani, D. L.</b>, Sun, M., Marsili, S., Gombolay, A. L., &hellip; Storici, F. &middot; <span class="pub__venue">Nucleic Acids Research, 52(3) 1207–1225</span></p>
-              <div class="pub__links"></div>
-            </div>
-          </article>
           <article class="pub" data-tags="software">
             <div class="pub__year">2024</div>
             <div>
-              <h3 class="pub__title">rNMPID: a database for riboNucleoside MonoPhosphates in DNA</h3>
-              <p class="pub__authors">Yang, J., Sun, M., Ran, Z., Yang, T., <b>Kundnani, D. L.</b>, Storici, F. &amp; Xu, P. &middot; <span class="pub__venue">Bioinformatics Advances, 4(1)</span></p>
+              <h3 class="pub__title"><a href="https://doi.org/10.1093/bioadv/vbae063" target="_blank" rel="noopener">rNMPID: a database for riboNucleoside MonoPhosphates in DNA</a></h3>
+              <p class="pub__authors">Yang, J., Sun, M., Ran, Z., Yang, T., <b>Kundnani, D. L.</b>, Storici, F. &amp; Xu, P. &middot; <span class="pub__venue">Bioinformatics Advances</span></p>
+              <div class="pub__links"></div>
+            </div>
+          </article>
+          <article class="pub" data-tags="epigenetics">
+            <div class="pub__year">2023</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.1093/nar/gkad1204" target="_blank" rel="noopener">Light-strand bias and enriched zones of embedded ribonucleotides in the human mitochondrial genome</a></h3>
+              <p class="pub__authors">Xu, P., Yang, T., <b>Kundnani, D. L.</b>, Sun, M., Marsili, S., Gombolay, A. L., &hellip; Storici, F. &middot; <span class="pub__venue">Nucleic Acids Research</span></p>
               <div class="pub__links"></div>
             </div>
           </article>
           <article class="pub" data-tags="firstauthor software">
             <div class="pub__year">2021</div>
             <div>
-              <h3 class="pub__title"><a href="https://doi.org/10.1016/J.SIMPA.2021.100144" target="_blank" rel="noopener">FeatureCorr: an R package to study feature correlations for sequencing and microarray data</a></h3>
+              <h3 class="pub__title"><a href="https://doi.org/10.1016/j.simpa.2021.100144" target="_blank" rel="noopener">FeatureCorr: an R package to study feature correlations for sequencing and microarray data</a></h3>
               <p class="pub__authors"><b>Kundnani, D.</b> &amp; Storici, F. &middot; <span class="pub__venue">Software Impacts</span></p>
               <div class="pub__links"><a class="tag" href="https://github.com/DKundnani/FeatureCorr" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg>Code</a></div>
             </div>
@@ -669,18 +726,10 @@
             </div>
           </article>
           <article class="pub" data-tags="cancer">
-            <div class="pub__year">2021</div>
-            <div>
-              <h3 class="pub__title">Contribution of a blood-based protein biomarker panel to the classification of indeterminate pulmonary nodules</h3>
-              <p class="pub__authors">Ostrin, E. J., Bantis, L. E., Wilson, D. O., Patel, N., Wang, R., <b>Kundnani, D.</b>, &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">Journal of Thoracic Oncology</span></p>
-              <div class="pub__links"></div>
-            </div>
-          </article>
-          <article class="pub" data-tags="cancer">
             <div class="pub__year">2020</div>
             <div>
-              <h3 class="pub__title">Proteome profiling uncovers an autoimmune response signature reflecting ovarian cancer pathogenesis</h3>
-              <p class="pub__authors">Kobayashi, M., Katayama, H., Irajizad, E., Vykoukal, J. V., Fahrmann, J. F., <b>Kundnani, D. L.</b>, &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">Cancers</span></p>
+              <h3 class="pub__title"><a href="https://doi.org/10.1016/j.jtho.2020.09.024" target="_blank" rel="noopener">Contribution of a blood-based protein biomarker panel to the classification of indeterminate pulmonary nodules</a></h3>
+              <p class="pub__authors">Ostrin, E. J., Bantis, L. E., Wilson, D. O., Patel, N., Wang, R., <b>Kundnani, D.</b>, &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">Journal of Thoracic Oncology</span></p>
               <div class="pub__links"></div>
             </div>
           </article>
@@ -693,17 +742,33 @@
             </div>
           </article>
           <article class="pub" data-tags="cancer">
-            <div class="pub__year">2019</div>
+            <div class="pub__year">2020</div>
             <div>
-              <h3 class="pub__title">Exosomes harbor B cell targets in pancreatic adenocarcinoma and exert decoy function against complement-mediated cytotoxicity</h3>
-              <p class="pub__authors">Capello, M., Vykoukal, J. V., Katayama, H., Bantis, L. E., Wang, H., <b>Kundnani, D. L.</b>, &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">Nature Communications</span></p>
+              <h3 class="pub__title"><a href="https://doi.org/10.1200/po.19.00330" target="_blank" rel="noopener">CES2 expression in pancreatic adenocarcinoma is predictive of response to irinotecan and is associated with type 2 diabetes</a></h3>
+              <p class="pub__authors">Capello, M., Fahrmann, J. F., Rios Perez, M. V., Vykoukal, J. V., Irajizad, E., &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">JCO Precision Oncology</span></p>
+              <div class="pub__links"></div>
+            </div>
+          </article>
+          <article class="pub" data-tags="cancer">
+            <div class="pub__year">2020</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.3390/cancers12020485" target="_blank" rel="noopener">Proteome profiling uncovers an autoimmune response signature reflecting ovarian cancer pathogenesis</a></h3>
+              <p class="pub__authors">Kobayashi, M., Katayama, H., Irajizad, E., Vykoukal, J. V., Fahrmann, J. F., <b>Kundnani, D. L.</b>, &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">Cancers</span></p>
               <div class="pub__links"></div>
             </div>
           </article>
           <article class="pub" data-tags="cancer">
             <div class="pub__year">2019</div>
             <div>
-              <h3 class="pub__title">Testing the gene expression classification of the EMT spectrum</h3>
+              <h3 class="pub__title"><a href="https://doi.org/10.1038/s41467-018-08109-6" target="_blank" rel="noopener">Exosomes harbor B cell targets in pancreatic adenocarcinoma and exert decoy function against complement-mediated cytotoxicity</a></h3>
+              <p class="pub__authors">Capello, M., Vykoukal, J. V., Katayama, H., Bantis, L. E., Wang, H., <b>Kundnani, D. L.</b>, &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">Nature Communications</span></p>
+              <div class="pub__links"></div>
+            </div>
+          </article>
+          <article class="pub" data-tags="cancer">
+            <div class="pub__year">2018</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.1088/1478-3975/aaf8d4" target="_blank" rel="noopener">Testing the gene expression classification of the EMT spectrum</a></h3>
               <p class="pub__authors">Jia, D., George, J. T., Tripathi, S. C., <b>Kundnani, D. L.</b>, Lu, M., Hanash, S. M., &hellip; &amp; Levine, H. &middot; <span class="pub__venue">Physical Biology</span></p>
               <div class="pub__links"></div>
             </div>
@@ -716,15 +781,22 @@
               <div class="pub__links"><a class="tag" href="https://www.mdanderson.org/newsroom/study-shows-biomarker-panel-boosts-lung-cancer-risk-assessment-for-smokers.h00-159225723.html" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>News</a></div>
             </div>
           </article>
-        <p style="margin-top:1.4rem">
-          <a class="btn btn--primary" href="pdf/DK-Publications-2025.pdf" target="_blank" rel="noopener">
-            <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> Full list (PDF)
-          </a>
-          <a class="btn btn--ghost"
-             href="https://scholar.google.com/citations?user=RdAQkxwAAAAJ&amp;hl=en" target="_blank" rel="noopener">
-            <svg class="icon icon--solid" aria-hidden="true"><use href="#i-scholar"/></svg> Google Scholar
-          </a>
-        </p>
+          <article class="pub" data-tags="cancer">
+            <div class="pub__year">2018</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.1093/jnci/djy126" target="_blank" rel="noopener">A plasma-derived protein-metabolite multiplexed panel for early-stage pancreatic cancer</a></h3>
+              <p class="pub__authors">Fahrmann, J. F., Bantis, L. E., Capello, M., Scelo, G., Dennison, J. B., &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">JNCI</span></p>
+              <div class="pub__links"></div>
+            </div>
+          </article>
+          <article class="pub" data-tags="cancer">
+            <div class="pub__year">2016</div>
+            <div>
+              <h3 class="pub__title"><a href="https://doi.org/10.1093/jnci/djw266" target="_blank" rel="noopener">Sequential validation of blood-based protein biomarker candidates for early-stage pancreatic cancer</a></h3>
+              <p class="pub__authors">Capello, M., Bantis, L. E., Scelo, G., Zhao, Y., Li, P., Dhillon, D. S., &hellip; &amp; Hanash, S. M. &middot; <span class="pub__venue">JNCI</span></p>
+              <div class="pub__links"></div>
+            </div>
+          </article>
       </section>
 
       <section class="section reveal" id="projects">

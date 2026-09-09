@@ -903,10 +903,10 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
    ========================================================================== */
 .orglogo {
   display: inline-grid; place-items: center; flex: none;
-  width: 34px; height: 34px; border-radius: 9px;
+  width: 34px; height: 34px; border-radius: 9px; padding: 0 2px;
   background: var(--brand, var(--navy)); color: #fff;
-  font-size: .6rem; font-weight: 800; letter-spacing: .02em;
-  line-height: 1; text-align: center;
+  font-size: .58rem; font-weight: 800; letter-spacing: -.01em;
+  line-height: 1; text-align: center; overflow: hidden;
 }
 .orglogo--img {
   background: #fff; object-fit: contain; padding: 3px;
@@ -915,32 +915,20 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
 
 /* Hero strip, directly under the metrics */
 .orgstrip { max-width: 720px; margin: 0 auto 2rem; }
-.orgstrip__label {
-  display: block; margin-bottom: .8rem;
-  font-size: .68rem; font-weight: 700; letter-spacing: .11em;
-  text-transform: uppercase; color: var(--text-faint);
-}
 .orgstrip ul {
   display: flex; flex-wrap: wrap; justify-content: center;
-  gap: .5rem .6rem; margin: 0; padding: 0; list-style: none;
+  gap: .6rem .7rem; margin: 0; padding: 0; list-style: none;
 }
-.orgstrip li {
-  display: flex; align-items: center; gap: .5rem;
-  padding: .32rem .7rem .32rem .34rem; border-radius: 999px;
-  background: var(--surface); border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  font-size: .78rem; font-weight: 600; color: var(--text-soft);
-  transition: transform .2s var(--ease), border-color .2s var(--ease);
+.orgstrip li { display: flex; }
+.orgstrip .orglogo {
+  width: 42px; height: 42px; border-radius: 11px; font-size: .58rem;
+  box-shadow: var(--shadow); cursor: default;
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
 }
-.orgstrip li:hover {
-  transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-}
-.orgstrip .orglogo { width: 28px; height: 28px; border-radius: 7px; font-size: .54rem; }
+.orgstrip .orglogo:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
 /* Timeline cards */
 .tl__head .orglogo { align-self: center; margin-right: .1rem; }
 @media (max-width: 620px) {
-  .orgstrip li span { display: none; }
-  .orgstrip li { padding: .3rem; }
+  .orgstrip .orglogo { width: 36px; height: 36px; border-radius: 9px; font-size: .52rem; }
 }

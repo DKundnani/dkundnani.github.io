@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Building FeatureCorr: lessons from a small R package — Deepali L. Kundnani</title>
+    <title>Building FeatureCorr: lessons from a small R package | Deepali L. Kundnani</title>
     <meta name="description" content="A correlation tool written for one analysis ended up as a published R package. What I learned about scoping, defaults, and documentation.">
     <meta name="author" content="Deepali L. Kundnani">
     <link rel="canonical" href="https://dkundnani.bio/blog/building-featurecorr.html">
@@ -11,13 +11,13 @@
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Deepali L. Kundnani">
-    <meta property="og:title" content="Building FeatureCorr: lessons from a small R package — Deepali L. Kundnani">
+    <meta property="og:title" content="Building FeatureCorr: lessons from a small R package | Deepali L. Kundnani">
     <meta property="og:description" content="A correlation tool written for one analysis ended up as a published R package. What I learned about scoping, defaults, and documentation.">
     <meta property="og:url" content="https://dkundnani.bio/blog/building-featurecorr.html">
     <meta property="og:image" content="https://dkundnani.bio/images/web/profile.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@DeepaliKundnani">
-    <meta name="twitter:title" content="Building FeatureCorr: lessons from a small R package — Deepali L. Kundnani">
+    <meta name="twitter:title" content="Building FeatureCorr: lessons from a small R package | Deepali L. Kundnani">
     <meta name="twitter:description" content="A correlation tool written for one analysis ended up as a published R package. What I learned about scoping, defaults, and documentation.">
     <meta name="twitter:image" content="https://dkundnani.bio/images/web/profile.jpg">
 
@@ -30,7 +30,7 @@
       /* Apply the saved theme before first paint so there is no flash. */
       (function () {
         try {
-          /* Light by default — dark only if the visitor picks it. */
+          /* Light by default; dark only if the visitor picks it. */
           var t = localStorage.getItem("dk-theme") || "light";
           document.documentElement.setAttribute("data-theme", t);
         } catch (e) {}
@@ -119,7 +119,7 @@
       <article class="section article">
         <div class="callout">
           <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-          <p><strong>Draft.</strong> This post was scaffolded as a starting point &mdash; edit the wording,
+          <p><strong>Draft.</strong> This post was scaffolded as a starting point: edit the wording,
           add your own detail, then delete this box and remove <code>post--draft</code> from the card on the
           blog index.</p>
         </div>
@@ -132,8 +132,8 @@
           nothing I reached for did quite that.
         </p>
         <p>
-          It ended up as a published R package. That transition &mdash; from a file that works on my
-          machine to something a stranger can install &mdash; turned out to be most of the work, and
+          It ended up as a published R package. That transition, from a file that works on my
+          machine to something a stranger can install, turned out to be most of the work, and
           almost none of it was the statistics.
         </p>
 
@@ -156,7 +156,7 @@
         </p>
         <p>
           That reframing changed several decisions. Which transformation is applied when the user says
-          nothing? What happens with missing values &mdash; silently dropped, or an error? I moved toward
+          nothing? What happens with missing values: silently dropped, or an error? I moved toward
           erroring loudly on ambiguity, because a wrong answer that runs is worse than a stop that
           makes someone think.
         </p>
@@ -190,7 +190,7 @@
 
         <h2>Was it worth it?</h2>
         <p>
-          Yes &mdash; but not primarily for the citation. Packaging forced me to state my assumptions
+          Yes, but not primarily for the citation. Packaging forced me to state my assumptions
           explicitly, in code, where they could be checked. Several were wrong. I would rather have found
           that out while writing documentation than in review.
         </p>
@@ -215,7 +215,7 @@
           <a href="../index.html">Home</a> &middot;
           <a href="../portfolio.html">Portfolio</a> &middot;
           <a href="../blog.html">Blog</a> &middot;
-          <a href="../pdf/Deepali_Kundnani_CV.pdf">CV</a>
+          <a href="../cv.html">CV</a>
         </p>
       </div>
     </footer>

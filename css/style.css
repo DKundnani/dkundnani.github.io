@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Deepali Kundnani — site styles
+   Deepali Kundnani, site styles
    Design tokens first; everything else derives from them.
    ========================================================================== */
 
@@ -870,3 +870,9 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
 
 /* Publication action row */
 .pub__actions { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0 0 1.4rem; }
+
+/* Per-paper citation badge */
+.pub__cites {
+  background: var(--accent-soft); border-color: transparent;
+  color: var(--accent); font-variant-numeric: tabular-nums;
+}

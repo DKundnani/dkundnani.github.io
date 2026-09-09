@@ -1,6 +1,6 @@
 # dkundnani.bio
 
-Personal website of **Deepali L. Kundnani** — computational biologist.
+Personal website of **Deepali L. Kundnani** , computational biologist.
 Live at <https://dkundnani.bio> (GitHub Pages, served from `master`).
 
 ## Structure
@@ -8,7 +8,8 @@ Live at <https://dkundnani.bio> (GitHub Pages, served from `master`).
 ```
 index.html            Home: hero, about, highlights, awards, journey,
                       publications, featured projects, blog teaser, skills, contact
-portfolio.html        Project showcase — carousel + full write-ups
+cv.html               Printable CV, generated from the same data as index.html
+portfolio.html        Project showcase , carousel + full write-ups
 blog.html             Blog index
 blog/*.html           Individual posts
 css/style.css         All styling (design tokens at the top, light + dark themes)
@@ -18,28 +19,35 @@ images/web/           Web-optimised versions actually used by the pages
 pdf/, ppt/            CV, publication list, posters, slide decks
 ```
 
-Pages are standalone HTML — no build step, no framework, no CDN dependencies
+Pages are standalone HTML , no build step, no framework, no CDN dependencies
 beyond the Inter webfont. Edit a file, commit, and GitHub Pages publishes it.
 
 ## Common edits
 
-**Change the colours** — every colour is a custom property at the top of
+**Change the colours** , every colour is a custom property at the top of
 `css/style.css`, in `:root` (light) and `html[data-theme="dark"]` (dark).
 
-**Add a publication** — copy an `<article class="pub">` block in `index.html`.
+**Add a publication** , copy an `<article class="pub">` block in `index.html`.
 The `data-tags` attribute drives the filter buttons; use existing tags
 (`firstauthor`, `epigenetics`, `cancer`, `software`) or add a new filter button
 with a matching `data-filter`.
 
-**Add a project** — add a slide to the `.carousel__track`, a matching
+**Add a project** , add a slide to the `.carousel__track`, a matching
 `.carousel__dot` and `.carousel__thumb`, and an `<article class="entry">` in the
 detail section of `portfolio.html`. Update the `x / N` count in `.carousel__count`.
 
-**Add a blog post** — copy any file in `blog/`, then add a card to the grid in
+**Add a blog post** , copy any file in `blog/`, then add a card to the grid in
 `blog.html` and to the Blog section of `index.html`. Remove the `post--draft`
 class and the draft callout once the post is final.
 
-**Add an image** — put the original in `images/`, then generate a web version so
+**Update publication metrics** , run `python3 scripts/update_metrics.py`.
+It prefers Google Scholar (higher counts, but blocks datacenter IPs) and falls
+back to OpenAlex, writing `data/metrics.json` (totals) and `data/citations.json`
+(per paper). A launchd agent runs it monthly; `.github/workflows/update-metrics.yml`
+is the CI backstop. The CV page and the site both rebuild from the generator, so
+nothing needs editing twice.
+
+**Add an image** , put the original in `images/`, then generate a web version so
 the page stays fast:
 
 ```sh

@@ -1,5 +1,5 @@
 /* Site behaviour: theme, nav, scroll effects, filters, carousel, lightbox.
-   Everything degrades gracefully — the pages are readable with JS disabled. */
+   Everything degrades gracefully; the pages are readable with JS disabled. */
 (function () {
   "use strict";
 
@@ -148,13 +148,31 @@
             var v = m[el.getAttribute("data-metric")];
             if (typeof v !== "number" || v < 1) return;
             el.setAttribute("data-count", v);
-            if (el.dataset.done) run(el);   // already animated — redo with the real figure
+            if (el.dataset.done) run(el);   // already animated, so redo with the real figure
           });
           var stamp = $("#metrics-updated");
           if (stamp && m.updated) stamp.textContent = m.updated;
         })
         .catch(function () { /* offline or blocked: keep the static numbers */ });
     }
+  }
+
+  /* Per-paper citation counts, same monthly refresh. Badges stay hidden
+     unless a real number arrives, so nothing renders as "0 citations". */
+  var citeEls = $$("[data-pub]");
+  if (citeEls.length && window.fetch) {
+    fetch("data/citations.json", { cache: "no-cache" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (c) {
+        if (!c) return;
+        citeEls.forEach(function (el) {
+          var n = c[el.getAttribute("data-pub")];
+          if (typeof n !== "number" || n < 1) return;
+          el.textContent = n + (n === 1 ? " citation" : " citations");
+          el.hidden = false;
+        });
+      })
+      .catch(function () {});
   }
 
   /* --------------------------------------------------- publication filters */

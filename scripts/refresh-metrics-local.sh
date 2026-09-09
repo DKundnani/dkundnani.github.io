@@ -37,6 +37,6 @@ fi
 if "$GIT" push --quiet origin master; then
   echo "pushed: $(cat data/metrics.json | tr -d '\n ')"
 else
-  echo "push failed — commit is local, will go out with your next push"
+  echo "push failed; commit is local, will go out with your next push"
   exit 1
 fi

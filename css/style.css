@@ -372,7 +372,10 @@ main { padding-block: 3.5rem 1rem; }
 /* --------------------------------------------------------------- timeline */
 /* Two columns astride a central spine: education left, experience right.
    --gap is the half-gutter each card leaves for the line. */
-.timeline { --gap: 34px; position: relative; max-width: 1000px; margin-inline: auto; }
+.timeline {
+  --gap: 34px; position: relative; max-width: 1000px; margin-inline: auto;
+  font-size: .92rem;            /* the journey reads a step smaller than the page */
+}
 .timeline::before {
   content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
   transform: translateX(-50%);
@@ -442,8 +445,10 @@ main { padding-block: 3.5rem 1rem; }
 }
 .tl-block__cols {
   display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--gap) * 2);
-  align-items: start;
+  align-items: stretch;
 }
+.tl-block__cols > div { display: flex; flex-direction: column; }
+.tl-block__cols > div > .tl:only-child { flex: 1; }
 
 /* Cards inside a block sit in the grid rather than astride the spine. */
 .tl--bare { position: relative; width: 100%; margin: 0 0 1rem; }
@@ -466,14 +471,14 @@ main { padding-block: 3.5rem 1rem; }
   .tl-block { margin-left: -1.4rem; }
 }
 .tl__head { display: flex; flex-wrap: wrap; gap: .2rem .8rem; align-items: baseline; }
-.tl__role { font-size: 1.02rem; font-weight: 700; margin: 0; letter-spacing: -.005em; }
+.tl__role { font-size: .95rem; font-weight: 700; margin: 0; letter-spacing: -.005em; }
 .tl__date {
-  width: 100%; font-size: .76rem; font-weight: 600; color: var(--text-faint);
+  width: 100%; font-size: .73rem; font-weight: 600; color: var(--text-faint);
   font-variant-numeric: tabular-nums;
 }
-.tl__org { margin: .1rem 0 .75rem; font-size: .9rem; color: var(--accent); font-weight: 600; }
+.tl__org { margin: .1rem 0 .6rem; font-size: .84rem; color: var(--accent); font-weight: 600; }
 .tl__org .tl__place { color: var(--text-faint); font-weight: 400; }
-.tl ul { margin: 0; padding-left: 1.1rem; color: var(--text-soft); font-size: .91rem; }
+.tl ul { margin: 0; padding-left: 1.05rem; color: var(--text-soft); font-size: .86rem; }
 .tl li { margin-bottom: .35rem; }
 .tl li::marker { color: var(--accent); }
 .tl__tag {
@@ -484,14 +489,20 @@ main { padding-block: 3.5rem 1rem; }
 
 /* collapsible detail */
 .tl__more {
-  margin-top: .6rem; background: none; border: 0; padding: 0; cursor: pointer;
-  font: inherit; font-size: .83rem; font-weight: 600; color: var(--accent);
+  margin-top: .1rem; background: none; border: 0; padding: 0; cursor: pointer;
+  font: inherit; font-size: .8rem; font-weight: 600; color: var(--accent);
   display: inline-flex; align-items: center; gap: .35rem;
 }
 .tl__more .icon { transition: transform .25s var(--ease); }
 .tl__more[aria-expanded="true"] .icon { transform: rotate(180deg); }
 .tl__extra { display: none; }
 .tl__extra.is-open { display: block; animation: fade .3s var(--ease); }
+.tl__extra li:has(> strong) {
+  list-style: none; margin-left: -1.05rem; margin-top: .7rem;
+  font-size: .72rem; letter-spacing: .07em; text-transform: uppercase;
+}
+.tl__extra li:first-child:has(> strong) { margin-top: .2rem; }
+.tl__extra li > strong { color: var(--text-faint); font-weight: 700; }
 @keyframes fade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
 
 /* ----------------------------------------------------------- publications */

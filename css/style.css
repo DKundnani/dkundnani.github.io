@@ -686,16 +686,6 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
   background: var(--navy); cursor: zoom-in;
 }
 .carousel__media img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.carousel__media::after {          /* legibility scrim for the caption band */
-  content: ""; position: absolute; inset: auto 0 0 0; height: 45%;
-  background: linear-gradient(to top, rgba(4,12,26,.88), transparent);
-  pointer-events: none;
-}
-.carousel__cap {
-  position: absolute; inset: auto 0 0 0; z-index: 1;
-  padding: 1.5rem clamp(1.1rem, 4vw, 2.2rem);
-  color: #fff; text-align: left;
-}
 .carousel__eyebrow {
   display: inline-block; margin-bottom: .5rem;
   padding: .2rem .7rem; border-radius: 999px;
@@ -703,18 +693,8 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
   color: #7fe9db; font-size: .68rem; font-weight: 700;
   letter-spacing: .09em; text-transform: uppercase;
 }
-.carousel__cap h3 {
-  margin: 0 0 .35rem; font-size: clamp(1.05rem, 2.6vw, 1.5rem);
-  font-weight: 750; line-height: 1.3; letter-spacing: -.015em; color: #fff;
-}
-.carousel__cap p {
-  margin: 0; max-width: 62ch; font-size: clamp(.82rem, 1.7vw, .95rem);
-  color: #cbd8ea;
-}
 @media (max-width: 620px) {
   .carousel__media { aspect-ratio: 4 / 3; }
-  .carousel__cap { padding: 1rem; }
-  .carousel__cap p { display: none; }
 }
 
 .carousel__nav {
@@ -739,13 +719,10 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
 }
 .carousel__dot:hover { background: var(--text-faint); }
 .carousel__dot[aria-selected="true"] { background: var(--accent); width: 52px; }
-.carousel__count {
-  margin-left: auto; font-size: .82rem; font-weight: 600;
-  color: var(--text-faint); font-variant-numeric: tabular-nums;
-}
 .carousel__play {
-  display: inline-flex; align-items: center; gap: .4rem;
-  padding: .3rem .8rem; border-radius: 999px; cursor: pointer; font: inherit;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-left: auto; width: 30px; height: 30px;
+  border-radius: 999px; cursor: pointer; font: inherit;
   font-size: .76rem; font-weight: 600;
   background: var(--surface); border: 1px solid var(--border); color: var(--text-soft);
   transition: all .2s var(--ease);

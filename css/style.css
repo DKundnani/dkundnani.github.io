@@ -911,7 +911,7 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
 }
 /* A supplied logo keeps its own proportions inside the same tile height. */
 img.orglogo--img {
-  width: auto; height: 34px; padding: 4px 7px;
+  width: auto; height: 34px; max-width: 130px; padding: 4px 7px;
   object-fit: contain; box-sizing: border-box;
 }
 html[data-theme="dark"] img.orglogo--img { background: #f6f8fc; }
@@ -931,7 +931,7 @@ html[data-theme="dark"] img.orglogo--bleed { background: none; }
   box-shadow: var(--shadow); cursor: default;
   transition: transform .2s var(--ease), box-shadow .2s var(--ease);
 }
-.orgstrip img.orglogo--img { height: 40px; padding: 5px 9px; }
+.orgstrip img.orglogo--img { height: 40px; max-width: 155px; padding: 5px 9px; }
 .orgstrip .orglogo:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
 
 /* Timeline cards */

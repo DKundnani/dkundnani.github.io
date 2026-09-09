@@ -370,23 +370,70 @@ main { padding-block: 3.5rem 1rem; }
 .award p { margin: 0; font-size: .86rem; color: var(--text-soft); font-style: italic; }
 
 /* --------------------------------------------------------------- timeline */
-.timeline { position: relative; padding-left: 2.1rem; }
+/* Two columns astride a central spine: education left, experience right.
+   --gap is the half-gutter each card leaves for the line. */
+.timeline { --gap: 34px; position: relative; max-width: 1000px; margin-inline: auto; }
 .timeline::before {
-  content: ""; position: absolute; left: 7px; top: .4rem; bottom: .4rem; width: 2px;
-  background: linear-gradient(180deg, var(--accent), var(--border) 70%, transparent);
+  content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, var(--accent), var(--border) 78%, transparent);
 }
-.tl { position: relative; margin-bottom: 1.5rem; }
-.tl::before {
-  content: ""; position: absolute; left: calc(-2.1rem + 2px); top: 1.55rem;
-  width: 12px; height: 12px; border-radius: 50%;
+
+.tl-heads {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: calc(var(--gap) * 2); margin-bottom: 1.5rem;
+}
+.tl-heads span {
+  font-size: .72rem; font-weight: 700; letter-spacing: .11em; text-transform: uppercase;
+  color: var(--accent); padding: .4rem .9rem; border-radius: 999px;
+  background: var(--accent-soft); justify-self: center;
+}
+
+.tl {
+  position: relative; width: calc(50% - var(--gap)); margin-bottom: 1.5rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.15rem 1.3rem; box-shadow: var(--shadow);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+}
+.tl:hover {
+  transform: translateY(-3px); box-shadow: var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+}
+.tl--edu { margin-right: auto; }   /* left column  */
+.tl--exp { margin-left: auto; }    /* right column */
+
+.tl::before {                      /* node on the spine */
+  content: ""; position: absolute; top: 1.5rem;
+  width: 14px; height: 14px; border-radius: 50%;
   background: var(--surface); border: 3px solid var(--accent);
-  box-shadow: 0 0 0 4px var(--bg);
+  box-shadow: 0 0 0 4px var(--bg); z-index: 1;
 }
-.tl__head { display: flex; flex-wrap: wrap; gap: .35rem 1rem; align-items: baseline; }
+.tl--edu::before { right: calc(-1 * (var(--gap) + 7px)); }
+.tl--exp::before { left:  calc(-1 * (var(--gap) + 7px)); }
+
+.tl::after {                       /* connector from card to spine */
+  content: ""; position: absolute; top: calc(1.5rem + 6px);
+  width: calc(var(--gap) - 7px); height: 2px; background: var(--border);
+}
+.tl--edu::after { right: calc(-1 * (var(--gap) - 7px)); }
+.tl--exp::after { left:  calc(-1 * (var(--gap) - 7px)); }
+
+.tl--edu { border-top: 3px solid color-mix(in srgb, var(--accent) 55%, var(--border)); }
+.tl--exp { border-top: 3px solid color-mix(in srgb, #5eb3e8 60%, var(--border)); }
+
+@media (max-width: 860px) {
+  .timeline { --gap: 0px; padding-left: 2.2rem; }
+  .timeline::before { left: 7px; transform: none; }
+  .tl-heads { display: none; }
+  .tl, .tl--edu, .tl--exp { width: 100%; margin-left: 0; margin-right: 0; }
+  .tl--edu::before, .tl--exp::before { left: -2.2rem; right: auto; }
+  .tl::after { display: none; }
+}
+.tl__head { display: flex; flex-wrap: wrap; gap: .2rem .8rem; align-items: baseline; }
 .tl__role { font-size: 1.02rem; font-weight: 700; margin: 0; letter-spacing: -.005em; }
 .tl__date {
-  margin-left: auto; font-size: .8rem; font-weight: 600; color: var(--text-faint);
-  font-variant-numeric: tabular-nums; white-space: nowrap;
+  width: 100%; font-size: .76rem; font-weight: 600; color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
 }
 .tl__org { margin: .1rem 0 .75rem; font-size: .9rem; color: var(--accent); font-weight: 600; }
 .tl__org .tl__place { color: var(--text-faint); font-weight: 400; }

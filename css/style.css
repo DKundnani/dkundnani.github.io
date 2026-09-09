@@ -850,9 +850,5 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
   text-transform: uppercase; color: var(--accent);
 }
 
-/* Stats footnote + publication action row */
-.stats__note {
-  margin: -1.4rem auto 2rem; font-size: .76rem; color: var(--text-faint);
-}
-.stats__note a { color: var(--text-soft); }
+/* Publication action row */
 .pub__actions { display: flex; flex-wrap: wrap; gap: .55rem; margin: 0 0 1.4rem; }

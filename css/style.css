@@ -13,6 +13,7 @@
   --accent-lite: #f97316;   /* graphics only, never text                  */
   --accent-glow: #fb923c;
   --accent-soft: #ffeadf;
+  --brand-grad:  linear-gradient(135deg, #fb923c, #cf4310);  /* matches the favicon */
   --amber:       #b45309;
   --amber-soft:  #fdf0d9;
 
@@ -27,11 +28,11 @@
   --on-dark-soft:#9fb2ce;
 
   /* Hero / sub-hero: a bright wash rather than a dark slab. */
-  --hero-1:      #fff4ec;
-  --hero-2:      #ffe7d8;
-  --hero-3:      #fdf2e8;
-  --hero-blob-1: rgba(234,88,12,.17);
-  --hero-blob-2: rgba(249,115,22,.15);
+  --hero-1:      #fff1e4;
+  --hero-2:      #ffe3cd;
+  --hero-3:      #fff6ec;
+  --hero-blob-1: rgba(251,146,60,.26);
+  --hero-blob-2: rgba(207,67,16,.14);
   --hero-text:   var(--text);
   --hero-muted:  var(--text-soft);
   --hero-line:   rgba(15,41,66,.12);
@@ -57,6 +58,7 @@ html[data-theme="dark"] {
   --accent-lite: #f97316;
   --accent-glow: #fdba74;
   --accent-soft: #3a1c08;
+  --brand-grad:  linear-gradient(135deg, #fdba74, #f97316);
   --amber:       #fbbf24;
   --amber-soft:  #33270d;
 
@@ -122,7 +124,7 @@ a:hover { color: var(--accent-2); }
 .scroll-progress {
   position: fixed; top: 0; left: 0; height: 3px; width: 100%;
   transform: scaleX(0); transform-origin: 0 50%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-lite), var(--accent-glow));
+  background: linear-gradient(90deg, var(--accent), var(--accent-lite), var(--accent-glow), var(--accent));
   z-index: 120; will-change: transform;
 }
 
@@ -147,7 +149,7 @@ a:hover { color: var(--accent-2); }
 .nav__mark {
   width: 30px; height: 30px; border-radius: 9px; flex: none;
   display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--accent-mid), var(--accent-2));
+  background: var(--brand-grad);
   color: #fff; font-size: .78rem; font-weight: 800; letter-spacing: .04em;
 }
 .nav__brand:hover { color: var(--accent); }
@@ -227,7 +229,7 @@ html:not([data-theme="dark"]) .theme-icon--sun { display: none; }
 .hero__photo {
   width: 235px; height: 235px; border-radius: 50%; object-fit: cover;
   margin: 0 auto 1.4rem; display: block;
-  box-shadow: 0 0 0 5px var(--surface), 0 0 0 7px var(--accent-lite), 0 16px 40px rgba(207,67,16,.20);
+  box-shadow: 0 0 0 5px var(--surface), 0 0 0 7px var(--accent-glow), 0 16px 40px rgba(207,67,16,.22);
 }
 .hero h1 {
   margin: 0 0 .35rem; font-size: clamp(2.1rem, 6vw, 3.2rem);
@@ -319,7 +321,7 @@ main {
 }
 .section__title::before {
   content: ""; width: 5px; height: 1.05em; border-radius: 3px; flex: none;
-  background: linear-gradient(180deg, var(--accent-lite), var(--accent));
+  background: var(--brand-grad);
 }
 .section__intro { margin: 0 0 1.75rem; color: var(--text-soft); max-width: 68ch; }
 

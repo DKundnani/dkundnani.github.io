@@ -7,8 +7,11 @@
   --navy:        #0f2942;
   --navy-2:      #163a5c;
   --navy-3:      #1d4d78;
-  --accent:      #cf4310;   /* orange: 4.7:1 on white, still safe for text */
-  --accent-2:    #a8360c;
+  --accent:      #cf4310;   /* text-safe orange, 4.7:1 on white          */
+  --accent-2:    #a8360c;   /* darker, for hover                          */
+  --accent-mid:  #e0550c;   /* large text only, 3.8:1                     */
+  --accent-lite: #f97316;   /* graphics only, never text                  */
+  --accent-glow: #fb923c;
   --accent-soft: #ffeadf;
   --amber:       #b45309;
   --amber-soft:  #fdf0d9;
@@ -50,6 +53,9 @@ html[data-theme="dark"] {
   --navy-2:      #0a1c38;
   --accent:      #fb923c;
   --accent-2:    #fdba74;
+  --accent-mid:  #fb923c;
+  --accent-lite: #f97316;
+  --accent-glow: #fdba74;
   --accent-soft: #3a1c08;
   --amber:       #fbbf24;
   --amber-soft:  #33270d;
@@ -116,7 +122,7 @@ a:hover { color: var(--accent-2); }
 .scroll-progress {
   position: fixed; top: 0; left: 0; height: 3px; width: 100%;
   transform: scaleX(0); transform-origin: 0 50%;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  background: linear-gradient(90deg, var(--accent), var(--accent-lite), var(--accent-glow));
   z-index: 120; will-change: transform;
 }
 
@@ -141,7 +147,7 @@ a:hover { color: var(--accent-2); }
 .nav__mark {
   width: 30px; height: 30px; border-radius: 9px; flex: none;
   display: grid; place-items: center;
-  background: linear-gradient(135deg, var(--accent), var(--navy-3));
+  background: linear-gradient(135deg, var(--accent-mid), var(--accent-2));
   color: #fff; font-size: .78rem; font-weight: 800; letter-spacing: .04em;
 }
 .nav__brand:hover { color: var(--accent); }
@@ -221,7 +227,7 @@ html:not([data-theme="dark"]) .theme-icon--sun { display: none; }
 .hero__photo {
   width: 235px; height: 235px; border-radius: 50%; object-fit: cover;
   margin: 0 auto 1.4rem; display: block;
-  box-shadow: 0 0 0 5px var(--surface), 0 0 0 7px var(--accent), 0 16px 40px rgba(15,41,66,.18);
+  box-shadow: 0 0 0 5px var(--surface), 0 0 0 7px var(--accent-lite), 0 16px 40px rgba(207,67,16,.20);
 }
 .hero h1 {
   margin: 0 0 .35rem; font-size: clamp(2.1rem, 6vw, 3.2rem);
@@ -259,7 +265,9 @@ html:not([data-theme="dark"]) .theme-icon--sun { display: none; }
 }
 .stat__num {
   font-size: clamp(1.4rem, 4.2vw, 2rem); font-weight: 800;
-  line-height: 1.1; color: var(--accent); font-variant-numeric: tabular-nums;
+  line-height: 1.1; font-variant-numeric: tabular-nums;
+  background: linear-gradient(135deg, var(--accent), var(--accent-mid));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
 }
 .stat__label {
   font-size: .68rem; letter-spacing: .09em; text-transform: uppercase;
@@ -279,7 +287,10 @@ html:not([data-theme="dark"]) .theme-icon--sun { display: none; }
               background-color .2s var(--ease), color .2s var(--ease);
 }
 .btn:hover { transform: translateY(-2px); }
-.btn--primary { background: var(--accent); color: #fff; box-shadow: 0 6px 18px rgba(207,67,16,.30); }
+.btn--primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; box-shadow: 0 6px 18px rgba(207,67,16,.30);
+}
 .btn--primary:hover { background: var(--accent-2); color: #fff; box-shadow: 0 10px 26px rgba(207,67,16,.40); }
 .btn--ghost { border-color: var(--border); background: var(--surface); color: var(--text); }
 .btn--ghost:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
@@ -308,7 +319,7 @@ main {
 }
 .section__title::before {
   content: ""; width: 5px; height: 1.05em; border-radius: 3px; flex: none;
-  background: linear-gradient(180deg, var(--accent), #f97316);
+  background: linear-gradient(180deg, var(--accent-lite), var(--accent));
 }
 .section__intro { margin: 0 0 1.75rem; color: var(--text-soft); max-width: 68ch; }
 
@@ -340,7 +351,8 @@ main {
 .hl { display: grid; gap: .6rem; }
 .hl__icon {
   width: 42px; height: 42px; border-radius: 11px; display: grid; place-items: center;
-  background: var(--accent-soft); color: var(--accent); font-size: 1.0875rem;
+  background: linear-gradient(135deg, var(--accent-soft), color-mix(in srgb, var(--accent-glow) 22%, var(--surface)));
+  color: var(--accent); font-size: 1.0875rem;
 }
 .hl h3 { margin: 0; font-size: 0.9375rem; font-weight: 700; letter-spacing: -.005em; }
 .hl p { margin: 0; color: var(--text-soft); font-size: 0.8375rem; }
@@ -418,7 +430,7 @@ main {
 .tl--exp::after { left:  calc(-1 * (var(--gap) - 7px)); }
 
 .tl--edu { border-top: 3px solid color-mix(in srgb, var(--accent) 55%, var(--border)); }
-.tl--exp { border-top: 3px solid color-mix(in srgb, #f59e0b 65%, var(--border)); }
+.tl--exp { border-top: 3px solid color-mix(in srgb, var(--accent-glow) 70%, var(--border)); }
 
 /* ---- Concurrent block: a degree and the roles held during it, one unit ---- */
 .tl-block {

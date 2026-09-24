@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Source files and generator scratch are not worth crawling.
+Disallow: /logos/orgs/alternates/
+
+Sitemap: https://dkundnani.bio/sitemap.xml

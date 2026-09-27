@@ -491,7 +491,7 @@ main {
 }
 .tl__org { margin: .1rem 0 .6rem; font-size: 0.7775rem; color: var(--accent); font-weight: 600; }
 .tl__org .tl__place { color: var(--text-faint); font-weight: 400; }
-.tl ul { margin: 0; padding-left: .95rem; color: var(--text-soft); font-size: 0.6275rem; }
+.tl ul { margin: 0; padding-left: .95rem; color: var(--text-soft); font-size: 0.6875rem; }
 .tl li { margin-bottom: .35rem; }
 .tl li::marker { color: var(--accent); }
 .tl__tag {

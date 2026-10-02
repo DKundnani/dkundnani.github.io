@@ -331,10 +331,15 @@
   }
 
   /* ----------------------------------------------------------- contact forms */
-  /* Post in the background so visitors stay on the page, and show the real
-     error if the form service rejects it. Without fetch the plain POST stands. */
-  $$("form[action*='formspree.io']").forEach(function (form) {
-    if (!window.fetch) return;
+  /* With data-endpoint set the form posts there in the background and reports
+     the result inline. With it empty nothing is sent anywhere: the fields are
+     composed into a mail draft addressed to data-mailto, so a message can
+     never reach a third party by accident. */
+  $$("form[data-mailto]").forEach(function (form) {
+    var endpoint = (form.getAttribute("data-endpoint") || "").trim();
+    var mailto   = form.getAttribute("data-mailto");
+    var subject  = form.getAttribute("data-subject") || "Message from dkundnani.bio";
+    var btn      = $('[type="submit"]', form);
 
     var status = document.createElement("p");
     status.className = "form__status";
@@ -343,20 +348,42 @@
     status.hidden = true;
     form.appendChild(status);
 
-    var btn = $('[type="submit"]', form);
-
     function say(msg, ok) {
       status.textContent = msg;
       status.classList.toggle("is-bad", !ok);
       status.hidden = false;
     }
 
+    function labelFor(el) {
+      var lab = el.id ? $('label[for="' + el.id + '"]', form) : null;
+      return lab ? lab.textContent.trim() : el.name;
+    }
+
+    function compose() {
+      var lines = [];
+      $$("input[name], select[name], textarea[name]", form).forEach(function (el) {
+        if (!el.name || el.name.charAt(0) === "_") return;   // service-only fields
+        var v = (el.value || "").trim();
+        if (v) lines.push(labelFor(el) + ": " + v);
+      });
+      return lines.join("\n\n");
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      if (endpoint.indexOf("https://") !== 0) {
+        window.location.href = "mailto:" + mailto +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(compose());
+        say("Opening your email app with this filled in. If nothing happens, write to " +
+            mailto + " directly.", true);
+        return;
+      }
+
       if (btn) btn.disabled = true;
       say("Sending\u2026", true);
-
-      fetch(form.action, {
+      fetch(endpoint, {
         method: "POST",
         body: new FormData(form),
         headers: { "Accept": "application/json" }
@@ -375,11 +402,11 @@
           var errs = res.body && res.body.errors;
           say(errs && errs.length
                 ? errs.map(function (x) { return x.message; }).join(". ")
-                : "That did not send. Please email dkundnani@salud.unm.edu instead.", false);
+                : "That did not send. Please email " + mailto + " instead.", false);
         })
         .catch(function () {
           if (btn) btn.disabled = false;
-          say("That did not send, the request was blocked. Please email dkundnani@salud.unm.edu instead.", false);
+          say("That did not send, the request was blocked. Please email " + mailto + " instead.", false);
         });
     });
   });

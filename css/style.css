@@ -345,6 +345,7 @@ main {
 .grid { display: grid; gap: 1.1rem; }
 .grid--2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 .grid--3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid--4 { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
 
 .prose p { margin: 0 0 1rem; text-wrap: pretty; }
 .prose p:last-child { margin-bottom: 0; }

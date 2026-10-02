@@ -409,6 +409,17 @@ main {
 .svc__note--tight { margin: 1.2rem 0 0; text-align: left; }
 .svc__aside-title { margin: 0 0 .9rem; font-size: 0.9375rem; }
 .field__hint { margin: .5rem 0 0; }
+.form__status {
+  margin: .85rem 0 0; padding: .7rem .9rem; border-radius: var(--radius-sm);
+  font-size: 0.8275rem; background: var(--accent-soft); color: var(--accent-2);
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--border));
+}
+.form__status.is-bad {
+  background: color-mix(in srgb, #dc2626 10%, var(--surface));
+  border-color: color-mix(in srgb, #dc2626 40%, var(--border));
+  color: #b91c1c;
+}
+html[data-theme="dark"] .form__status.is-bad { color: #fca5a5; }
 .btn--sm { padding: .42rem .8rem; font-size: 0.7675rem; }
 
 /* The booking embed is switched on by putting a scheduling URL in

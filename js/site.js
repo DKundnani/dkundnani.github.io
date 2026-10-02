@@ -330,6 +330,60 @@
     });
   }
 
+  /* ----------------------------------------------------------- contact forms */
+  /* Post in the background so visitors stay on the page, and show the real
+     error if the form service rejects it. Without fetch the plain POST stands. */
+  $$("form[action*='formspree.io']").forEach(function (form) {
+    if (!window.fetch) return;
+
+    var status = document.createElement("p");
+    status.className = "form__status";
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+    status.hidden = true;
+    form.appendChild(status);
+
+    var btn = $('[type="submit"]', form);
+
+    function say(msg, ok) {
+      status.textContent = msg;
+      status.classList.toggle("is-bad", !ok);
+      status.hidden = false;
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (btn) btn.disabled = true;
+      say("Sending\u2026", true);
+
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      })
+        .then(function (r) {
+          return r.json().then(function (b) { return { ok: r.ok, body: b }; },
+                               function ()  { return { ok: r.ok, body: {} }; });
+        })
+        .then(function (res) {
+          if (btn) btn.disabled = false;
+          if (res.ok) {
+            form.reset();
+            say("Thank you. That reached me, and I will reply shortly.", true);
+            return;
+          }
+          var errs = res.body && res.body.errors;
+          say(errs && errs.length
+                ? errs.map(function (x) { return x.message; }).join(". ")
+                : "That did not send. Please email dkundnani@salud.unm.edu instead.", false);
+        })
+        .catch(function () {
+          if (btn) btn.disabled = false;
+          say("That did not send, the request was blocked. Please email dkundnani@salud.unm.edu instead.", false);
+        });
+    });
+  });
+
   /* ------------------------------------------------------------ year stamp */
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();

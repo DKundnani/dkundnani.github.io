@@ -13,7 +13,7 @@
  * OPTIONS call that Apps Script web apps cannot answer.
  */
 
-var TO               = "dkundnani@salud.unm.edu";
+var TO               = "deepali.kundnani@gmail.com";
 var SUBJECT_FALLBACK = "Message from dkundnani.bio";
 var HOURLY_LIMIT     = 30;   // well under the 100/day Gmail quota
 

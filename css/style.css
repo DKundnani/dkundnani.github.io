@@ -962,3 +962,13 @@ a.hl:hover h3 { color: var(--accent); }
 a.hl:hover .hl__go { opacity: 1; }
 .hl__go .icon { transition: transform .2s var(--ease); }
 a.hl:hover .hl__go .icon { transform: translateX(3px); }
+
+/* About: dated points rather than a wall of paragraphs */
+.about__points { margin: 0 0 1.1rem; padding-left: 1.05rem; display: grid; gap: .7rem; }
+.about__points li { line-height: 1.55; }
+.about__points li::marker { color: var(--accent); }
+.about__points strong { color: var(--text); font-weight: 700; }
+.about__thread {
+  margin: 0; padding-left: .9rem; border-left: 2px solid var(--accent-glow);
+  color: var(--text-soft); font-style: italic;
+}

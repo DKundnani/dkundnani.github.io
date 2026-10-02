@@ -427,8 +427,19 @@ html[data-theme="dark"] .form__status.is-bad { color: #fca5a5; }
    data-booking-url on #booking; until then the fallback card stands in. */
 .booking { max-width: 860px; margin-inline: auto; }
 .booking iframe {
-  width: 100%; border: 1px solid var(--border); border-radius: var(--radius);
-  background: var(--surface); box-shadow: var(--shadow); display: block;
+  width: 100%; display: block; border: 0; border-radius: calc(var(--radius) - 4px);
+  background: #fff;
+}
+/* The embed renders light whatever the page theme, so it sits in a padded
+   white panel and is framed like any other card instead of glaring. */
+.booking__frame {
+  padding: 6px; background: #fff;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden;
+}
+.booking__alt {
+  margin: .9rem 0 0; text-align: center;
+  font-size: 0.7875rem; color: var(--text-faint);
 }
 .booking__fallback { display: flex; flex-direction: column; gap: .8rem; align-items: flex-start; }
 .booking__fallback h3 { margin: 0; font-size: 0.9875rem; }

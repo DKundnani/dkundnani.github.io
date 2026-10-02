@@ -311,7 +311,10 @@
       frame.height = booking.getAttribute("data-booking-height") || "760";
       frame.setAttribute("loading", "lazy");
       frame.setAttribute("frameborder", "0");
-      booking.insertBefore(frame, booking.firstChild);
+      var panel = document.createElement("div");
+      panel.className = "booking__frame";
+      panel.appendChild(frame);
+      booking.insertBefore(panel, booking.firstChild);
       var fallback = $(".booking__fallback", booking);
       if (fallback) fallback.hidden = true;
     }

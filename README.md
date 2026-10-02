@@ -59,6 +59,47 @@ sips -Z 900  --setProperty format jpeg --setProperty formatOptions 72 \
      images/YOUR_FIGURE.png --out images/web/your-figure-thumb.jpg
 ```
 
+## Contact form
+
+The site is static, so it cannot send mail on its own. `scripts/mail-relay.gs`
+is a Google Apps Script web app that does it: the form posts there, the script
+sends the message through the Gmail account that owns it, and the visitor stays
+on the page.
+
+Until a relay URL is configured the forms fall back to composing a `mailto:`
+draft, so they always do something useful.
+
+To deploy or redeploy the relay:
+
+1. Go to <https://script.google.com>, **New project**, and paste in
+   `scripts/mail-relay.gs`. Name it something like `dkundnani.bio mail relay`.
+2. **Deploy -> New deployment -> Web app**.
+   Set *Execute as* to **Me** and *Who has access* to **Anyone**.
+   "Anyone" means anyone may POST to it; it does not expose the Gmail account.
+3. Approve the permission prompt. Google calls the script unverified because it
+   is unpublished; **Advanced -> Go to (project name)** gets past it.
+4. Copy the web app URL. It ends in `/exec`.
+5. Put that URL in `data-endpoint` on both forms, in `index.html` and
+   `consulting.html`. The handler switches from `mailto:` to a background POST
+   automatically.
+
+Changing the script afterwards needs **Deploy -> Manage deployments -> edit ->
+Version: New version**, otherwise the old code stays live on the same URL.
+
+Notes on how it is wired:
+
+- The payload goes as JSON inside `text/plain`. That keeps it a simple
+  cross-origin request, so the browser skips the preflight `OPTIONS` call that
+  Apps Script web apps cannot answer.
+- `_fields` carries each answer already labelled the way the visitor saw it, so
+  the mail reads `Work email:` rather than `email:`.
+- The submitter's address becomes `Reply-To`, so replying from the inbox works.
+- `_gotcha` is a honeypot. A filled one is dropped silently.
+- `HOURLY_LIMIT` in the script caps sends per hour, well under Gmail's 100/day.
+- `data-format` on the form forces `json` or `form` encoding; without it the
+  format is chosen from the endpoint hostname. A Formspree-shaped service needs
+  `form`.
+
 ## Notes
 
 - Search for `TODO` in `index.html` for the details that still need your input.

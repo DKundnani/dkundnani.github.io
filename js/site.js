@@ -413,22 +413,42 @@
 
       if (btn) btn.disabled = true;
       say("Sending\u2026", true);
-      fetch(endpoint, {
-        method: "POST",
-        body: new FormData(form),
-        headers: { "Accept": "application/json" }
-      })
+
+      var body, headers;
+      var fmt = form.getAttribute("data-format") ||
+                (endpoint.indexOf("script.google.com") > -1 ? "json" : "form");
+      if (fmt === "json") {
+        /* text/plain keeps this a simple request, so the browser skips the
+           preflight that an Apps Script web app cannot answer. */
+        var payload = { _page: window.location.href, _fields: [] };
+        $$("input[name], select[name], textarea[name]", form).forEach(function (el) {
+          if (!el.name) return;
+          payload[el.name] = el.value;                 // raw names for the relay's own logic
+          if (el.name.charAt(0) === "_") return;
+          var v = (el.value || "").trim();
+          if (v) payload._fields.push({ label: labelFor(el), value: v });
+        });
+        body = JSON.stringify(payload);
+        headers = { "Content-Type": "text/plain;charset=utf-8" };
+      } else {
+        body = new FormData(form);
+        headers = { "Accept": "application/json" };
+      }
+
+      fetch(endpoint, { method: "POST", body: body, headers: headers })
         .then(function (r) {
           return r.json().then(function (b) { return { ok: r.ok, body: b }; },
                                function ()  { return { ok: r.ok, body: {} }; });
         })
         .then(function (res) {
           if (btn) btn.disabled = false;
-          if (res.ok) {
+          var sent = res.ok && !(res.body && res.body.ok === false);
+          if (sent) {
             form.reset();
             say("Thank you. That reached me, and I will reply shortly.", true);
             return;
           }
+          if (res.body && res.body.error) { say(res.body.error, false); return; }
           var errs = res.body && res.body.errors;
           say(errs && errs.length
                 ? errs.map(function (x) { return x.message; }).join(". ")

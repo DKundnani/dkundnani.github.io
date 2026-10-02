@@ -183,6 +183,14 @@ def main():
     except Exception:
         pubs = None
 
+    # Scholar and OpenAlex both miss entries the site lists (preprints, mostly).
+    # The tile links straight to that list, so it must never read lower than it.
+    try:
+        listed = len(json.load(open(PUBS_IN)))
+        pubs = max(pubs or 0, listed) or None
+    except Exception:
+        pass
+
     try:
         old = json.load(open(OUT))
     except Exception:

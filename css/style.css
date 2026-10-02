@@ -182,7 +182,7 @@ a:hover { color: var(--accent-2); }
 html[data-theme="dark"] .theme-icon--moon { display: none; }
 html:not([data-theme="dark"]) .theme-icon--sun { display: none; }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .nav__toggle { display: grid; }
   .nav__links {
     position: fixed; inset: var(--nav-h) 0 auto 0; margin: 0;
@@ -385,6 +385,42 @@ main {
   border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
   background: var(--accent-soft);
 }
+
+/* ------------------------------------------------------------- consulting */
+.svc { display: flex; flex-direction: column; gap: .65rem; height: 100%; }
+.svc h3 { margin: 0; font-size: 0.9875rem; font-weight: 700; letter-spacing: -.005em; }
+.svc p { margin: 0; color: var(--text-soft); font-size: 0.8575rem; }
+.svc__lead { color: var(--text) !important; font-weight: 600; }
+.svc .pills { margin-top: .2rem; }
+.svc__shape {
+  margin-top: auto !important; padding-top: .85rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.7875rem !important; color: var(--text-faint) !important;
+}
+.step__n {
+  width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+  background: var(--brand-grad); color: #fff;
+  font-size: 0.9375rem; font-weight: 800; font-variant-numeric: tabular-nums;
+}
+.svc__note {
+  max-width: 760px; margin: 1.6rem auto 0; text-align: center;
+  font-size: 0.8175rem; color: var(--text-faint); text-wrap: pretty;
+}
+.svc__note--tight { margin: 1.2rem 0 0; text-align: left; }
+.svc__aside-title { margin: 0 0 .9rem; font-size: 0.9375rem; }
+.field__hint { margin: .5rem 0 0; }
+.btn--sm { padding: .42rem .8rem; font-size: 0.7675rem; }
+
+/* The booking embed is switched on by putting a scheduling URL in
+   data-booking-url on #booking; until then the fallback card stands in. */
+.booking { max-width: 860px; margin-inline: auto; }
+.booking iframe {
+  width: 100%; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); box-shadow: var(--shadow); display: block;
+}
+.booking__fallback { display: flex; flex-direction: column; gap: .8rem; align-items: flex-start; }
+.booking__fallback h3 { margin: 0; font-size: 0.9875rem; }
+.booking__fallback p { margin: 0; color: var(--text-soft); font-size: 0.8575rem; }
 
 /* --------------------------------------------------------------- timeline */
 /* Two columns astride a central spine: education left, experience right.
@@ -641,13 +677,13 @@ a.tag:hover { background: var(--accent); border-color: var(--accent); color: #ff
   display: block; margin-bottom: .3rem; font-size: 0.7375rem;
   font-weight: 600; color: var(--text-soft);
 }
-.field input, .field textarea {
+.field input, .field textarea, .field select {
   width: 100%; padding: .7rem .9rem; font: inherit; font-size: 0.8675rem;
   color: var(--text); background: var(--bg);
   border: 1px solid var(--border); border-radius: var(--radius-sm);
   transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
 }
-.field input:focus, .field textarea:focus {
+.field input:focus, .field textarea:focus, .field select:focus {
   outline: none; border-color: var(--accent);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
 }

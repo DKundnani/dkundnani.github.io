@@ -63,30 +63,6 @@
     });
   }
 
-  /* ------------------------------------------------------------ scroll spy */
-  var spyLinks = $$('#nav-links a[href^="#"]');
-  if (spyLinks.length && "IntersectionObserver" in window) {
-    var byId = {};
-    var sections = spyLinks.map(function (a) {
-      var el = document.getElementById(a.getAttribute("href").slice(1));
-      if (el) byId[el.id] = a;
-      return el;
-    }).filter(Boolean);
-
-    var visible = {};
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { visible[en.target.id] = en.isIntersecting; });
-      var current = null;
-      for (var i = 0; i < sections.length; i++) {
-        if (visible[sections[i].id]) { current = sections[i].id; break; }
-      }
-      spyLinks.forEach(function (a) { a.classList.remove("is-active"); });
-      if (current && byId[current]) byId[current].classList.add("is-active");
-    }, { rootMargin: "-30% 0px -55% 0px", threshold: 0 });
-
-    sections.forEach(function (s) { spy.observe(s); });
-  }
-
   /* ------------------------------------------------------- reveal on scroll */
   var reveals = $$(".reveal");
   if (reveals.length) {
@@ -136,11 +112,11 @@
       counters.forEach(function (el) { co.observe(el); });
     }
 
-    /* Live publication metrics, refreshed weekly by a GitHub Action that
-       reads OpenAlex. Falls back silently to the numbers in the HTML. */
+    /* Live publication metrics, refreshed monthly from Google Scholar with
+       OpenAlex as the fallback. Falls back silently to the numbers in the HTML. */
     var metricEls = $$("[data-metric]");
     if (metricEls.length && window.fetch) {
-      fetch("data/metrics.json", { cache: "no-cache" })
+      fetch("/data/metrics.json", { cache: "no-cache" })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (m) {
           if (!m) return;
@@ -161,7 +137,7 @@
      unless a real number arrives, so nothing renders as "0 citations". */
   var citeEls = $$("[data-pub]");
   if (citeEls.length && window.fetch) {
-    fetch("data/citations.json", { cache: "no-cache" })
+    fetch("/data/citations.json", { cache: "no-cache" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (c) {
         if (!c) return;
@@ -321,6 +297,38 @@
     render();
     if (car.hasAttribute("data-autoplay")) start();
   });
+
+  /* ------------------------------------------------- consulting: booking embed */
+  /* The scheduling page is embedded only once a URL is configured on #booking.
+     With no URL the fallback card in the markup is what visitors see. */
+  var booking = $("#booking");
+  if (booking) {
+    var bookUrl = (booking.getAttribute("data-booking-url") || "").trim();
+    if (bookUrl.indexOf("https://") === 0) {
+      var frame = document.createElement("iframe");
+      frame.src = bookUrl;
+      frame.title = "Booking calendar";
+      frame.height = booking.getAttribute("data-booking-height") || "760";
+      frame.setAttribute("loading", "lazy");
+      frame.setAttribute("frameborder", "0");
+      booking.insertBefore(frame, booking.firstChild);
+      var fallback = $(".booking__fallback", booking);
+      if (fallback) fallback.hidden = true;
+    }
+  }
+
+  /* ------------------------------------------------ consulting: brief template */
+  var tplBtn = $("#use-template");
+  var tplSrc = $("#brief-template");
+  var brief  = $("#bBrief");
+  if (tplBtn && tplSrc && brief) {
+    tplBtn.addEventListener("click", function () {
+      var text = (tplSrc.content ? tplSrc.content.textContent : tplSrc.textContent) || "";
+      if (!brief.value.trim()) brief.value = text.replace(/^\n+/, "");
+      brief.focus();
+      brief.setSelectionRange(brief.value.length, brief.value.length);
+    });
+  }
 
   /* ------------------------------------------------------------ year stamp */
   $$("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });

@@ -354,6 +354,34 @@
       status.hidden = false;
     }
 
+    /* Webmail-only visitors get nothing from a mailto: link, so hand them the
+       text instead of a dead end. */
+    function offerCopy(text) {
+      if ($(".form__copy", form)) return;
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "btn btn--ghost btn--sm form__copy";
+      b.textContent = "Copy the message";
+      b.addEventListener("click", function () {
+        var done = function () { b.textContent = "Copied"; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, function () {});
+          return;
+        }
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      });
+      status.appendChild(document.createElement("br"));
+      status.appendChild(b);
+    }
+
     function labelFor(el) {
       var lab = el.id ? $('label[for="' + el.id + '"]', form) : null;
       return lab ? lab.textContent.trim() : el.name;
@@ -373,11 +401,13 @@
       e.preventDefault();
 
       if (endpoint.indexOf("https://") !== 0) {
+        var body = compose();
         window.location.href = "mailto:" + mailto +
           "?subject=" + encodeURIComponent(subject) +
-          "&body=" + encodeURIComponent(compose());
-        say("Opening your email app with this filled in. If nothing happens, write to " +
-            mailto + " directly.", true);
+          "&body=" + encodeURIComponent(body);
+        say("Opening your email app with this filled in. Nothing is sent until you press send " +
+            "there. No email app? Copy the message and send it to " + mailto + ".", true);
+        offerCopy(subject + "\n\n" + body);
         return;
       }
 

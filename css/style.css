@@ -409,6 +409,8 @@ main {
 .svc__note--tight { margin: 1.2rem 0 0; text-align: left; }
 .svc__aside-title { margin: 0 0 .9rem; font-size: 0.9375rem; }
 .field__hint { margin: .5rem 0 0; }
+.form__note { margin: .7rem 0 0; font-size: 0.7675rem; color: var(--text-faint); }
+.form__copy { margin-top: .6rem; }
 .form__status {
   margin: .85rem 0 0; padding: .7rem .9rem; border-radius: var(--radius-sm);
   font-size: 0.8275rem; background: var(--accent-soft); color: var(--accent-2);

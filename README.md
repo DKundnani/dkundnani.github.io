@@ -95,6 +95,19 @@ Notes on how it is wired:
   the mail reads `Work email:` rather than `email:`.
 - The submitter's address becomes `Reply-To`, so replying from the inbox works.
 - `_gotcha` is a honeypot. A filled one is dropped silently.
+- Spam gate, in two layers. `js/site.js` stamps every submission with
+  `_check`, a fingerprint of the values being sent, salted with `RELAY_SALT`;
+  the relay recomputes it and drops anything that does not match. A bot
+  posting straight at `/exec` has not run the page's JavaScript, so it has no
+  stamp, and a captured request cannot be replayed with new wording because
+  the stamp is bound to the wording. Stamps over 36 hours old are refused too.
+  `RELAY_SALT` must be the same string in both files, so change it in both.
+  Anything the gate rejects is answered `ok`, so a bot learns nothing.
+- Behind that, `spamScore()` marks keyboard-mash names and messages, Gmail
+  dot-trick addresses and link-only notes. Two points rejects; one never does,
+  so a real message cannot be lost to a single unlucky word. Set
+  `QUARANTINE = true` to have suspected spam delivered with a `[spam?]`
+  subject tag instead of dropped, which is the way to audit the gate.
 - `HOURLY_LIMIT` in the script caps sends per hour, well under Gmail's 100/day.
 - `data-format` on the form forces `json` or `form` encoding; without it the
   format is chosen from the endpoint hostname. A Formspree-shaped service needs
@@ -104,7 +117,8 @@ Notes on how it is wired:
 
 - Search for `TODO` in `index.html` for the details that still need your input.
 - Analytics: Google Analytics `G-ZKYQ2F24J1`, inlined in each page's `<head>`.
-- Contact form posts to Formspree (`xjvdwbqk`).
+- Contact forms post to the Apps Script relay above. Formspree is gone: the
+  endpoint in the original template belonged to its author, not to this site.
 - `sitemap.xml` and `robots.txt` are checked in; update the sitemap when a
   page is added or removed.
 - `_og-card.html` is the source for the link-preview image. To regenerate it:

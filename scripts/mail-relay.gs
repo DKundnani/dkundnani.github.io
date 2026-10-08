@@ -11,11 +11,16 @@
  * The request arrives as text/plain holding JSON. That is deliberate: it
  * counts as a simple cross-origin request, so the browser skips the preflight
  * OPTIONS call that Apps Script web apps cannot answer.
+ *
+ * Anything the spam gate rejects is answered with ok so a bot learns nothing
+ * about why it failed, and no mail is sent.
  */
 
 var TO               = "deepali.kundnani@gmail.com";
 var SUBJECT_FALLBACK = "Message from dkundnani.bio";
-var HOURLY_LIMIT     = 30;   // well under the 100/day Gmail quota
+var HOURLY_LIMIT     = 30;    // well under the 100/day Gmail quota
+var RELAY_SALT       = "dkundnani.bio/relay/1";   // must match js/site.js
+var QUARANTINE       = false;  // true delivers suspected spam, subject-tagged
 
 function doPost(e) {
   try {
@@ -25,8 +30,11 @@ function doPost(e) {
 
     var data = JSON.parse(e.postData.contents);
 
-    // Honeypot: real people leave this empty. Answer ok so bots learn nothing.
+    // Honeypot: real people leave this empty.
     if (data._gotcha) return reply({ ok: true });
+
+    // The page stamps each submission. No stamp means no browser ran the form.
+    if (!signed(data)) return reply({ ok: true });
 
     if (overLimit()) {
       return reply({ ok: false, error: "Too many messages in the last hour. Please email " + TO + " directly." });
@@ -48,6 +56,9 @@ function doPost(e) {
     }
     if (!lines.length) return reply({ ok: false, error: "Nothing was filled in" });
 
+    var junk = spamScore(data) >= 2;
+    if (junk && !QUARANTINE) return reply({ ok: true });
+
     lines.push("", "---", "Sent from " + String(data._page || "dkundnani.bio"));
 
     var options = { name: "dkundnani.bio" };
@@ -56,7 +67,8 @@ function doPost(e) {
 
     MailApp.sendEmail(
       TO,
-      String(data._subject || SUBJECT_FALLBACK).substring(0, 160),
+      (junk ? "[spam?] " : "") +
+        String(data._subject || SUBJECT_FALLBACK).substring(0, 160),
       lines.join("\n"),
       options
     );
@@ -70,6 +82,72 @@ function doPost(e) {
 /* Visiting the URL in a browser confirms the deployment is live. */
 function doGet() {
   return reply({ ok: true, service: "dkundnani.bio mail relay" });
+}
+
+/* ------------------------------------------------------------- spam gate */
+
+/* Recompute the page's fingerprint over the values that arrived. A stamp that
+   does not match means the payload was rewritten or replayed; a stamp older
+   than a day and a half means it was captured and kept. */
+function signed(data) {
+  var nonce = String(data._nonce || "");
+  var check = String(data._check || "");
+  if (!nonce || !check) return false;
+
+  var sent = parseInt(nonce, 36);
+  if (!sent || Math.abs(Date.now() - sent) > 36 * 3600 * 1000) return false;
+
+  var basis = (data._fields || []).map(function (f) { return String(f.value); }).join("\u0001");
+  return fingerprint(RELAY_SALT + "|" + nonce + "|" + basis) === check;
+}
+
+function fingerprint(text) {
+  var h = 2166136261;                                  // FNV-1a, 32 bit
+  for (var i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h += (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
+    h >>>= 0;
+  }
+  return h.toString(36);
+}
+
+/* Two points is enough to reject. One signal on its own never is, so a real
+   message cannot be lost to a single unlucky word. */
+function spamScore(data) {
+  var name    = String(data.name || "").trim();
+  var message = String(data.message || data.brief || "").trim();
+  var email   = String(data.email || "").trim();
+  var local   = email.split("@")[0] || "";
+  var score   = 0;
+
+  if (looksRandom(name))    score += 2;
+  if (looksRandom(message)) score += 2;
+  if (message.length >= 15 && !/\s/.test(message))        score += 1;
+  if ((local.match(/\./g) || []).length >= 4)             score += 1;
+  if (/https?:\/\//i.test(message) && message.length < 120) score += 1;
+  if (name && !/\s/.test(name) && message.length < 25)    score += 1;
+
+  return score;
+}
+
+/* Keyboard-mash words: letters flipping case over and over, or a long run
+   with no vowel at all. Ordinary names and sentences do neither. */
+function looksRandom(text) {
+  var words = String(text).split(/[^A-Za-z]+/);
+  for (var i = 0; i < words.length; i++) {
+    var w = words[i];
+    if (w.length < 8) continue;
+    if (!/[aeiouAEIOU]/.test(w) && w.length >= 12) return true;
+
+    var flips = 0;
+    for (var j = 1; j < w.length; j++) {
+      var up   = w.charAt(j) === w.charAt(j).toUpperCase();
+      var prev = w.charAt(j - 1) === w.charAt(j - 1).toUpperCase();
+      if (up !== prev) flips++;
+    }
+    if (flips >= 4) return true;
+  }
+  return false;
 }
 
 /* Crude hourly cap so a bot cannot burn the daily Gmail quota. */

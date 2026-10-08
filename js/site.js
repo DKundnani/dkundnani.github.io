@@ -333,6 +333,24 @@
     });
   }
 
+  /* --------------------------------------------------------- spam signature */
+  /* Every submission is stamped with a fingerprint of its own contents. The
+     relay recomputes it and drops anything that does not match, so a bot
+     posting straight at the endpoint never gets through: it has not run this
+     code, so it has no stamp. The salt is readable here on purpose. The point
+     is to make drive-by spam cost real work, not to keep a secret. */
+  var RELAY_SALT = "dkundnani.bio/relay/1";
+
+  function fingerprint(text) {
+    var h = 2166136261;                                  // FNV-1a, 32 bit
+    for (var i = 0; i < text.length; i++) {
+      h ^= text.charCodeAt(i);
+      h += (h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24);
+      h >>>= 0;
+    }
+    return h.toString(36);
+  }
+
   /* ----------------------------------------------------------- contact forms */
   /* With data-endpoint set the form posts there in the background and reports
      the result inline. With it empty nothing is sent anywhere: the fields are
@@ -431,6 +449,11 @@
           var v = (el.value || "").trim();
           if (v) payload._fields.push({ label: labelFor(el), value: v });
         });
+        /* Bound to the values being sent, so a captured request cannot be
+           replayed with different wording. */
+        payload._nonce = Date.now().toString(36);
+        payload._check = fingerprint(RELAY_SALT + "|" + payload._nonce + "|" +
+          payload._fields.map(function (f) { return f.value; }).join("\u0001"));
         body = JSON.stringify(payload);
         headers = { "Content-Type": "text/plain;charset=utf-8" };
       } else {

@@ -501,7 +501,8 @@
         <p class="section__intro">Questions, collaborations, or just to say hello.</p>
         <div class="contact">
           <form name="contact" data-endpoint="https://script.google.com/macros/s/AKfycbxLT4Nae1eEw52Q15GLrxnQb3kuy9e0uu8cs5LqMj5TzFgcQ8TO4Wmc2cK8x-lVkv_S/exec" data-mailto="deepali.kundnani@gmail.com"
-                data-subject="Message from dkundnani.bio">
+                data-subject="Message from dkundnani.bio" data-captcha="turnstile" data-sitekey="">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="field">
               <label for="inputName">Name</label>
               <input type="text" name="name" id="inputName" autocomplete="name" required>
@@ -514,6 +515,7 @@
               <label for="inputMessage">Message</label>
               <textarea name="message" id="inputMessage" rows="5" required></textarea>
             </div>
+            <div class="form__captcha"></div>
             <button class="btn btn--primary" type="submit" style="width:100%">
               <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg> Send message
             </button>

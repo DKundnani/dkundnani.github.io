@@ -103,6 +103,29 @@ Notes on how it is wired:
   the stamp is bound to the wording. Stamps over 36 hours old are refused too.
   `RELAY_SALT` must be the same string in both files, so change it in both.
   Anything the gate rejects is answered `ok`, so a bot learns nothing.
+- Captcha, off until configured. Both forms carry
+  `data-captcha="turnstile"` and an empty `data-sitekey`. While the key is
+  empty no widget renders, no provider script is fetched and nothing changes.
+  To turn it on:
+
+  1. Get a free key pair. Turnstile: <https://dash.cloudflare.com> ->
+     **Turnstile** -> **Add widget**, hostname `dkundnani.bio`. For reCAPTCHA
+     v2 ("I'm not a robot") use <https://www.google.com/recaptcha/admin>
+     instead and set `data-captcha="recaptcha"` on both forms.
+  2. Put the **site** key in `data-sitekey` on both forms. It is public, so it
+     belongs in the HTML.
+  3. Put the **secret** key in the script, not the repo: Apps Script ->
+     **Project Settings** -> **Script properties** -> `CAPTCHA_SECRET`. Add
+     `CAPTCHA_PROVIDER` as `recaptcha` if not using Turnstile. The provider is
+     read from the properties, never from the request, so a bot cannot choose
+     a verifier it controls.
+  4. Redeploy with **New version**.
+
+  Until `CAPTCHA_SECRET` exists the relay skips the check, so the two halves
+  can be set up in either order without the forms breaking. If the provider
+  script is blocked in a visitor's browser the widget hides itself and the
+  message still sends, falling back to the stamp gate rather than trapping a
+  real person.
 - Behind that, `spamScore()` marks keyboard-mash names and messages, Gmail
   dot-trick addresses and link-only notes. Two points rejects; one never does,
   so a real message cannot be lost to a single unlucky word. Set

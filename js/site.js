@@ -351,6 +351,41 @@
     return h.toString(36);
   }
 
+  /* --------------------------------------------------------------- captcha */
+  /* Turnstile and reCAPTCHA v2 both expose render(el, {sitekey, callback}),
+     so one loader covers either. The provider script is fetched only when a
+     form actually carries a site key, so a page without one stays untouched
+     and no third party sees the visitor. */
+  var CAPTCHA_SRC = {
+    turnstile: "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit",
+    recaptcha: "https://www.google.com/recaptcha/api.js?render=explicit"
+  };
+  var CAPTCHA_API = { turnstile: "turnstile", recaptcha: "grecaptcha" };
+  var captchaLoading = {};
+
+  function loadCaptcha(provider, done, fail) {
+    var api = CAPTCHA_API[provider];
+    if (!api || !CAPTCHA_SRC[provider]) { fail(); return; }
+    if (window[api] && window[api].render) { done(window[api]); return; }
+
+    if (!captchaLoading[provider]) {
+      captchaLoading[provider] = true;
+      var tag = document.createElement("script");
+      tag.src = CAPTCHA_SRC[provider];
+      tag.async = true;
+      tag.defer = true;
+      document.head.appendChild(tag);
+    }
+    /* Both scripts publish their global a moment after they load, so wait for
+       the global rather than for onload. Give up after ten seconds. */
+    var waited = 0;
+    var tick = setInterval(function () {
+      if (window[api] && window[api].render) { clearInterval(tick); done(window[api]); return; }
+      waited += 150;
+      if (waited > 10000) { clearInterval(tick); fail(); }
+    }, 150);
+  }
+
   /* ----------------------------------------------------------- contact forms */
   /* With data-endpoint set the form posts there in the background and reports
      the result inline. With it empty nothing is sent anywhere: the fields are
@@ -373,6 +408,36 @@
       status.textContent = msg;
       status.classList.toggle("is-bad", !ok);
       status.hidden = false;
+    }
+
+    /* The widget renders only once a site key is set, so the form keeps
+       working while the key is still blank. */
+    var provider = (form.getAttribute("data-captcha") || "").trim();
+    var sitekey  = (form.getAttribute("data-sitekey") || "").trim();
+    var slot     = $(".form__captcha", form);
+    var captcha  = { on: false, ready: false, token: "", reset: null };
+
+    if (provider && sitekey && slot) {
+      captcha.on = true;
+      loadCaptcha(provider, function (api) {
+        var theme = document.documentElement.getAttribute("data-theme") || "auto";
+        var id = api.render(slot, {
+          sitekey: sitekey,
+          theme: provider === "turnstile" ? theme : (theme === "dark" ? "dark" : "light"),
+          callback: function (token) { captcha.token = token; captcha.ready = true; },
+          "expired-callback": function () { captcha.token = ""; captcha.ready = false; }
+        });
+        captcha.reset = function () {
+          captcha.token = "";
+          captcha.ready = false;
+          try { api.reset(id); } catch (err) {}
+        };
+      }, function () {
+        /* Blocked or offline. Let the message through rather than trapping a
+           real visitor; the relay still has the stamp check behind this. */
+        captcha.on = false;
+        slot.hidden = true;
+      });
     }
 
     /* Webmail-only visitors get nothing from a mailto: link, so hand them the
@@ -432,6 +497,13 @@
         return;
       }
 
+      if (captcha.on && !captcha.token) {
+        say(captcha.ready
+              ? "The spam check expired. Please tick it again."
+              : "Please complete the spam check just above the button.", false);
+        return;
+      }
+
       if (btn) btn.disabled = true;
       say("Sending\u2026", true);
 
@@ -451,6 +523,7 @@
         });
         /* Bound to the values being sent, so a captured request cannot be
            replayed with different wording. */
+        if (captcha.token) payload._captcha = captcha.token;
         payload._nonce = Date.now().toString(36);
         payload._check = fingerprint(RELAY_SALT + "|" + payload._nonce + "|" +
           payload._fields.map(function (f) { return f.value; }).join("\u0001"));
@@ -468,6 +541,8 @@
         })
         .then(function (res) {
           if (btn) btn.disabled = false;
+          /* Tokens are single use, so the widget needs a fresh one either way. */
+          if (captcha.reset) captcha.reset();
           var sent = res.ok && !(res.body && res.body.ok === false);
           if (sent) {
             form.reset();
@@ -482,6 +557,7 @@
         })
         .catch(function () {
           if (btn) btn.disabled = false;
+          if (captcha.reset) captcha.reset();
           say("That did not send, the request was blocked. Please email " + mailto + " instead.", false);
         });
     });

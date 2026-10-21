@@ -36,6 +36,12 @@ function doPost(e) {
     // The page stamps each submission. No stamp means no browser ran the form.
     if (!signed(data)) return reply({ ok: true });
 
+    // Captcha, once CAPTCHA_SECRET is set. This answer is visible on purpose:
+    // a bot never reaches it, so only a real person can be looking at it.
+    if (!captchaOk(data)) {
+      return reply({ ok: false, error: "The spam check did not pass. Please try again, or email " + TO + " directly." });
+    }
+
     if (overLimit()) {
       return reply({ ok: false, error: "Too many messages in the last hour. Please email " + TO + " directly." });
     }
@@ -85,6 +91,36 @@ function doGet() {
 }
 
 /* ------------------------------------------------------------- spam gate */
+
+/* Ask the captcha provider whether the visitor's token is good. Returns true
+   when no secret is stored, so the forms keep working until one is: set
+   CAPTCHA_SECRET, and optionally CAPTCHA_PROVIDER, under
+   Project Settings -> Script properties. The provider is read from the
+   properties rather than from the request, so a bot cannot pick its own. */
+function captchaOk(data) {
+  var props  = PropertiesService.getScriptProperties();
+  var secret = String(props.getProperty("CAPTCHA_SECRET") || "").trim();
+  if (!secret) return true;
+
+  var token = String(data._captcha || "").trim();
+  if (!token) return false;
+
+  var provider = String(props.getProperty("CAPTCHA_PROVIDER") || "turnstile").trim();
+  var url = provider === "recaptcha"
+    ? "https://www.google.com/recaptcha/api/siteverify"
+    : "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+
+  try {
+    var res = UrlFetchApp.fetch(url, {
+      method: "post",
+      payload: { secret: secret, response: token },
+      muteHttpExceptions: true
+    });
+    return JSON.parse(res.getContentText()).success === true;
+  } catch (err) {
+    return false;        // cannot verify, so do not deliver
+  }
+}
 
 /* Recompute the page's fingerprint over the values that arrived. A stamp that
    does not match means the payload was rewritten or replayed; a stamp older

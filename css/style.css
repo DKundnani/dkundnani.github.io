@@ -410,6 +410,11 @@ main {
 .svc__aside-title { margin: 0 0 .9rem; font-size: 0.9375rem; }
 .field__hint { margin: .5rem 0 0; }
 .form__copy { margin-top: .6rem; }
+/* The provider renders its own box, so this only reserves room for it and
+   keeps it from butting against the button. */
+.form__captcha:not(:empty) { margin: 0 0 .9rem; min-height: 65px; }
+.form__captcha iframe { max-width: 100%; }
+
 .form__status {
   margin: .85rem 0 0; padding: .7rem .9rem; border-radius: var(--radius-sm);
   font-size: 0.8275rem; background: var(--accent-soft); color: var(--accent-2);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Deepali L. Kundnani | Computational Biologist</title>
-    <meta name="description" content="Biomedical AI researcher at the UNM Comprehensive Cancer Center. Interpretable models over EHR, genomic and multi-omics data. Ph.D. Bioinformatics, Georgia Tech.">
+    <meta name="description" content="Biomedical AI researcher at the UNM Comprehensive Cancer Center. First author of the 2026 Cell paper mapping the human ribome. Ph.D. Bioinformatics, Georgia Tech.">
     <meta name="author" content="Deepali L. Kundnani">
     <link rel="canonical" href="https://dkundnani.bio/">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fb923c'/%3E%3Cstop offset='1' stop-color='%23cf4310'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E">
@@ -12,7 +12,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Deepali L. Kundnani">
     <meta property="og:title" content="Deepali L. Kundnani | Computational Biologist">
-    <meta property="og:description" content="Biomedical AI researcher at the UNM Comprehensive Cancer Center. Interpretable models over EHR, genomic and multi-omics data. Ph.D. Bioinformatics, Georgia Tech.">
+    <meta property="og:description" content="Biomedical AI researcher at the UNM Comprehensive Cancer Center. First author of the 2026 Cell paper mapping the human ribome. Ph.D. Bioinformatics, Georgia Tech.">
     <meta property="og:url" content="https://dkundnani.bio/">
     <meta property="og:image" content="https://dkundnani.bio/images/web/og-card.jpg">
     <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@DeepaliKundnani">
     <meta name="twitter:title" content="Deepali L. Kundnani | Computational Biologist">
-    <meta name="twitter:description" content="Biomedical AI researcher at the UNM Comprehensive Cancer Center. Interpretable models over EHR, genomic and multi-omics data. Ph.D. Bioinformatics, Georgia Tech.">
+    <meta name="twitter:description" content="Biomedical AI researcher at the UNM Comprehensive Cancer Center. First author of the 2026 Cell paper mapping the human ribome. Ph.D. Bioinformatics, Georgia Tech.">
     <meta name="twitter:image" content="https://dkundnani.bio/images/web/og-card.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -151,8 +151,11 @@
       </svg>
 
       <div class="container hero__inner">
-        <img class="hero__photo" src="images/web/profile.jpg" width="235" height="235"
-             alt="Portrait of Deepali Kundnani" fetchpriority="high">
+        <div class="hero__portrait">
+          <img class="hero__photo" src="images/web/profile.jpg" width="235" height="235"
+               alt="Portrait of Deepali Kundnani" fetchpriority="high">
+          <a class="hero__badge" href="#featured">First author, <em>Cell</em> 2026</a>
+        </div>
         <h1>Deepali L. Kundnani</h1>
         <p class="hero__role">Postdoctoral Researcher, Biomedical AI</p>
         <p class="hero__affil">University of New Mexico Comprehensive Cancer Center &middot; Ph.D. Bioinformatics, Georgia Tech</p>
@@ -212,8 +215,58 @@
 
     <main class="container" id="main">
 
+      <section class="section reveal" id="featured">
+        <p class="eyebrow">Featured research</p>
+        <h2 class="section__title">A new epigenetic layer in human DNA</h2>
+        <div class="feature">
+          <div class="feature__body prose">
+            <p>
+              Ribonucleotides are RNA building blocks that slip into DNA while a cell copies
+              itself. For decades they were treated as mistakes, to be cut out and forgotten.
+            </p>
+            <p class="feature__quote">
+              What the field had written off as damage turned out to carry information.
+            </p>
+            <p>
+              We mapped roughly one million of them in every human nuclear genome, the first
+              genome-wide picture of where they actually sit. They are not scattered at random.
+              They track gene activity, and processing them shifts how tightly DNA is wound,
+              which ties the chemistry of a genome to its physical shape and to transcription
+              itself. The work also speaks to disorders caused by a failure to clear RNA out of
+              DNA, including rare autoimmune disease.
+            </p>
+            <p>
+              I am first author, and I led the bioinformatics: the mapping, the genomic feature
+              associations, and the analysis behind the human nuclear <em>ribome</em>.
+            </p>
+            <div class="feature__links">
+              <a class="btn btn--primary" href="https://doi.org/10.1016/j.cell.2026.07.053" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> Read it in <em>Cell</em>
+              </a>
+              <a class="btn btn--ghost" href="https://bioinformatics.gatech.edu/bioinformatics-publication-cell" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-right"/></svg> Georgia Tech coverage
+              </a>
+            </div>
+          </div>
+
+          <aside class="feature__side">
+            <div class="card feature__stat">
+              <div class="feature__num">~1M</div>
+              <p>ribonucleotides mapped in every human nuclear genome</p>
+            </div>
+            <ul class="chips">
+              <li class="chip">First author</li>
+              <li class="chip"><em>Cell</em>, 2026</li>
+              <li class="chip">Genome-wide first</li>
+              <li class="chip">Ph.D. thesis work</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
       <section class="section reveal" id="about">
-        <h2 class="section__title">About me</h2>
+        <p class="eyebrow">Meet the researcher</p>
+        <h2 class="section__title">Who you would be working with</h2>
         <div class="about">
           <div class="prose">
             <p>
@@ -259,30 +312,12 @@
           </div>
 
           <aside class="about__aside">
-            <div class="card">
-              <ul class="factlist">
-                <li>
-                  <svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>
-                  <div><strong>Mark Borodovsky Prize</strong><span>Top bioinformatics Ph.D. student, Georgia Tech</span></div>
-                </li>
-                <li>
-                  <svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>
-                  <div><strong>Ph.D. minor in Machine Learning</strong><span>GPA 4.00 / 4.00</span></div>
-                </li>
-                <li>
-                  <svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>
-                  <div><strong>Bench to terminal</strong><span>CLIA-certified lab work and computational analysis</span></div>
-                </li>
-                <li>
-                  <svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>
-                  <div><strong>200+ experts led</strong><span>STEM evaluation teams at Turing</span></div>
-                </li>
-                <li>
-                  <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
-                  <div><strong>Languages</strong><span>English, Hindi</span></div>
-                </li>
-              </ul>
-            </div>
+            <ul class="chips chips--stack">
+              <li class="chip chip--lg"><svg class="icon" aria-hidden="true"><use href="#i-award"/></svg>Mark Borodovsky Prize, top bioinformatics Ph.D. student at Georgia Tech</li>
+              <li class="chip chip--lg"><svg class="icon" aria-hidden="true"><use href="#i-cpu"/></svg>Ph.D. minor in Machine Learning, 4.00 / 4.00</li>
+              <li class="chip chip--lg"><svg class="icon" aria-hidden="true"><use href="#i-flask"/></svg>Bench to terminal, CLIA certified lab work and computational analysis</li>
+              <li class="chip chip--lg"><svg class="icon" aria-hidden="true"><use href="#i-users"/></svg>200+ subject matter experts led at Turing</li>
+            </ul>
             <a class="btn btn--primary" href="#contact" style="justify-content:center">
               <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Get in touch
             </a>
@@ -497,8 +532,13 @@
       </section>
 
       <section class="section reveal" id="contact">
-        <h2 class="section__title">Contact</h2>
-        <p class="section__intro">Questions, collaborations, or just to say hello.</p>
+        <p class="eyebrow">Get in touch</p>
+        <h2 class="section__title">Tell me what you are working on</h2>
+        <p class="section__intro">
+          Collaborations, a question about a paper or a method, or a problem you are stuck on:
+          all of it is welcome, and half-formed is fine. I read every message myself and reply
+          within two working days.
+        </p>
         <div class="contact">
           <form name="contact" data-endpoint="https://script.google.com/macros/s/AKfycbxLT4Nae1eEw52Q15GLrxnQb3kuy9e0uu8cs5LqMj5TzFgcQ8TO4Wmc2cK8x-lVkv_S/exec" data-mailto="deepali.kundnani@gmail.com"
                 data-subject="Message from dkundnani.bio" data-captcha="turnstile" data-sitekey="">
@@ -512,13 +552,35 @@
               <input type="email" name="email" id="inputEmail" autocomplete="email" required>
             </div>
             <div class="field">
+              <label for="inputTopic">What brings you here?</label>
+              <select name="topic" id="inputTopic">
+                <option value="">Choose one</option>
+                <option>Research collaboration</option>
+                <option>Consulting enquiry</option>
+                <option>Question about a paper or method</option>
+                <option>Speaking, teaching or peer review</option>
+                <option>Mentoring or a student enquiry</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div class="field">
               <label for="inputMessage">Message</label>
-              <textarea name="message" id="inputMessage" rows="5" required></textarea>
+              <textarea name="message" id="inputMessage" rows="5" required
+                        placeholder="What you are working on, and where you are stuck."></textarea>
             </div>
             <div class="form__captcha"></div>
             <button class="btn btn--primary" type="submit" style="width:100%">
               <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg> Send message
             </button>
+            <p class="form__alt"><span>or reach me directly</span></p>
+            <p class="form__direct">
+              <a href="mailto:dkundnani@salud.unm.edu">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> dkundnani@salud.unm.edu
+              </a>
+              <a href="consulting.html#book">
+                <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg> Book a 30 minute call
+              </a>
+            </p>
           </form>
 
           <div class="card">

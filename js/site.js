@@ -546,7 +546,8 @@
           var sent = res.ok && !(res.body && res.body.ok === false);
           if (sent) {
             form.reset();
-            say("Thank you. That reached me, and I will reply shortly.", true);
+            say(form.getAttribute("data-success") ||
+                "Thank you. That reached me, and I will reply shortly.", true);
             return;
           }
           if (res.body && res.body.error) { say(res.body.error, false); return; }

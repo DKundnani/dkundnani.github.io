@@ -169,3 +169,16 @@ Notes on how it is wired:
   generator that lived outside the repository and has since been lost, so
   `index.html` and `cv.html` now need matching edits when shared facts change
   (role, affiliation, publications, awards).
+
+## Newsletter (BioMed AI Watch)
+
+`newsletter.html` is the subscribe page and issue archive. `newsletter/<date>.html` are the issues.
+`newsletter/latest.html` and `latest.json` are what the weekly email sender reads. All of these are
+written by the [biomedi-ai-watch](https://github.com/DKundnani/biomedi-ai-watch) pipeline. Don't edit the list
+between the `issues:start` / `issues:end` markers by hand. `newsletter/_template.html` is the issue page layout:
+the underscore keeps Jekyll from publishing it, and `{{TITLE}}`-style placeholders are filled per issue.
+
+Sign-ups post to the same mail relay as the contact form, with `_action=subscribe`, and pass the same spam
+gate. `scripts/newsletter.gs` holds the subscriber Sheet, confirm and unsubscribe links, and the Monday
+`sendWeekly` trigger. It goes into the same Apps Script project as `mail-relay.gs`. Setup steps are in the
+biomedi-ai-watch README.

@@ -46,6 +46,9 @@ function doPost(e) {
       return reply({ ok: false, error: "Too many messages in the last hour. Please email " + TO + " directly." });
     }
 
+    // Newsletter sign-ups share the gate above, then leave here (newsletter.gs).
+    if (data._action === "subscribe") return reply(subscribe(data));
+
     // The page sends _fields already labelled the way the visitor saw them.
     // Fall back to the raw field names if an older page posts here.
     var lines = [];
@@ -85,8 +88,10 @@ function doPost(e) {
   }
 }
 
-/* Visiting the URL in a browser confirms the deployment is live. */
-function doGet() {
+/* Visiting the URL in a browser confirms the deployment is live. Newsletter
+   confirm and unsubscribe links also land here (newsletter.gs). */
+function doGet(e) {
+  if (e && e.parameter && e.parameter.action) return newsletterLink(e.parameter);
   return reply({ ok: true, service: "dkundnani.bio mail relay" });
 }
 

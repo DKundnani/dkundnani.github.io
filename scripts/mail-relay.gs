@@ -46,8 +46,12 @@ function doPost(e) {
       return reply({ ok: false, error: "Too many messages in the last hour. Please email " + TO + " directly." });
     }
 
-    // Newsletter sign-ups share the gate above, then leave here (newsletter.gs).
-    if (data._action === "subscribe") return reply(subscribe(data));
+    // Newsletter sign-ups share the gate above, then leave here. subscribe() and
+    // newsletterLink() live in github.com/DKundnani/biomedi-ai-watch/apps_script/newsletter.gs.
+    if (data._action === "subscribe") {
+      if (typeof subscribe !== "function") return reply({ ok: false, error: "Sign-ups are not open yet." });
+      return reply(subscribe(data));
+    }
 
     // The page sends _fields already labelled the way the visitor saw them.
     // Fall back to the raw field names if an older page posts here.
@@ -89,9 +93,12 @@ function doPost(e) {
 }
 
 /* Visiting the URL in a browser confirms the deployment is live. Newsletter
-   confirm and unsubscribe links also land here (newsletter.gs). */
+   confirm and unsubscribe links also land here (see the note in doPost). */
 function doGet(e) {
-  if (e && e.parameter && e.parameter.action) return newsletterLink(e.parameter);
+  if (e && e.parameter && e.parameter.action) {
+    if (typeof newsletterLink !== "function") return reply({ ok: false, error: "Newsletter is not set up yet" });
+    return newsletterLink(e.parameter);
+  }
   return reply({ ok: true, service: "dkundnani.bio mail relay" });
 }
 

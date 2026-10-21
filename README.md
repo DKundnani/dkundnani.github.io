@@ -172,13 +172,14 @@ Notes on how it is wired:
 
 ## Newsletter (BioMed AI Watch)
 
-`newsletter.html` is the subscribe page and issue archive. `newsletter/<date>.html` are the issues.
-`newsletter/latest.html` and `latest.json` are what the weekly email sender reads. All of these are
-written by the [biomedi-ai-watch](https://github.com/DKundnani/biomedi-ai-watch) pipeline. Don't edit the list
-between the `issues:start` / `issues:end` markers by hand. `newsletter/_template.html` is the issue page layout:
-the underscore keeps Jekyll from publishing it, and `{{TITLE}}`-style placeholders are filled per issue.
+The pages live here; the logic lives in [biomedi-ai-watch](https://github.com/DKundnani/biomedi-ai-watch).
 
-Sign-ups post to the same mail relay as the contact form, with `_action=subscribe`, and pass the same spam
-gate. `scripts/newsletter.gs` holds the subscriber Sheet, confirm and unsubscribe links, and the Monday
-`sendWeekly` trigger. It goes into the same Apps Script project as `mail-relay.gs`. Setup steps are in the
-biomedi-ai-watch README.
+- `newsletter.html` is the subscribe page and issue archive. The list between the `issues:start` / `issues:end`
+  markers is rewritten by the pipeline, so don't edit it by hand.
+- `newsletter/_template.html` is the issue page layout. The underscore keeps Jekyll from publishing it, and
+  the `{{TITLE}}`-style placeholders are filled per issue.
+- `newsletter/<date>.html`, `newsletter/assets/` and `newsletter/latest.html` / `latest.json` are committed
+  here weekly by that repo's GitHub Action. The `latest` files are what the Monday email sender reads.
+- Sign-ups post to the contact form's mail relay with `_action=subscribe` and pass the same spam gate.
+  `scripts/mail-relay.gs` hands them to `subscribe()` / `newsletterLink()`, which come from
+  `apps_script/newsletter.gs` in biomedi-ai-watch and are pasted into the same Apps Script project.

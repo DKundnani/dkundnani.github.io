@@ -9,24 +9,23 @@
     <link rel="canonical" href="{{URL}}">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fb923c'/%3E%3Cstop offset='1' stop-color='%23cf4310'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E">
 
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="Deepali L. Kundnani">
     <meta property="og:title" content="{{TITLE}}">
     <meta property="og:description" content="{{DESCRIPTION}}">
     <meta property="og:url" content="{{URL}}">
-    <meta property="og:image" content="https://dkundnani.bio/images/web/og-card.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="{{COVER_URL}}">
+        <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@DeepaliKundnani">
     <meta name="twitter:title" content="{{TITLE}}">
     <meta name="twitter:description" content="{{DESCRIPTION}}">
-    <meta name="twitter:image" content="https://dkundnani.bio/images/web/og-card.jpg">
+    <meta name="twitter:image" content="{{COVER_URL}}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/newsletter.css">
 
     <script>
       /* Apply the saved theme before first paint so there is no flash. */
@@ -110,14 +109,18 @@
       </div>
     </nav>
     <header class="subhero">
-      <div class="container">
-        <span class="eyebrow">BioMed AI Watch &middot; {{WEEK}}</span>
+      <div class="container issue__head">
+        <span class="eyebrow">{{TAG}}</span>
         <h1>{{TITLE}}</h1>
+        <p class="issue__deck">{{SUBTITLE}}</p>
+        <div class="issue__byline"><strong>Deepali Kundnani</strong> &middot; <time datetime="{{DATE}}">{{DATE_LONG}}</time> &middot; {{READ}} min read</div>
+        <div class="share">{{SHARE}}</div>
       </div>
     </header>
 
     <main class="container" id="main">
-      <article class="section">
+      <article class="section issue">
+{{TOC}}
         <div class="article__body">
 {{CONTENT}}
         </div>
@@ -127,6 +130,7 @@
           </a>
           <a class="btn btn--ghost" href="../newsletter.html#issues">All issues</a>
         </div>
+{{NAV}}
       </article>
     </main>
 
@@ -161,5 +165,14 @@
     </div>
 
     <script src="../js/site.js"></script>
+    <script>
+      /* Copy-link button in the share row. */
+      document.querySelectorAll("[data-copy]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          var done = function () { b.textContent = "Link copied"; };
+          if (navigator.clipboard) navigator.clipboard.writeText(b.getAttribute("data-copy")).then(done, function () {});
+        });
+      });
+    </script>
   </body>
 </html>

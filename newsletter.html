@@ -27,6 +27,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/newsletter.css">
 
     <script>
       /* Apply the saved theme before first paint so there is no flash. */
@@ -121,25 +122,40 @@
     </header>
 
     <main class="container" id="main">
-      <section class="section reveal" id="subscribe">
-        <div class="contact">
-          <form name="newsletter" data-endpoint="https://script.google.com/macros/s/AKfycbxLT4Nae1eEw52Q15GLrxnQb3kuy9e0uu8cs5LqMj5TzFgcQ8TO4Wmc2cK8x-lVkv_S/exec" data-mailto="deepali.kundnani@gmail.com"
-                data-subject="BioMed AI Watch subscription" data-captcha="turnstile" data-sitekey=""
-                data-success="You are subscribed. The next issue arrives Monday morning.">
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-            <input type="hidden" name="_action" value="subscribe">
-            <div class="field">
-              <label for="nlEmail">Email</label>
-              <input type="email" name="email" id="nlEmail" autocomplete="email" required placeholder="you@institution.edu">
-            </div>
-            <div class="form__captcha"></div>
-            <button class="btn btn--primary" type="submit" style="width:100%">
-              <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Subscribe, free
-            </button>
-            <p class="field__hint">One email a week. Unsubscribe in one click from any issue.</p>
-          </form>
+      <section class="section nl-layout">
+        <div>
+<!-- latest:start -->
+<!-- latest:end -->
+          <div class="nl-head" id="issues">
+            <h2>Recent issues</h2>
+          </div>
+<!-- issues:start -->
+          <p class="nl-empty">The first issue is on its way.</p>
+<!-- issues:end -->
+        </div>
 
+        <aside class="nl-side" id="subscribe">
           <div class="card">
+            <h3>BioMed AI Watch</h3>
+            <p>Facts, data and research gaps in medical AI. One short issue every Monday, built around charts.</p>
+            <form name="newsletter" data-endpoint="https://script.google.com/macros/s/AKfycbxLT4Nae1eEw52Q15GLrxnQb3kuy9e0uu8cs5LqMj5TzFgcQ8TO4Wmc2cK8x-lVkv_S/exec" data-mailto="deepali.kundnani@gmail.com"
+                  data-subject="BioMed AI Watch subscription" data-captcha="turnstile" data-sitekey=""
+                  data-success="You are subscribed. The next issue arrives Monday morning.">
+              <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+              <input type="hidden" name="_action" value="subscribe">
+              <div class="field">
+                <label for="nlEmail">Email</label>
+                <input type="email" name="email" id="nlEmail" autocomplete="email" required placeholder="you@institution.edu">
+              </div>
+              <div class="form__captcha"></div>
+              <button class="btn btn--primary" type="submit" style="width:100%">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Subscribe, free
+              </button>
+              <p class="field__hint">One email a week. Unsubscribe in one click from any issue.</p>
+            </form>
+          </div>
+          <div class="card">
+            <h3>In every issue</h3>
             <ul class="factlist">
               <li>
                 <svg class="icon" aria-hidden="true"><use href="#i-target"/></svg>
@@ -159,17 +175,14 @@
               </li>
             </ul>
           </div>
-        </div>
-      </section>
-
-      <section class="section reveal" id="issues">
-        <p class="eyebrow">Archive</p>
-        <h2 class="section__title">Past issues</h2>
-        <div class="article__body">
-<!-- issues:start -->
-          <p>The first issue is on its way.</p>
-<!-- issues:end -->
-        </div>
+          <div class="card">
+            <h3>Spotlight topics</h3>
+            <ul class="nl-topics">
+<!-- topics:start -->
+<!-- topics:end -->
+            </ul>
+          </div>
+        </aside>
       </section>
     </main>
 
